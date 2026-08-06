@@ -170,6 +170,7 @@
     mimeo
     shared-mime-info
     file
+    xwayland-satellite
 
     #hyprland
     awww
