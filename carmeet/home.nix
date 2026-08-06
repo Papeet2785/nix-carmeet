@@ -14,11 +14,11 @@
       rm = "trash -v";
       mkdir = "mkdir -p";
       la = "ls -Alh";
-      nixbuild = "cd ~/mynixos && sudo nixos-rebuild switch --flake ./#myMachine";
+      nixbuild = "cd ~/nix-carmeet && sudo nixos-rebuild switch --flake ./#myMachine";
       nixfreespace = "sudo nix-collect-garbage -d";
       gotrash = "sudo rm -rf ~/.local/share/Trash/*";
       tinstall = "nix-shell -p";
-      nixupgrade = "cd ~/mynixos && nix flake update && sudo nixos-rebuild switch --flake .#myMachine";
+      nixupgrade = "cd ~/nix-carmeet && nix flake update && sudo nixos-rebuild switch --flake .#myMachine";
     };
     interactiveShellInit = ''
       set -g fish_greeting ""
