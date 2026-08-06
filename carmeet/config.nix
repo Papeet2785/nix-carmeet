@@ -41,6 +41,9 @@
     enable = true;
     xwayland.enable = true;
   };
+  programs.niri = {
+    enable = true;
+  };
   services.xserver.enable = true;
   services.xserver.xkb = {
     layout = "us";
