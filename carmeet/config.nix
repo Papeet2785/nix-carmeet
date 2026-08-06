@@ -115,7 +115,6 @@
 
     #code
     helix
-    gedit
     (python3.withPackages (ps: with ps; [
       tkinter
       numpy
@@ -128,6 +127,7 @@
     openjdk
     uv
     clang
+    gcc
     clang-tools
     lld
     raylib
@@ -149,7 +149,7 @@
     marksman
     black
     stylua
-    nixfmt-rfc-style
+    nixfmt
     prettier
     shfmt
     
@@ -206,7 +206,7 @@
     qalculate-gtk
 
     #apps
-    inputs.freesmlauncher.packages.${pkgs.system}.freesmlauncher
+    inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
     arduino
     localsend
     obs-studio
