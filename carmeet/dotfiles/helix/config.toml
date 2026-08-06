@@ -1,0 +1,12 @@
+theme = "gruvbox"
+[editor]
+default-yank-register = "+"
+idle-timeout = 0
+soft-wrap.enable = true
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+[editor.file-picker]
+hidden = false
+

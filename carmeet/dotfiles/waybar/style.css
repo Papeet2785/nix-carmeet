@@ -1,0 +1,117 @@
+@define-color work #83a598;
+@define-color notify #7c6f64;
+@define-color fg #ebdbb2;
+@define-color sound #fabd2f;
+@define-color temp #fb4934;
+@define-color battery #8ec07c;
+@define-color memory #d3869b;
+@define-color clock #b8bb26;
+@define-color cpu #fe8019;
+
+#waybar {
+  background-color: #282828;
+  border-bottom: 8px solid #1d2021;
+  color: #fbf1c7;
+  font-family: "Comfortaa";
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+#window {
+  border-bottom: 5px solid rgba(0, 0, 0, 0);
+  border-radius: 6px;
+  color: #ebdbb2;
+}
+
+button {
+  all: unset;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ebdbb2;
+  border: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: transform 0.1s ease-in-out;
+  border-bottom: 5px solid rgba(0, 0, 0, 0);
+}
+
+button.active {
+  background: inherit;
+  border-radius: 5px;
+  color: #3c3836;
+  background-color: @work;
+  border-bottom: 5px solid #458588;
+}
+
+#battery,
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#temperature,
+#tray,
+#window,
+#workspaces,
+#custom-swaync {
+  color: #fbf1c7;
+  padding-top: 2px;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 2px;
+}
+
+#custom-swaync {
+  background-color: @notify;
+  border-bottom: 5px solid #504945;
+  border-radius: 6px;
+  color: #282c34;
+  margin: 2px;
+  padding-left: 5px;
+  padding-right: 8px;
+}
+
+#clock {
+  background-color: @clock;
+  border-bottom: 5px solid #98971a;
+  color: #3c3836;
+  margin-right: 8px;
+}
+
+#battery {
+  background-color: @battery;
+  color: #3c3836;
+  border-bottom: 5px solid #689d6a;
+}
+
+#cpu {
+  background-color: @cpu;
+  color: #3c3836;
+  border-bottom: 5px solid #d65d0e;
+}
+
+#memory {
+  background-color: @memory;
+  color: #3c3836;
+  border-bottom: 5px solid #b16286;
+}
+
+#pulseaudio {
+  background-color: @sound;
+  border-bottom: 5px solid #d79921;
+  color: #3c3836;
+}
+
+#temperature {
+  background-color: @temp;
+  color: #3c3836;
+  border-bottom: 5px solid #cc241d;
+}
+
+#temperature.critical {
+  background-color: #9d0006;
+}
+
+#tray {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 5px solid #1d2021;
+}
