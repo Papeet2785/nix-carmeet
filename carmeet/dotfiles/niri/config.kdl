@@ -7,8 +7,8 @@ window-rule {
   default-column-width { fixed 1080; }
   default-window-height { fixed 920; }
   clip-to-geometry true
-  draw-border-with-background false
-  geometry-corner-radius 20
+  draw-border-with-background true
+  geometry-corner-radius 12
 }
 
 debug {
@@ -56,6 +56,8 @@ binds {
     Mod+B { spawn "firefox"; }
     Mod+Shift+B { spawn "google-chrome"; }
     Mod+E { spawn "nautilus"; }
+    Mod+Alt+B { spawn "blueman-manager"; }
+    Mod+Alt+W {spawn "nmtui"; }
     //noctlaia
     Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+N { spawn-sh "noctalia msg panel-toggle control-center"; }
@@ -67,6 +69,7 @@ binds {
     XF86AudioMute { spawn-sh "noctalia msg volume-mute"; }
     XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up"; }
     XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down"; }
+    Mod+W { spawn-sh "noctalia msg panel-toggle wallpaper"; }
     // Window management
     Mod+Q { close-window; }
     Mod+F { toggle-window-floating; }
@@ -80,6 +83,8 @@ binds {
     Mod+Shift+J { move-window-down; }
     Mod+Shift+K { move-window-up; }
     Mod+Shift+L { move-column-right; }
+    Mod+Alt+H { set-column-width "-10%"; }
+    Mod+Alt+L { set-column-width "+10%"; }
     Mod+Control+H { consume-or-expel-window-left; }
     Mod+Control+L { consume-or-expel-window-right; }
     // Screenshots
