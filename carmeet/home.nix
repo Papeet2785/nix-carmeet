@@ -30,10 +30,6 @@
       theme = {
         mode = "dark";
       };
-      wallpaper = {
-        enabled = true;
-        default.path = "/home/carmeet/Pictures/wall/abstract.png";
-      };
     };
   };
   home.file = {
