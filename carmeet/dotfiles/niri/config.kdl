@@ -1,1 +1,123 @@
+// ~/.config/niri/config.kdl
+spawn-at-startup "noctalia" "--daemon"
+prefer-no-csd
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+  clip-to-geometry true
+  draw-border-with-background false
+  geometry-corner-radius 20
+  clip-to-geometry true
+}
 
+debug {
+  honor-xdg-activation-with-invalid-serial
+}
+input {
+    keyboard {
+        xkb {
+            layout "us"
+        }
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+        dwt
+    }
+
+    focus-follows-mouse
+}
+
+layout {
+    gaps 10
+    border {
+        width 3
+        active-color "#b8bb26"
+        inactive-color "#69675b"
+    }
+
+    focus-ring {
+        off
+    }
+
+    background-color "#1d2021"
+
+    preset-column-widths {
+        proportion 0.50
+        proportion 0.75
+        proportion 1.00
+    }
+
+    default-column-width {
+        proportion 1.00
+    }
+}
+
+binds {
+    // Applications
+    Mod+Return { spawn "kitty"; }
+    Mod+C { spawn "kitty" "-e" "hx" "~"; }
+    Mod+B { spawn "firefox"; }
+    Mod+Shift+B { spawn "google-chrome"; }
+    Mod+E { spawn "nautilus"; }
+
+    //noctlaia
+    
+    Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+N { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Comma { spawn-sh "noctalia msg settings-toggle"; }
+    Alt+Tab { spawn-sh "noctalia msg window-switcher"; }
+    Mod+P { spawn-sh "noctalia msg panel-toggle session"; }
+
+    XF86AudioRaiseVolume { spawn-sh "noctalia msg volume-up"; }
+    XF86AudioLowerVolume { spawn-sh "noctalia msg volume-down"; }
+    XF86AudioMute { spawn-sh "noctalia msg volume-mute"; }
+    XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up"; }
+    XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down"; }
+    // Window management
+    Mod+Q { close-window; }
+    Mod+F { fullscreen-window; }
+
+    // Focus
+    Mod+H { focus-column-left; }
+    Mod+J { focus-window-down; }
+    Mod+K { focus-window-up; }
+    Mod+L { focus-column-right; }
+
+    // Move windows
+    Mod+Shift+H { move-column-left; }
+    Mod+Shift+J { move-window-down; }
+    Mod+Shift+K { move-window-up; }
+    Mod+Shift+L { move-column-right; }
+
+    // Screenshots
+    Mod+Shift+S {
+        spawn "noctalia" "msg" "screenshot-region";
+    }
+
+    // Workspaces
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; }
+
+    Mod+Shift+1 { move-window-to-workspace 1; }
+    Mod+Shift+2 { move-window-to-workspace 2; }
+    Mod+Shift+3 { move-window-to-workspace 3; }
+    Mod+Shift+4 { move-window-to-workspace 4; }
+    Mod+Shift+5 { move-window-to-workspace 5; }
+    Mod+Shift+6 { move-window-to-workspace 6; }
+    Mod+Shift+7 { move-window-to-workspace 7; }
+    Mod+Shift+8 { move-window-to-workspace 8; }
+    Mod+Shift+9 { move-window-to-workspace 9; }
+    Mod+Shift+0 { move-window-to-workspace 10; }
+}

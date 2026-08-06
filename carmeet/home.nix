@@ -1,4 +1,4 @@
-{config, pkgs, ...}: {
+{config, pkgs, inputs, ...}: {
   home.username = "carmeet";
   home.homeDirectory = "/home/carmeet";
   home.stateVersion = "26.11";
@@ -23,6 +23,18 @@
     interactiveShellInit = ''
       set -g fish_greeting ""
       '';
+  };
+  programs.noctalia = {
+    enable = true;
+    settings = {
+      theme = {
+        mode = "dark";
+      };
+      wallpaper = {
+        enabled = true;
+        default.path = "/home/carmeet/Pictures/wall/abstract.png";
+      };
+    };
   };
   home.file = {
     ".config/hypr".source = ./dotfiles/hypr;

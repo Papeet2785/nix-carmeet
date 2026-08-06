@@ -1,4 +1,4 @@
-{ config, pkgs, lib, freesmlauncher, ... }:
+{ config, pkgs, lib, inputs, ... }:
 {
     imports = [
       ./hardware.nix
@@ -29,6 +29,9 @@
       save = true;
       numlock = true;
     };
+  };
+  services.upower = {
+    enable = true;
   };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.auto-optimise-store = true;
@@ -203,7 +206,7 @@
     qalculate-gtk
 
     #apps
-    freesmlauncher.packages.${pkgs.system}.freesmlauncher
+    inputs.freesmlauncher.packages.${pkgs.system}.freesmlauncher
     arduino
     localsend
     obs-studio

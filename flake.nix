@@ -11,13 +11,17 @@
     home-manager = {
       url = "github:nix-community/home-manager";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, freesmlauncher, stylix, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, freesmlauncher, stylix, home-manager, ... }: {
     nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
-          inherit freesmlauncher;
+          inherit inputs;
         };
         modules = [
           ./carmeet/config.nix
@@ -26,6 +30,12 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+              sharedModules = [
+                inputs.noctalia.homeModules.default
+              ];
               users.carmeet = import ./carmeet/home.nix;
               backupFileExtension = "backup";
             };
