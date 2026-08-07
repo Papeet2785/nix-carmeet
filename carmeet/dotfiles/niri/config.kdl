@@ -6,6 +6,7 @@ window-rule {
   open-floating true
   default-column-width { fixed 1080; }
   default-window-height { fixed 920; }
+  geometry-corner-radius 12;
   clip-to-geometry true
   draw-border-with-background true
 }
@@ -29,6 +30,11 @@ input {
         accel-profile "flat"
     }
 }
+window-rule {
+    geometry-corner-radius 12;
+    clip-to-geometry true;
+    draw-border-with-background true
+}
 layout {
     gaps 10
     border {
@@ -41,10 +47,10 @@ layout {
     }
     background-color "#1d2021"
     preset-column-widths {
+        proportion 1.00
         proportion 0.50
         proportion 0.67
         proportion 0.75
-        proportion 1.00
     }
     default-column-width {
         proportion 0.67
