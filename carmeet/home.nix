@@ -42,4 +42,10 @@
     ".config/fastfetch".source = ./dotfiles/fastfetch;
     ".config/niri".source = ./dotfiles/niri;
   };
+  xdg.desktopEntries.arduino = {
+    name = "Arduino IDE";
+    exec = "appimage-run /home/carmeet/Applications/arduino-ide_2.3.10_Linux_64bit.AppImage";
+    terminal = false;
+    categories = [ "Development" "IDE" ];
+  };
 }
