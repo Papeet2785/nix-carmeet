@@ -129,6 +129,10 @@
   programs.fish.enable = true;
   programs.starship.enable = true;
   nixpkgs.config.allowUnfree = true;
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
+  };
   environment.systemPackages = with pkgs; [
     #shell
     fzf
@@ -259,8 +263,24 @@ fonts = {
   noto-fonts-color-emoji
     ];
   };
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
+    config = {
+      common = {
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
+        # PipeWire screencast backend
+        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+        # Optional
+        "org.freedesktop.impl.portal.Screenshot" = [ "gtk" ];
+      };
+    };
+  };
   stylix.enable = true;
   stylix = {
     base16Scheme =
