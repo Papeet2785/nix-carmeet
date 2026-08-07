@@ -154,7 +154,7 @@
     shfmt
     
     #services
-    btop
+    htop
     udiskie
     gsettings-desktop-schemas
     bluez
@@ -171,6 +171,8 @@
     shared-mime-info
     file
     xwayland-satellite
+    appimage-run
+    fuse
 
     #hyprland
     awww

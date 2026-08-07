@@ -29,6 +29,10 @@ input {
         accel-speed 1.0
         accel-profile "flat"
     }
+    mouse {
+        accel-speed 1.0
+        accel-profile "flat"
+    }
 }
 window-rule {
     geometry-corner-radius 12;
@@ -59,6 +63,7 @@ layout {
 binds {
     // Applications
     Mod+Return { spawn "kitty"; }
+    Mod+Escape { spawn "kitty" "-e" "htop"; }
     Mod+Tab { toggle-overview; }
     Mod+C { spawn "kitty" "-e" "hx" "~"; }
     Mod+B { spawn "firefox"; }
