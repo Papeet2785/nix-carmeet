@@ -87,7 +87,8 @@ binds {
     // Window management
     Mod+Q { close-window; }
     Mod+F { toggle-window-floating; }
-    Mod+Shift+F { switch-preset-column-width; }
+    Mod+Shift+F { switch-focus-between-floating-and-tiling; }
+    Mod+Alt+F { switch-preset-column-width; }
     // Focus
     Mod+H { focus-column-left; }
     Mod+J { focus-window-down; }

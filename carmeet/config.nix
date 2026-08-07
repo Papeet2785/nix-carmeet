@@ -210,8 +210,6 @@
 
     #apps
     inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
-    arduino
-    localsend
     obs-studio
     proton-vpn
     firefox
