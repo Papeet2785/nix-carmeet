@@ -63,6 +63,7 @@ layout {
 binds {
     // Applications
     Mod+Return { spawn "kitty"; }
+    Mod+Escape { spawn "kitty -e btop"; }
     Mod+Tab { toggle-overview; }
     Mod+C { spawn "kitty" "-e" "hx" "~"; }
     Mod+B { spawn "firefox"; }

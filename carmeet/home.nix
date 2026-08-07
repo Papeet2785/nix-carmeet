@@ -48,4 +48,12 @@
     terminal = false;
     categories = [ "Development" "IDE" ];
   };
+
+  xdg.desktopEntries.processing = {
+    name = "Processing";
+    exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 /home/carmeet/Applications/Processing/bin/Processing";
+    icon = "/home/carmeet/Applications/Processing/lib/Processing.png";
+    terminal = false;
+    categories = [ "Development" "IDE" ];
+  };
 }

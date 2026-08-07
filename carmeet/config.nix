@@ -52,6 +52,31 @@
     layout = "us";
     variant = "";
   };
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      libGL
+      libGLU
+      mesa
+      stdenv.cc.cc
+      zlib
+      libX11
+      libXext
+      libXi
+      libXrandr
+      libXrender
+      libXcursor
+      libXinerama
+      libXfixes
+      libXtst
+      wayland
+      libxkbcommon
+      alsa-lib
+      fontconfig
+      freetype
+      expat
+    ];
+  };  
   services.logind.settings.Login = {
     HandleLidSwitch = "suspend";
     HandleLidSwitchExternalPower = "suspend";
@@ -125,7 +150,6 @@
       transformers
     ]))
     openjdk
-    processing
     uv
     clang
     gcc
