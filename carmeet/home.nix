@@ -19,6 +19,7 @@
       gotrash = "sudo rm -rf ~/.local/share/Trash/*";
       tinstall = "nix-shell -p";
       nixupgrade = "cd ~/nix-carmeet && nix flake update && sudo nixos-rebuild switch --flake .#myMachine";
+      noctaliabackupconfig = "cp -r ~/.config/noctalia ~/nix-carmeet/carmeet/dotfiles/";
     };
     interactiveShellInit = ''
       set -g fish_greeting ""
@@ -26,11 +27,6 @@
   };
   programs.noctalia = {
     enable = true;
-    settings = {
-      theme = {
-        mode = "dark";
-      };
-    };
   };
   home.file = {
     ".config/hypr".source = ./dotfiles/hypr;
@@ -41,6 +37,7 @@
     ".config/waybar".source = ./dotfiles/waybar;
     ".config/fastfetch".source = ./dotfiles/fastfetch;
     ".config/niri".source = ./dotfiles/niri;
+    ".config/noctalia".source = ./dotfiles/noctalia;
   };
   xdg.desktopEntries.arduino = {
     name = "Arduino IDE";
