@@ -1,1 +1,16 @@
-/nix/store/7kspfixwb6q9867mn7bis0gpcmh41rjp-home-manager-files/.config/noctalia/config.toml
+[dock]
+background_opacity = 1.0
+
+[notification]
+background_opacity = 1.0
+
+[osd]
+background_opacity = 1.0
+
+[shell]
+font_family = "Comfortaa"
+
+[theme]
+custom_palette = "stylix"
+mode = "dark"
+source = "custom"
