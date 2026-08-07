@@ -29,12 +29,8 @@
     enable = true;
   };
   home.file = {
-    ".config/hypr".source = ./dotfiles/hypr;
-    ".config/rofi".source = ./dotfiles/rofi;
     ".config/kitty".source = ./dotfiles/kitty;
     ".config/helix".source = ./dotfiles/helix;
-    ".config/swaync".source = ./dotfiles/swaync;
-    ".config/waybar".source = ./dotfiles/waybar;
     ".config/fastfetch".source = ./dotfiles/fastfetch;
     ".config/niri".source = ./dotfiles/niri;
     ".config/noctalia".source = ./dotfiles/noctalia;

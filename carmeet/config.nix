@@ -40,10 +40,6 @@
     dates = "weekly";
     options = "--delete-older-than 5d";
   };
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
   programs.niri = {
     enable = true;
   };
@@ -203,11 +199,7 @@
     appimage-run
     fuse
 
-    #hyprland
-    awww
-    waypaper
-    hyprsunset
-    hypridle
+    #niri
     playerctl
     wireplumber
     rofi-unwrapped
@@ -216,29 +208,19 @@
     qt6Packages.qt6ct
     bc
     kitty
-    swaynotificationcenter
     libnotify
-    waybar
-    nwg-displays
     wl-clipboard
     cliphist
-    grim
-    slurp
-    swappy
     bibata-cursors
-    hyprcursor
-    networkmanagerapplet
-    blueman
-    hyprlock
-    evince
-    shotwell
     pavucontrol
     brightnessctl
-    pamixer
-    qalculate-gtk
 
     #apps
     inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
+    qalculate-gtk
+    evince
+    shotwell
+    cheese
     obs-studio
     proton-vpn
     firefox
