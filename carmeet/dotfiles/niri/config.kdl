@@ -63,16 +63,13 @@ layout {
 binds {
     // Applications
     Mod+Return { spawn "kitty"; }
-    Mod+Escape { spawn "kitty" "-e" "htop"; }
     Mod+Tab { toggle-overview; }
     Mod+C { spawn "kitty" "-e" "hx" "~"; }
     Mod+B { spawn "firefox"; }
     Mod+Shift+B { spawn "google-chrome"; }
     Mod+E { spawn "nautilus"; }
-    Mod+Alt+B { spawn "blueman-manager"; }
-    Mod+Alt+W {spawn "nmtui"; }
     //noctlaia
-    Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+D { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+V { spawn-sh "noctalia msg plugin-toggle clipboard"; }
     Mod+N { spawn-sh "noctalia msg panel-toggle control-center"; }
     Mod+Comma { spawn-sh "noctalia msg settings-toggle"; }
@@ -86,9 +83,9 @@ binds {
     Mod+W { spawn-sh "noctalia msg panel-toggle wallpaper"; }
     // Window management
     Mod+Q { close-window; }
-    Mod+F { toggle-window-floating; }
-    Mod+Shift+F { switch-focus-between-floating-and-tiling; }
-    Mod+Alt+F { switch-preset-column-width; }
+    Mod+Space { toggle-window-floating; }
+    Mod+Shift+Space { switch-focus-between-floating-and-tiling; }
+    Mod+F { switch-preset-column-width; }
     // Focus
     Mod+H { focus-column-left; }
     Mod+J { focus-window-down; }
