@@ -125,6 +125,7 @@
       transformers
     ]))
     openjdk
+    processing
     uv
     clang
     gcc
@@ -133,7 +134,7 @@
     raylib
     binutils
     python314Packages.pyinstaller
-
+    
     #lsps
     arduino-language-server
     basedpyright
