@@ -63,12 +63,13 @@ layout {
 binds {
     // Applications
     Mod+Return { spawn "kitty"; }
-    Mod+Escape { spawn "kitty -e btop"; }
+    Mod+Escape { spawn "kitty" "-e" "btop"; }
     Mod+Tab { toggle-overview; }
     Mod+C { spawn "kitty" "-e" "hx" "~"; }
     Mod+B { spawn "firefox"; }
     Mod+Shift+B { spawn "google-chrome"; }
     Mod+E { spawn "nautilus"; }
+    Mod+R { spawn "niri" "msg" "action" "load-config-file"; }
     //noctlaia
     Mod+D { spawn-sh "noctalia msg panel-toggle launcher"; }
     Mod+V { spawn-sh "noctalia msg panel-toggle clipboard"; }
