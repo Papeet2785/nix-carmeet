@@ -202,7 +202,6 @@
     #niri
     playerctl
     wireplumber
-    rofi-unwrapped
     jq
     gtk4
     qt6Packages.qt6ct
