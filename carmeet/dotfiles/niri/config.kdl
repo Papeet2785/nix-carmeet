@@ -66,8 +66,7 @@ binds {
     Mod+Escape { spawn "kitty" "-e" "btop"; }
     Mod+Tab { toggle-overview; }
     Mod+C { spawn "kitty" "-e" "hx" "~"; }
-    Mod+B { spawn "firefox"; }
-    Mod+Shift+B { spawn "google-chrome"; }
+    Mod+B { spawn "google-chrome"; }
     Mod+E { spawn "nautilus"; }
     Mod+R { spawn "niri" "msg" "action" "load-config-file"; }
     //noctlaia
