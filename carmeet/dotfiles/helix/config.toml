@@ -1,4 +1,4 @@
-theme = "gruvbox"
+theme = "tokyonight"
 [editor]
 default-yank-register = "+"
 idle-timeout = 0
