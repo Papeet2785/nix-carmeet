@@ -222,7 +222,6 @@
     cheese
     obs-studio
     proton-vpn
-    firefox
     google-chrome
     vlc
     discord
