@@ -266,7 +266,7 @@ fonts = {
   stylix.enable = true;
   stylix = {
     base16Scheme =
-      "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+      "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";

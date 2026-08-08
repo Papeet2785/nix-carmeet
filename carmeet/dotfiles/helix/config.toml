@@ -1,4 +1,4 @@
-theme = "tokyonight"
+theme = "kanagawa"
 [editor]
 default-yank-register = "+"
 idle-timeout = 0
