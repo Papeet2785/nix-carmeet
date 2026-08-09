@@ -273,7 +273,7 @@ fonts = {
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.meslo-lg;
-        name = "MesloLGS Nerd Font";
+        name = "MesloLGM Nerd Font";
       };
       serif = {
         package = pkgs.comfortaa;

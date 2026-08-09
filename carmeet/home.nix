@@ -105,9 +105,6 @@
 
     defaultApplications = {
       # Browser
-      "x-scheme-handler/http" = "google-chrome.desktop";
-      "x-scheme-handler/https" = "google-chrome.desktop";
-
       # Text / programming
       "text/plain" = "helix-terminal.desktop";
       "text/markdown" = "helix-terminal.desktop";
