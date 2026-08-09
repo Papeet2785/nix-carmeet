@@ -116,6 +116,14 @@
       "text/javascript" = "helix-terminal.desktop";
       "application/json" = "helix-terminal.desktop";
 
+      # Images
+      "image/png" = "org.gnome.Shotwell-Viewer.desktop";
+      "image/jpeg" = "org.gnome.Shotwell-Viewer.desktop";
+      "image/gif" = "org.gnome.Shotwell-Viewer.desktop";
+      "image/webp" = "org.gnome.Shotwell-Viewer.desktop";
+      "image/tiff" = "org.gnome.Shotwell-Viewer.desktop";
+      "image/bmp" = "org.gnome.Shotwell-Viewer.desktop";
+
       # Arduino
       "text/x-arduino" = "arduino.desktop";
 
