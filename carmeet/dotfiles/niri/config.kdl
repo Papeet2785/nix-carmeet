@@ -43,13 +43,13 @@ layout {
     gaps 10
     border {
         width 3
-        active-color "#7E9CD8"
-        inactive-color "#54546D"
+        active-color "#b8bb26"
+        inactive-color "#3c3836"
     }
     focus-ring {
         off
     }
-    background-color "#000000"
+    background-color "#282828"
     preset-column-widths {
         proportion 1.00
         proportion 0.50
