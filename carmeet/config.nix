@@ -232,7 +232,7 @@
     filezilla
     gnome-themes-extra
     onlyoffice-desktopeditors
-    tuxpaint
+    gimp
   ];
 programs.dconf.enable = true;
 fonts = {

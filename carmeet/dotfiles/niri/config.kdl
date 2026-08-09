@@ -82,6 +82,7 @@ binds {
     XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up"; }
     XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down"; }
     Mod+W { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Alt+Space { spawn-sh "noctalia msg panel-toggle launcher /fs"; }
     // Window management
     Mod+Q { close-window; }
     Mod+Space { toggle-window-floating; }
