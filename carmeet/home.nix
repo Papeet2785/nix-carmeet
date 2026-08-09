@@ -46,7 +46,7 @@
     enable = true;
     settings = {
       confirm-close-surface = false;
-      font-family = "MesloLGS Nerd Font";
+      font-family = "MesloLGM Nerd Font";
       font-size = 12;
     };
   };
@@ -126,14 +126,6 @@
       "text/x-processing" = "processing.desktop";
 
       # Images
-      "image/png" = "org.gnome.Shotwell.desktop";
-      "image/jpeg" = "org.gnome.Shotwell.desktop";
-      "image/gif" = "org.gnome.Shotwell.desktop";
-      "image/webp" = "org.gnome.Shotwell.desktop";
-      "image/tiff" = "org.gnome.Shotwell.desktop";
-      "image/bmp" = "org.gnome.Shotwell.desktop";
-
-      # PDF
       "application/pdf" = "org.gnome.Evince.desktop";
 
       # Directories
