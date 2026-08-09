@@ -42,37 +42,45 @@
     enable = true;
   };
 
+  programs.ghostty = {
+    enable = true;
+    settings = {
+      confirm-close-surface = false;
+      font-family = "MesloLGS Nerd Font";
+      font-size = 12;
+    };
+  };
+
   home.file = {
-    ".config/kitty".source = ./dotfiles/kitty;
-    ".config/helix".source = ./dotfiles/helix;
-    ".config/fastfetch".source = ./dotfiles/fastfetch;
-    ".config/niri".source = ./dotfiles/niri;
-    ".config/noctalia".source = ./dotfiles/noctalia;
+  ".config/helix".source = ./dotfiles/helix;
+  ".config/fastfetch".source = ./dotfiles/fastfetch;
+  ".config/niri".source = ./dotfiles/niri;
+  ".config/noctalia".source = ./dotfiles/noctalia;
 
-    ".local/share/applications/helix-terminal.desktop".text = ''
-      [Desktop Entry]
-      Name=Helix
-      Comment=Helix in Kitty
-      Exec=kitty -e hx %F
-      Terminal=false
-      Type=Application
-      Categories=Development;TextEditor;
-    '';
+  ".local/share/applications/helix-terminal.desktop".text = ''
+    [Desktop Entry]
+    Name=Helix
+    Comment=Helix in Ghostty
+    Exec=ghostty -e hx %F
+    Terminal=false
+    Type=Application
+    Categories=Development;TextEditor;
+  '';
 
-    ".local/share/mime/packages/carmeet-mime.xml".text = ''
-      <?xml version="1.0" encoding="UTF-8"?>
-      <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
-        <mime-type type="text/x-arduino">
-          <comment>Arduino Sketch</comment>
-          <glob pattern="*.ino"/>
-        </mime-type>
+  ".local/share/mime/packages/carmeet-mime.xml".text = ''
+    <?xml version="1.0" encoding="UTF-8"?>
+    <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+      <mime-type type="text/x-arduino">
+        <comment>Arduino Sketch</comment>
+        <glob pattern="*.ino"/>
+      </mime-type>
 
-        <mime-type type="text/x-processing">
-          <comment>Processing Sketch</comment>
-          <glob pattern="*.pde"/>
-        </mime-type>
-      </mime-info>
-    '';
+      <mime-type type="text/x-processing">
+        <comment>Processing Sketch</comment>
+        <glob pattern="*.pde"/>
+      </mime-type>
+    </mime-info>
+  '';
   };
 
   xdg.desktopEntries.arduino = {

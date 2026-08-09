@@ -62,10 +62,10 @@ layout {
 }
 binds {
     // Applications
-    Mod+Return { spawn "kitty"; }
-    Mod+Escape { spawn "kitty" "-e" "btop"; }
+    Mod+Return { spawn "ghostty"; }
+    Mod+Escape { spawn "ghostty" "-e" "btop"; }
     Mod+Tab { toggle-overview; }
-    Mod+C { spawn "kitty" "-e" "hx" "~"; }
+    Mod+C { spawn "ghostty" "-e" "hx" "~"; }
     Mod+B { spawn "google-chrome"; }
     Mod+E { spawn "nautilus"; }
     Mod+R { spawn "niri" "msg" "action" "load-config-file"; }

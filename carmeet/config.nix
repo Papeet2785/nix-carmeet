@@ -206,7 +206,7 @@
     gtk4
     qt6Packages.qt6ct
     bc
-    kitty
+    ghostty
     libnotify
     wl-clipboard
     cliphist
