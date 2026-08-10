@@ -187,7 +187,7 @@
     wget
     git
     kdePackages.kdeconnect-kde
-    kdePackages.kdenlive
+    shotcut
     gvfs
     nautilus
     xdg-utils
