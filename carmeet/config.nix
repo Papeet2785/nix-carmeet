@@ -179,7 +179,6 @@
     shfmt
     
     #services
-    btop
     udiskie
     gsettings-desktop-schemas
     bluez
