@@ -20,9 +20,7 @@
   outputs = inputs@{ self, nixpkgs, freesmlauncher, stylix, home-manager, ... }: {
     nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {
-          inherit inputs;
-        };
+        specialArgs = { inherit inputs; };
         modules = [
           ./carmeet/config.nix
           stylix.nixosModules.stylix
