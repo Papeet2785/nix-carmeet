@@ -10,7 +10,6 @@ window-rule {
   clip-to-geometry true
   draw-border-with-background true
 }
-
 debug {
   honor-xdg-activation-with-invalid-serial
 }
@@ -103,9 +102,7 @@ binds {
     Mod+Control+H { consume-or-expel-window-left; }
     Mod+Control+L { consume-or-expel-window-right; }
     // Screenshots
-    Mod+Shift+S {
-        spawn "noctalia" "msg" "screenshot-region";
-    }
+    Mod+Shift+S { spawn "noctalia" "msg" "screenshot-region"; }
     // Workspaces
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
