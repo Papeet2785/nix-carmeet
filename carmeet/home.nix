@@ -13,6 +13,7 @@
       font-size = 12;
     };
   };
+  stylix.targets.niri.enable = false;
   stylix.targets.btop.enable = false;
   programs.btop = {
     enable = true;
@@ -25,8 +26,9 @@
     ./dotfiles/xdg-stuff.nix
     ./dotfiles/helix.nix
     ./dotfiles/fastfetch.nix
+    ./dotfiles/niri.nix
   ];
-  home.file = {
-  ".config/niri".source = ./dotfiles/niri;
-  };
+  #home.file = {
+  #".config/niri".source = ./dotfiles/niri;
+  #};
 }
