@@ -80,10 +80,10 @@ binds {
     XF86AudioMute { spawn-sh "noctalia msg volume-mute"; }
     XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up"; }
     XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down"; }
-    XF86AudioPlay { spawn "mediactl" "PlayPause"; }
-    XF86AudioNext { spawn "mediactl" "Next"; }
-    XF86AudioPrev { spawn "mediactl" "Previous"; }
-    XF86AudioStop { spawn "mediactl" "Stop"; }
+    XF86AudioPlay { spawn "playerctl" "PlayPause"; }
+    XF86AudioNext { spawn "playerctl" "Next"; }
+    XF86AudioPrev { spawn "playerctl" "Previous"; }
+    XF86AudioStop { spawn "playerctl" "Stop"; }
     Mod+W { spawn-sh "noctalia msg panel-toggle wallpaper"; }
     Alt+Space { spawn-sh "noctalia msg panel-toggle launcher /fs"; }
     // Window management
