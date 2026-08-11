@@ -170,7 +170,6 @@
       python314Packages.pyinstaller
       processing
       #lsps
-      arduino-language-server
       basedpyright
       ruff
       jdt-language-server
