@@ -14,8 +14,6 @@
       tinstall = "nix-shell -p";
       nixupgrade =
         "cd ~/nix-carmeet && nix flake update && sudo nixos-rebuild switch --flake .#myMachine";
-      noctaliabackupconfig =
-        "cp -aL ~/.config/noctalia ~/nix-carmeet/carmeet/dotfiles/";
     };
     interactiveShellInit = ''
       set -g fish_greeting ""

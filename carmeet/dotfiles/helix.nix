@@ -4,8 +4,6 @@
     enable = true;
 
     settings = {
-      theme = "gruvbox";
-
       editor = {
         default-yank-register = "+";
         idle-timeout = 0;
@@ -35,25 +33,16 @@
         }
 
         {
-          name = "toml";
+          name = "nix";
           auto-format = false;
           indent = {
-            tab-width = 4;
+            tab-width = 2;
             unit = "    ";
           };
         }
 
         {
           name = "html";
-          auto-format = false;
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
-        }
-
-        {
-          name = "hyprlang";
           auto-format = false;
           indent = {
             tab-width = 4;
@@ -104,14 +93,6 @@
           };
         }
 
-        {
-          name = "json";
-          auto-format = false;
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
-        }
       ];
     };
   };
