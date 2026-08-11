@@ -13,7 +13,7 @@ This repository contains my NixOS, Home Manager, Niri, and Noctalia configuratio
 - Flakes enabled
 - Git
 
-Clone the repository:
+Clone the repository from your home directory, in the carmeet user:
 
 ```bash
 git clone https://github.com/Papeet2785/nix-carmeet.git
@@ -91,46 +91,7 @@ appimage-run ~/Applications/arduino-ide*.AppImage
 
 ---
 
-### Processing
-
-Download the latest Linux release:
-
-https://github.com/processing/processing4/releases
-
-Extract it into:
-
-```text
-~/Applications/
-```
-
-Example:
-
-```text
-~/Applications/
-└── processing-4.4.8/
-```
-
-Make sure the launcher is executable:
-
-```bash
-chmod +x ~/Applications/processing-*/processing
-```
-
-Run Processing:
-
-```bash
-~/Applications/processing-*/processing
-```
-
----
-
 ## Useful Commands
-
-Rebuild system:
-
-```bash
-sudo nixos-rebuild switch --flake .#myMachine
-```
 
 Update flake:
 
@@ -149,14 +110,6 @@ Validate Niri configuration:
 ```bash
 niri validate
 ```
-
-Reload Niri configuration:
-
-```bash
-niri msg reload-config
-```
-
----
 
 ## Desktop Environment
 
