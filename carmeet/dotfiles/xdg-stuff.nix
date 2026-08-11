@@ -6,13 +6,13 @@
     terminal = false;
     categories = [ "Development" "IDE" ];
   };
-  xdg.desktopEntries.processing = {
+   xdg.desktopEntries.processing = {
     name = "Processing";
-    exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 /home/carmeet/Applications/Processing/bin/Processing %F";
-    icon = "/home/carmeet/Applications/Processing/lib/Processing.png";
+    exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 processing %F";
+    icon = "processing";
     terminal = false;
     categories = [ "Development" "IDE" ];
-  };
+  };  
   home.file.".local/share/applications/helix-terminal.desktop".text = ''
     [Desktop Entry]
     Name=Helix

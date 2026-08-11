@@ -192,6 +192,7 @@
       raylib
       binutils
       python314Packages.pyinstaller
+      processing
       #lsps
       arduino-language-server
       basedpyright
