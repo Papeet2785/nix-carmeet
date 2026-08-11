@@ -124,6 +124,7 @@
   };
   programs.fish.enable = true;
   programs.starship.enable = true;
+  programs.helix.enable = true;
   nixpkgs.config.allowUnfree = true;
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
@@ -139,7 +140,6 @@
     trash-cli
 
     #code
-    helix
     (python3.withPackages (ps: with ps; [
       tkinter
       numpy

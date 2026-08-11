@@ -25,9 +25,10 @@
   imports = [
     ./dotfiles/fish.nix
     ./dotfiles/xdg-stuff.nix
+    ./dotfiles/helix.nix
   ];
   home.file = {
-  ".config/helix".source = ./dotfiles/helix;
+  #".config/helix".source = ./dotfiles/helix;
   ".config/fastfetch".source = ./dotfiles/fastfetch;
   ".config/niri".source = ./dotfiles/niri;
   ".config/noctalia".source = ./dotfiles/noctalia;
