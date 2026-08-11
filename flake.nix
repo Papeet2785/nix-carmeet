@@ -17,8 +17,12 @@
     niri = {
       url = "github:sodiboo/niri-flake";
     };
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
-  outputs = inputs@{ self, nixpkgs, freesmlauncher, stylix, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, freesmlauncher, auto-cpufreq, stylix, home-manager, ... }: {
     nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
@@ -26,6 +30,7 @@
           ./carmeet/config.nix
           inputs.niri.nixosModules.niri
           stylix.nixosModules.stylix
+          auto-cpufreq.nixosModules.default
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
