@@ -28,7 +28,4 @@
     ./dotfiles/fastfetch.nix
     ./dotfiles/niri.nix
   ];
-  #home.file = {
-  #".config/niri".source = ./dotfiles/niri;
-  #};
 }
