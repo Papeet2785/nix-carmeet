@@ -25,7 +25,6 @@
   };
   imports = [
     ./dotfiles/fish.nix
-    ./dotfiles/xdg-stuff.nix
   ];
   home.file = {
   ".config/helix".source = ./dotfiles/helix;
