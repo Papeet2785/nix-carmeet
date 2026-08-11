@@ -1,26 +1,21 @@
 { config, pkgs, lib, ... }: {
-
   programs.helix = {
     enable = true;
-
     settings = {
       editor = {
         default-yank-register = "+";
         idle-timeout = 0;
         soft-wrap.enable = true;
-
         cursor-shape = {
           normal = "block";
           insert = "bar";
           select = "underline";
         };
-
         file-picker = {
           hidden = false;
         };
       };
     };
-
     languages = {
       language = [
         {
@@ -31,7 +26,6 @@
             unit = "    ";
           };
         }
-
         {
           name = "nix";
           auto-format = false;
@@ -40,7 +34,6 @@
             unit = "    ";
           };
         }
-
         {
           name = "html";
           auto-format = false;
@@ -49,7 +42,6 @@
             unit = "    ";
           };
         }
-
         {
           name = "python";
           auto-format = false;
@@ -59,7 +51,6 @@
           };
           language-servers = [ "pyright" ];
         }
-
         {
           name = "java";
           auto-format = false;
@@ -74,7 +65,6 @@
           };
           language-servers = [ "jdtls" ];
         }
-
         {
           name = "c";
           auto-format = false;
@@ -83,7 +73,6 @@
             unit = "    ";
           };
         }
-
         {
           name = "cpp";
           auto-format = false;
@@ -92,7 +81,6 @@
             unit = "    ";
           };
         }
-
       ];
     };
   };

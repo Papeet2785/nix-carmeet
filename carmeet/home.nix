@@ -2,11 +2,9 @@
   home.username = "carmeet";
   home.homeDirectory = "/home/carmeet";
   home.stateVersion = "26.11";
-
   programs.noctalia = {
     enable = true;
   };
-
   programs.ghostty = {
     enable = true;
     settings = {
