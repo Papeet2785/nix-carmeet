@@ -101,31 +101,7 @@
       enable = true;
       package = pkgs.niri;
     };
-    nix-ld = {
-      enable = true;
-      libraries = with pkgs; [
-        libGL
-        libGLU
-        mesa
-        stdenv.cc.cc
-        zlib
-        libX11
-        libXext
-        libXi
-        libXrandr
-        libXrender
-        libXcursor
-        libXinerama
-        libXfixes
-        libXtst
-        wayland
-        libxkbcommon
-        alsa-lib
-        fontconfig
-        freetype
-        expat
-      ];
-    };  
+    nix-ld.enable = true;
     dconf.enable = true;
     fish.enable = true;
     starship.enable = true;

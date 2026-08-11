@@ -9,9 +9,6 @@
    xdg.desktopEntries.processing = {
     name = "Processing";
     exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 processing %F";
-    icon = "processing";
-    terminal = false;
-    categories = [ "Development" "IDE" ];
   };  
   home.file.".local/share/applications/helix-terminal.desktop".text = ''
     [Desktop Entry]
