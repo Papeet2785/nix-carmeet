@@ -13,12 +13,16 @@
     niri = {
       url = "github:sodiboo/niri-flake";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     auto-cpufreq = {
       url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ self, nixpkgs, freesmlauncher, auto-cpufreq, stylix, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, freesmlauncher, auto-cpufreq, stylix, home-manager, noctalia, ... }: {
     nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
@@ -34,6 +38,9 @@
               extraSpecialArgs = {
                 inherit inputs;
               };
+              sharedModules = [
+                inputs.noctalia.homeModules.default
+              ];
               users.carmeet = import ./carmeet/home.nix;
               backupFileExtension = "backup";
             };

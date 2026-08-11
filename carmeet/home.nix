@@ -12,6 +12,7 @@
   };
   stylix.targets.niri.enable = false;
   stylix.targets.btop.enable = false;
+  programs.noctalia.enable = true;
   programs.btop = {
     enable = true;
     settings = {
@@ -24,6 +25,5 @@
     ./dotfiles/helix.nix
     ./dotfiles/fastfetch.nix
     ./dotfiles/niri.nix
-    ./dotfiles/noctalia.nix
   ];
 }
