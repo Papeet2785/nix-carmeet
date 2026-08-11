@@ -4,40 +4,6 @@
   home.homeDirectory = "/home/carmeet";
   home.stateVersion = "26.11";
 
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  programs.fish = {
-    enable = true;
-
-    shellAliases = {
-      cp = "cp -i";
-      mv = "mv -i";
-      rm = "trash -v";
-      mkdir = "mkdir -p";
-      la = "ls -Alh";
-
-      nixbuild =
-        "cd ~/nix-carmeet && sudo nixos-rebuild switch --flake ./#myMachine";
-
-      nixfreespace = "sudo nix-collect-garbage -d";
-      gotrash = "sudo rm -rf ~/.local/share/Trash/*";
-      tinstall = "nix-shell -p";
-
-      nixupgrade =
-        "cd ~/nix-carmeet && nix flake update && sudo nixos-rebuild switch --flake .#myMachine";
-
-      noctaliabackupconfig =
-        "cp -aL ~/.config/noctalia ~/nix-carmeet/carmeet/dotfiles/";
-    };
-
-    interactiveShellInit = ''
-      set -g fish_greeting ""
-    '';
-  };
-
   programs.noctalia = {
     enable = true;
   };
@@ -57,7 +23,10 @@
       color_theme = "gruvbox_dark";
     };
   };
-
+  imports = [
+    ./dotfiles/fish.nix
+    ./dotfiles/xdg-stuff.nix
+  ];
   home.file = {
   ".config/helix".source = ./dotfiles/helix;
   ".config/fastfetch".source = ./dotfiles/fastfetch;
