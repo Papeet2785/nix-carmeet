@@ -14,6 +14,9 @@
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+    };
   };
   outputs = inputs@{ self, nixpkgs, freesmlauncher, stylix, home-manager, ... }: {
     nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
@@ -21,6 +24,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./carmeet/config.nix
+          inputs.niri.nixosModules.niri
           stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager {
             home-manager = {

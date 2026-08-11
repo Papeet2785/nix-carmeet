@@ -4,9 +4,6 @@
   programs.fastfetch = {
     enable = true;
     settings = {
-      logo = {
-        type = "none";
-      };
       display = {
         separator = " 󰑃  ";
       };
@@ -101,10 +98,6 @@
           type = "uptime";
           key = "│ ├󰅐";
           keyColor = "green";
-        }
-        {
-          type = "custom";
-          format = "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m  \u001b[39m    \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m ";
         }
         "break"
       ];
