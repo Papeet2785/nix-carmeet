@@ -1,26 +1,31 @@
 { config, pkgs, lib, inputs, ... }:
-{
-    imports = [
-      ./hardware.nix
-    ];
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 0;
-  boot.loader.systemd-boot.configurationLimit = 5;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+{ imports = [ ./hardware.nix ];
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 5;
+      };
+      efi.canTouchEfiVariables = true;
+      timeout = 0;
+    };
+  };
   networking.hostName = "carmeet-pc";
   time.timeZone = "America/New_York";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "en_US.UTF-8";
+      LC_IDENTIFICATION = "en_US.UTF-8";
+      LC_MEASUREMENT = "en_US.UTF-8";
+      LC_MONETARY = "en_US.UTF-8";
+      LC_NAME = "en_US.UTF-8";
+      LC_NUMERIC = "en_US.UTF-8";
+      LC_PAPER = "en_US.UTF-8";
+      LC_TELEPHONE = "en_US.UTF-8";
+      LC_TIME = "en_US.UTF-8";
+    };
   };
   networking.networkmanager.enable = true;
   services.displayManager.ly = {
@@ -30,23 +35,23 @@
       numlock = true;
     };
   };
-  services.upower = {
-    enable = true;
+  services.upower = { enable = true; };
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    auto-optimise-store = true;
   };
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.auto-optimise-store = true;
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 5d";
   };
-  programs.niri = {
+  programs.niri = { enable = true; };
+  services.xserver = {
     enable = true;
-  };
-  services.xserver.enable = true;
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+    xkb = { layout = "us"; };
   };
   programs.nix-ld = {
     enable = true;
@@ -78,14 +83,16 @@
     HandleLidSwitchExternalPower = "suspend";
     HandleLidSwitchDocked = "ignore";
   };
-  services.printing.enable = true;
-  services.printing.drivers = with pkgs; [
-    hplip
-    canon-cups-ufr2
-    gutenprint
-    gutenprintBin
-    cnijfilter2
-  ];
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      hplip
+      canon-cups-ufr2
+      gutenprint
+      gutenprintBin
+      cnijfilter2
+    ];
+  };
   hardware.sane.enable = true;
   services.avahi = {
     enable = true;
@@ -96,14 +103,12 @@
   services.gvfs.enable = true;
   services.dbus.enable = true;
   services.system-config-printer.enable = true;
-  networking.firewall.allowedTCPPorts = [ 631 ];
-  networking.firewall.allowedUDPPorts = [ 5353 ];
-  networking.firewall.allowedTCPPortRanges = [
-    { from = 1714; to = 1764; }
-  ];
-  networking.firewall.allowedUDPPortRanges = [
-    { from = 1714; to = 1764; }
-  ];
+  networking.firewall = {
+    allowedTCPPorts = [ 631 ];
+    allowedUDPPorts = [ 5353 ];
+    allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+    allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
+  };
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -137,7 +142,6 @@
     vimPlugins.fzf-wrapper
     fastfetch
     trash-cli
-
     #code
     helix
     (python3.withPackages (ps: with ps; [
@@ -158,7 +162,6 @@
     raylib
     binutils
     python314Packages.pyinstaller
-    
     #lsps
     arduino-language-server
     basedpyright
@@ -171,7 +174,6 @@
     nixfmt
     prettier
     shfmt
-    
     #services
     udiskie
     gsettings-desktop-schemas
@@ -191,7 +193,6 @@
     xwayland-satellite
     appimage-run
     fuse
-
     #niri
     playerctl
     wireplumber
@@ -206,7 +207,6 @@
     bibata-cursors
     pavucontrol
     brightnessctl
-
     #apps
     inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
     qalculate-gtk
@@ -254,8 +254,8 @@ fonts = {
       };
     };
   };
-  stylix.enable = true;
   stylix = {
+    enable = true;
     base16Scheme =
       "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
     cursor = {

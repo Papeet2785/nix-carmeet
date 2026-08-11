@@ -1,6 +1,5 @@
 {
   description = "My NixOS configuration";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     freesmlauncher = {
@@ -16,7 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
   outputs = inputs@{ self, nixpkgs, freesmlauncher, stylix, home-manager, ... }: {
     nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
