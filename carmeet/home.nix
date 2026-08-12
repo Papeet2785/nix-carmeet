@@ -30,6 +30,7 @@
     ./dotfiles/xdg-stuff.nix
     ./dotfiles/helix.nix
     ./dotfiles/fastfetch.nix
+    ./dotfiles/fetch.nix
     ./dotfiles/niri.nix
   ];
 }
