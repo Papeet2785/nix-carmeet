@@ -38,17 +38,13 @@
           color = "#0a0e14";
         };
       };
-      focus-ring = {
-        enable = false;
-      };
+      focus-ring = { enable = false; };
       background-color = "#0a0e14";
       preset-column-widths = [
         { proportion = 0.50; }
         { proportion = 1.00; }
       ];
-      default-column-width = {
-        proportion = 1.00;
-      };
+      default-column-width = { proportion = 1.00; };
     };
     window-rules = [
       {
@@ -115,26 +111,12 @@
       "XF86MonBrightnessDown".action.spawn-sh =
         "noctalia msg brightness-down";
       # Media
-      "XF86AudioPlay".action.spawn = [
-        "playerctl"
-        "play-pause"
-      ];
-      "XF86AudioNext".action.spawn = [
-        "playerctl"
-        "next"
-      ];
-      "XF86AudioPrev".action.spawn = [
-        "playerctl"
-        "previous"
-      ];
-      "XF86AudioStop".action.spawn = [
-        "playerctl"
-        "stop"
-      ];
-      "Mod+W".action.spawn-sh =
-        "noctalia msg panel-toggle wallpaper";
-      "Alt+Space".action.spawn-sh =
-        "noctalia msg panel-toggle launcher /fs";
+      "XF86AudioPlay".action.spawn = [ "playerctl" "play-pause" ];
+      "XF86AudioNext".action.spawn = [ "playerctl" "next" ];
+      "XF86AudioPrev".action.spawn = [ "playerctl" "previous" ];
+      "XF86AudioStop".action.spawn = [ "playerctl" "stop" ];
+      "Mod+W".action.spawn-sh = "noctalia msg panel-toggle wallpaper";
+      "Alt+Space".action.spawn-sh = "noctalia msg panel-toggle launcher /fs";
       # Window management
       "Mod+Q".action.close-window = {};
       "Mod+Space".action.toggle-window-floating = {};
@@ -155,11 +137,7 @@
       "Mod+Control+H".action.consume-or-expel-window-left = {};
       "Mod+Control+L".action.consume-or-expel-window-right = {};
       # Screenshots
-      "Mod+Shift+S".action.spawn = [
-        "noctalia"
-        "msg"
-        "screenshot-region"
-      ];
+      "Mod+Shift+S".action.spawn = [ "noctalia" "msg" "screenshot-region" ];
       # Workspaces
       "Mod+1".action.focus-workspace = 1;
       "Mod+2".action.focus-workspace = 2;
@@ -171,46 +149,16 @@
       "Mod+8".action.focus-workspace = 8;
       "Mod+9".action.focus-workspace = 9;
       "Mod+0".action.focus-workspace = 10;
-      "Mod+Shift+1".action.move-window-to-workspace = [
-        { focus = false; }
-        1
-      ];
-      "Mod+Shift+2".action.move-window-to-workspace = [
-        { focus = false; }
-        2
-      ];
-      "Mod+Shift+3".action.move-window-to-workspace = [
-        { focus = false; }
-        3
-      ];
-      "Mod+Shift+4".action.move-window-to-workspace = [
-        { focus = false; }
-        4
-      ];
-      "Mod+Shift+5".action.move-window-to-workspace = [
-        { focus = false; }
-        5
-      ];
-      "Mod+Shift+6".action.move-window-to-workspace = [
-        { focus = false; }
-        6
-      ];
-      "Mod+Shift+7".action.move-window-to-workspace = [
-        { focus = false; }
-        7
-      ];
-      "Mod+Shift+8".action.move-window-to-workspace = [
-        { focus = false; }
-        8
-      ];
-      "Mod+Shift+9".action.move-window-to-workspace = [
-        { focus = false; }
-        9
-      ];
-      "Mod+Shift+0".action.move-window-to-workspace = [
-        { focus = false; }
-        10
-      ];
+      "Mod+Shift+1".action.move-window-to-workspace = [ { focus = false; } 1 ];
+      "Mod+Shift+2".action.move-window-to-workspace = [ { focus = false; } 2 ];
+      "Mod+Shift+3".action.move-window-to-workspace = [ { focus = false; } 3 ];
+      "Mod+Shift+4".action.move-window-to-workspace = [ { focus = false; } 4 ];
+      "Mod+Shift+5".action.move-window-to-workspace = [ { focus = false; } 5 ];
+      "Mod+Shift+6".action.move-window-to-workspace = [ { focus = false; } 6 ];
+      "Mod+Shift+7".action.move-window-to-workspace = [ { focus = false; } 7 ];
+      "Mod+Shift+8".action.move-window-to-workspace = [ { focus = false; } 8 ];
+      "Mod+Shift+9".action.move-window-to-workspace = [ { focus = false; } 9 ];
+      "Mod+Shift+0".action.move-window-to-workspace = [ { focus = false; } 10 ];
       "Mod+Ctrl+1".action.move-window-to-workspace = 1;
       "Mod+Ctrl+2".action.move-window-to-workspace = 2;
       "Mod+Ctrl+3".action.move-window-to-workspace = 3;
