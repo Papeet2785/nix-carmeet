@@ -168,6 +168,7 @@
       raylib
       binutils
       python314Packages.pyinstaller
+      arduino
       processing
       #lsps
       basedpyright

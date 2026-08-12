@@ -2,13 +2,15 @@
 { config, pkgs, lib, ... }: {
   xdg.desktopEntries.arduino = {
     name = "Arduino IDE";
-    exec = "appimage-run /home/carmeet/Applications/arduino-ide_2.3.10_Linux_64bit.AppImage %F";
+    exec = "env GDK_BACKEND=x11 _JAVA_AWT_WM_NONREPARENTING=1 arduino %F";
     terminal = false;
     categories = [ "Development" "IDE" ];
-  };
+  };  
    xdg.desktopEntries.processing = {
     name = "Processing";
     exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 processing %F";
+    terminal = false;
+    categories = [ "Development" "IDE" ];
   };  
   home.file.".local/share/applications/helix-terminal.desktop".text = ''
     [Desktop Entry]
