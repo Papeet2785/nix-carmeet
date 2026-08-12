@@ -146,7 +146,6 @@
       glib
       bash
       vimPlugins.fzf-wrapper
-      fastfetch
       trash-cli
       #code
       helix
