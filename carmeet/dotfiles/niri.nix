@@ -92,7 +92,6 @@
       "Mod+V".action.spawn-sh = "noctalia msg panel-toggle clipboard";
       "Mod+N".action.spawn-sh = "noctalia msg panel-toggle control-center";
       "Mod+Comma".action.spawn-sh = "noctalia msg settings-toggle";
-      "Alt+Tab".action.spawn-sh = "noctalia msg window-switcher";
       "Control+Alt+Delete".action.spawn-sh = "noctalia msg panel-toggle session";
       "XF86AudioRaiseVolume".action.spawn-sh = "noctalia msg volume-up";
       "XF86AudioLowerVolume".action.spawn-sh = "noctalia msg volume-down";
@@ -116,16 +115,14 @@
       "Mod+K".action.focus-window-up = {};
       "Mod+L".action.focus-column-right = {};
       # Move windows
-      "Mod+Shift+H".action.move-column-left = {};
-      "Mod+Shift+J".action.move-window-down = {};
-      "Mod+Shift+K".action.move-window-up = {};
-      "Mod+Shift+L".action.move-column-right = {};
-      "Mod+Alt+H".action.set-column-width = "-10%";
-      "Mod+Alt+L".action.set-column-width = "+10%";
-      "Mod+Alt+J".action.set-window-height = "+10%";
-      "Mod+Alt+K".action.set-window-height = "-10%";
+      "Mod+Shift+H".action.set-column-width = "-10%";
+      "Mod+Shift+L".action.set-column-width = "+10%";
+      "Mod+Shift+J".action.set-window-height = "+10%";
+      "Mod+Shift+K".action.set-window-height = "-10%";
       "Mod+Control+H".action.consume-or-expel-window-left = {};
       "Mod+Control+L".action.consume-or-expel-window-right = {};
+      "Mod+Control+K".action.move-window-up = {};
+      "Mod+Control+J".action.move-window-down = {};
       # Screenshots
       "Mod+Shift+S".action.spawn = [ "noctalia" "msg" "screenshot-region" ];
       # Workspaces
