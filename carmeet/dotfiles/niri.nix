@@ -35,7 +35,7 @@
           color = "#61afef";
         };
         inactive = {
-          color = "#abb2bf";
+          color = "#282c34";
         };
       };
       focus-ring = { enable = false; };
