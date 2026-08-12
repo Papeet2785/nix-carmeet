@@ -51,46 +51,6 @@ nixupgrade
 
 ---
 
-## External Applications
-
-Some applications are intentionally **not included** in this repository because GitHub has a **100 MB file size limit**. Download them from their official sources instead.
-
-Create an Applications folder:
-
-```bash
-mkdir -p ~/Applications
-```
-
----
-
-### Arduino IDE
-
-Download the latest **Linux AppImage**:
-
-https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE
-
-Move it into the Applications directory:
-
-```bash
-mv ~/Downloads/arduino-ide*.AppImage ~/Applications/
-```
-
-Make it executable:
-
-```bash
-chmod +x ~/Applications/arduino-ide*.AppImage
-```
-
-Run it:
-
-```bash
-appimage-run ~/Applications/arduino-ide*.AppImage
-```
-
-> The AppImage is recommended because it currently works correctly with my Niri setup.
-
----
-
 ## Useful Commands
 
 Update flake:
@@ -121,11 +81,3 @@ niri validate
 - Firefox
 - Stylix
 - Home Manager
-
----
-
-## Notes
-
-This repository only contains configuration files.
-
-Large binaries such as AppImages, JDKs, IDEs, and other downloaded software are intentionally excluded from version control. They should be downloaded from their official sources and placed in `~/Applications`.
