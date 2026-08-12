@@ -38,19 +38,17 @@
       "text/css" = "helix-terminal.desktop";
       "text/javascript" = "helix-terminal.desktop";
       "application/json" = "helix-terminal.desktop";
-      # Arduino
-      "text/x-arduino" = "arduino.desktop";
-      # Processing
-      "text/x-processing" = "processing.desktop";
       # PDF
       "application/pdf" = "org.gnome.Evince.desktop";
-      # Microsoft Office
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" =
-        "onlyoffice-desktopeditors.desktop";
-      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" =
-        "onlyoffice-desktopeditors.desktop";
-      "application/vnd.openxmlformats-officedocument.presentationml.presentation" =
-        "onlyoffice-desktopeditors.desktop";
+      # Media
+      "audio/mpeg" = "vlc.desktop";
+      "audio/mp4" = "vlc.desktop";
+      "audio/x-wav" = "vlc.desktop";
+      "audio/flac" = "vlc.desktop";
+      "video/mp4" = "vlc.desktop";
+      "video/x-matroska" = "vlc.desktop";
+      "video/webm" = "vlc.desktop";
+      "video/mpeg" = "vlc.desktop";
     };
   };
 }
