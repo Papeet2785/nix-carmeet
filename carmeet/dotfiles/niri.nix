@@ -32,16 +32,16 @@
         enable = true;
         width = 3;
         active = {
-          color = "#b8bb26";
+          color = "#ffb454";
         };
         inactive = {
-          color = "#3c3836";
+          color = "#0a0e14";
         };
       };
       focus-ring = {
         enable = false;
       };
-      background-color = "#282828";
+      background-color = "#0a0e14";
       preset-column-widths = [
         { proportion = 0.50; }
         { proportion = 1.00; }
