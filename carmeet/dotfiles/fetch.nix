@@ -4,7 +4,7 @@
   ];
   programs.fetch = {
     enable = true;
-    labelColor = "yellow";
+    labelColor = "magenta";
     info = [
       "os"
       "host"
@@ -17,10 +17,14 @@
       "icons"
       "font"
       "terminal"
+      "display"
       "cpu"
       "gpu"
+      "disk"
       "memory"
       "battery"
+      "locale"
+      "colors"
     ];
     speed = 1.0;
     spin = "xy";
