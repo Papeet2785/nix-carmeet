@@ -230,7 +230,6 @@
       supertuxkart
       filezilla
       gnome-themes-extra
-      onlyoffice-desktopeditors
       libreoffice
     ];
   };

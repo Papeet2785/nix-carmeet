@@ -116,7 +116,6 @@
       "XF86AudioPrev".action.spawn = [ "playerctl" "previous" ];
       "XF86AudioStop".action.spawn = [ "playerctl" "stop" ];
       "Mod+W".action.spawn-sh = "noctalia msg panel-toggle wallpaper";
-      "Alt+Space".action.spawn-sh = "noctalia msg panel-toggle launcher /fs";
       # Window management
       "Mod+Q".action.close-window = {};
       "Mod+Space".action.toggle-window-floating = {};
