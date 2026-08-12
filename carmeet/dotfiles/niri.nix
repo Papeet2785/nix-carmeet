@@ -86,30 +86,19 @@
       "Mod+C".action.spawn = [ "ghostty" "-e" "hx" "~" ];
       "Mod+B".action.spawn = "google-chrome";
       "Mod+E".action.spawn = "nautilus";
-      "Mod+R".action.spawn = [
-        "niri"
-        "msg"
-        "action"
-        "load-config-file"
-      ];
+      "Mod+R".action.spawn = [ "niri" "msg" "action" "load-config-file" ];
       # Noctalia
       "Mod+D".action.spawn-sh = "noctalia msg panel-toggle launcher";
       "Mod+V".action.spawn-sh = "noctalia msg panel-toggle clipboard";
       "Mod+N".action.spawn-sh = "noctalia msg panel-toggle control-center";
       "Mod+Comma".action.spawn-sh = "noctalia msg settings-toggle";
       "Alt+Tab".action.spawn-sh = "noctalia msg window-switcher";
-      "Control+Alt+Delete".action.spawn-sh =
-        "noctalia msg panel-toggle session";
-      "XF86AudioRaiseVolume".action.spawn-sh =
-        "noctalia msg volume-up";
-      "XF86AudioLowerVolume".action.spawn-sh =
-        "noctalia msg volume-down";
-      "XF86AudioMute".action.spawn-sh =
-        "noctalia msg volume-mute";
-      "XF86MonBrightnessUp".action.spawn-sh =
-        "noctalia msg brightness-up";
-      "XF86MonBrightnessDown".action.spawn-sh =
-        "noctalia msg brightness-down";
+      "Control+Alt+Delete".action.spawn-sh = "noctalia msg panel-toggle session";
+      "XF86AudioRaiseVolume".action.spawn-sh = "noctalia msg volume-up";
+      "XF86AudioLowerVolume".action.spawn-sh = "noctalia msg volume-down";
+      "XF86AudioMute".action.spawn-sh = "noctalia msg volume-mute";
+      "XF86MonBrightnessUp".action.spawn-sh = "noctalia msg brightness-up";
+      "XF86MonBrightnessDown".action.spawn-sh = "noctalia msg brightness-down";
       # Media
       "XF86AudioPlay".action.spawn = [ "playerctl" "play-pause" ];
       "XF86AudioNext".action.spawn = [ "playerctl" "next" ];
@@ -133,6 +122,8 @@
       "Mod+Shift+L".action.move-column-right = {};
       "Mod+Alt+H".action.set-column-width = "-10%";
       "Mod+Alt+L".action.set-column-width = "+10%";
+      "Mod+Alt+J".action.set-window-height = "+10%";
+      "Mod+Alt+K".action.set-window-height = "-10%";
       "Mod+Control+H".action.consume-or-expel-window-left = {};
       "Mod+Control+L".action.consume-or-expel-window-right = {};
       # Screenshots
