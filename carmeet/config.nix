@@ -190,7 +190,7 @@
       wget
       git
       kdePackages.kdeconnect-kde
-      shotcut
+      kdePackages.kdenlive
       gvfs
       nautilus
       xdg-utils
@@ -232,7 +232,7 @@
       filezilla
       gnome-themes-extra
       onlyoffice-desktopeditors
-      gimp
+      libreoffice
     ];
   };
   fonts = {
@@ -264,7 +264,7 @@
   stylix = {
     enable = true;
     base16Scheme =
-      "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
+      "${pkgs.base16-schemes}/share/themes/onedark-dark.yaml";
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";

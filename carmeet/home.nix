@@ -17,7 +17,7 @@
     btop = {
       enable = true;
       settings = {
-        color_theme = "ayu";
+        color_theme = "onedark";
       };
     };
   };

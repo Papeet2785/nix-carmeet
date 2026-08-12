@@ -30,16 +30,16 @@
       gaps = 10;
       border = {
         enable = true;
-        width = 3;
+        width = 4;
         active = {
-          color = "#ffb454";
+          color = "#61afef";
         };
         inactive = {
-          color = "#0a0e14";
+          color = "#abb2bf";
         };
       };
       focus-ring = { enable = false; };
-      background-color = "#0a0e14";
+      background-color = "#282c34";
       preset-column-widths = [
         { proportion = 0.50; }
         { proportion = 1.00; }

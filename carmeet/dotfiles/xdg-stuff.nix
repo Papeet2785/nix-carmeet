@@ -40,6 +40,23 @@
       "application/json" = "helix-terminal.desktop";
       # PDF
       "application/pdf" = "org.gnome.Evince.desktop";
+      # LibreOffice Writer
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" =
+        "writer.desktop";
+      "application/msword" =
+        "writer.desktop";
+
+      # LibreOffice Calc
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" =
+        "calc.desktop";
+      "application/vnd.ms-excel" =
+        "calc.desktop";
+
+      # LibreOffice Impress
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation" =
+        "impress.desktop";
+      "application/vnd.ms-powerpoint" =
+        "impress.desktop";        
       # Media
       "audio/mpeg" = "vlc.desktop";
       "audio/mp4" = "vlc.desktop";
