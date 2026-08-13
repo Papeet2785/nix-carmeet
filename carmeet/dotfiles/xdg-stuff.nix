@@ -1,4 +1,3 @@
-
 { config, pkgs, lib, ... }: {
   xdg.desktopEntries.arduino = {
     name = "Arduino IDE";
@@ -15,8 +14,8 @@
   home.file.".local/share/applications/helix-terminal.desktop".text = ''
     [Desktop Entry]
     Name=Helix
-    Comment=Helix in Kitty
-    Exec=kitty -e hx %F
+    Comment=Helix in Ghostty
+    Exec=ghostty -e hx %F
     Terminal=false
     Type=Application
     MimeType=text/plain;text/markdown;text/x-c;text/x-java;text/html;text/css;text/javascript;application/json;text/x-python;text/x-nix;
@@ -40,13 +39,11 @@
       "application/json" = "helix-terminal.desktop";
       # PDF
       "application/pdf" = "org.gnome.Evince.desktop";
-      # LibreOffice Writer
+      # OnlyOffice 
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "onlyoffice-desktopeditors.desktop";
       "application/msword" = "onlyoffice-desktopeditors.desktop";
-      # LibreOffice Calc
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = "onlyoffice-desktopeditors.desktop";
       "application/vnd.ms-excel" = "onlyoffice-desktopeditors.desktop";
-      # LibreOffice Impress
       "application/vnd.openxmlformats-officedocument.presentationml.presentation" = "onlyoffice-desktopeditors.desktop";
       "application/vnd.ms-powerpoint" = "onlyoffice-desktopeditors.desktop";        
       # Media
