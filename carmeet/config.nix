@@ -225,7 +225,7 @@
       qalculate-gtk
       evince
       gimp
-      eog
+      loupe
       cheese
       obs-studio
       proton-vpn
