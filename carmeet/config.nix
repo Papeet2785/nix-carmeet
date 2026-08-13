@@ -80,6 +80,10 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+    ollama = {
+      enable = true;
+      loadModels = [ "qwen3.5:4b" ];
+    };
   };
   security = {
     rtkit.enable = true;
@@ -154,6 +158,7 @@
       trash-cli
       #code
       helix
+      ollama
       (python3.withPackages (ps: with ps; [
         tkinter
         numpy
@@ -165,7 +170,7 @@
         langchain
         wikipedia
         langchain-community
-        langchain-openai
+        langchain-ollama
         python-dotenv
         pydantic
       ]))
