@@ -162,6 +162,12 @@
         manim
         torch
         transformers
+        langchain
+        wikipedia
+        langchain-community
+        langchain-openai
+        python-dotenv
+        pydantic
       ]))
       openjdk
       uv
