@@ -55,6 +55,16 @@
       "video/x-matroska" = "vlc.desktop";
       "video/webm" = "vlc.desktop";
       "video/mpeg" = "vlc.desktop";
-    };
+       # Images
+      "image/jpeg" = "org.gnome.eog.desktop";
+      "image/png" = "org.gnome.eog.desktop";
+      "image/gif" = "org.gnome.eog.desktop";
+      "image/webp" = "org.gnome.eog.desktop";
+      "image/tiff" = "org.gnome.eog.desktop";
+      "image/bmp" = "org.gnome.eog.desktop";
+      "image/x-icon" = "org.gnome.eog.desktop";
+      "image/heif" = "org.gnome.eog.desktop";
+      "image/avif" = "org.gnome.eog.desktop";
+   };
   };
 }

@@ -142,6 +142,8 @@
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
+      QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
+      QT_QPA_PLATFORMTHEME_QT6 = lib.mkForce "qt6ct";
     };
     systemPackages = with pkgs; [
       #shell
@@ -209,6 +211,7 @@
       jq
       gtk4
       qt6Packages.qt6ct
+      libsForQt5.qt5ct
       bc
       ghostty
       libnotify
@@ -222,7 +225,7 @@
       qalculate-gtk
       evince
       gimp
-      shotwell
+      eog
       cheese
       obs-studio
       proton-vpn
@@ -263,6 +266,10 @@
         "org.freedesktop.impl.portal.Screenshot" = [ "gtk" ];
       };
     };
+  };
+  qt = {
+    enable = true;
+    platformTheme = lib.mkForce "qt5ct";
   };
   stylix = {
     enable = true;
