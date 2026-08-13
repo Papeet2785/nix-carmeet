@@ -3,6 +3,7 @@
   programs.niri.settings = {
     spawn-at-startup = [
       { argv = [ "noctalia" "--daemon" ]; }
+      { argv = [ "polkit-gnome-authentication-agent-1" ]; }
     ];
     prefer-no-csd = true;
     debug = {

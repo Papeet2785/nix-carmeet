@@ -81,7 +81,10 @@
       pulse.enable = true;
     };
   };
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
   nix = {
     settings = {
       experimental-features = [
@@ -181,6 +184,7 @@
       prettier
       shfmt
       #services
+      polkit_gnome
       udiskie
       gsettings-desktop-schemas
       bluez
@@ -217,6 +221,7 @@
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
       qalculate-gtk
       evince
+      gimp
       shotwell
       cheese
       obs-studio
@@ -230,7 +235,7 @@
       supertuxkart
       filezilla
       gnome-themes-extra
-      libreoffice
+      onlyoffice-desktopeditors
     ];
   };
   fonts = {
