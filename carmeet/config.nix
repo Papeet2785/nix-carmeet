@@ -154,21 +154,6 @@
       trash-cli
       #code
       helix
-      (python3.withPackages (ps: with ps; [
-        tkinter
-        numpy
-        pandas
-        pygame
-        manim
-        torch
-        transformers
-        langchain
-        wikipedia
-        langchain-community
-        langchain-openai
-        python-dotenv
-        pydantic
-      ]))
       openjdk
       uv
       clang
@@ -177,7 +162,6 @@
       lld
       raylib
       binutils
-      python314Packages.pyinstaller
       arduino
       processing
       #lsps
