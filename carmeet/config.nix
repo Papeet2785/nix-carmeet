@@ -165,7 +165,7 @@
         langchain
         wikipedia
         langchain-community
-        langchain-google-genai
+        langchain-openai
         python-dotenv
         pydantic
       ]))
