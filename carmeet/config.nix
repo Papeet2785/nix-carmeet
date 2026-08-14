@@ -156,6 +156,7 @@
       helix
       openjdk
       uv
+      libx11
       clang
       gcc
       clang-tools
