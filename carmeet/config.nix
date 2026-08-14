@@ -156,6 +156,7 @@
       helix
       openjdk
       (python3.withPackages (ps: with ps; [
+        pyqt5
         tkinter
         manim
         numpy
