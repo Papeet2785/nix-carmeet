@@ -144,6 +144,7 @@
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
       QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
       QT_QPA_PLATFORMTHEME_QT6 = lib.mkForce "qt6ct";
+      #QT_QPA_PLATFORM = "xcb";
     };
     systemPackages = with pkgs; [
       #shell
@@ -156,7 +157,9 @@
       helix
       openjdk
       (python3.withPackages (ps: with ps; [
-        pyqt5
+        pyqt6
+        pyqt6-webengine
+        pyside6
         tkinter
         manim
         numpy
