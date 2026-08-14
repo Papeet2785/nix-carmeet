@@ -155,8 +155,13 @@
       #code
       helix
       openjdk
+      (python3.withPackages (ps: with ps; [
+        tkinter
+        manim
+        numpy
+        pygame
+      ]))
       uv
-      libx11
       clang
       gcc
       clang-tools
