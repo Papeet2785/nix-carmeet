@@ -240,14 +240,6 @@
       onlyoffice-desktopeditors
     ];
   };
-  fonts = {
-    packages = with pkgs; [
-    comfortaa
-    nerd-fonts.meslo-lg
-    noto-fonts
-    noto-fonts-color-emoji
-      ];
-    };
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
