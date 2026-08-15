@@ -217,7 +217,6 @@
       libnotify
       wl-clipboard
       cliphist
-      bibata-cursors
       pavucontrol
       brightnessctl
       #apps

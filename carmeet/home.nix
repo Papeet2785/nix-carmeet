@@ -13,6 +13,9 @@
         font-size = 12;
       };
     };
+    niri.settings = {
+      outputs."eDP-1".scale = 1.1;
+    };
     noctalia.enable = true;
     btop = {
       enable = true;
