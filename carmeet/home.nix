@@ -20,7 +20,7 @@
     btop = {
       enable = true;
       settings = {
-        color_theme = "onedark";
+        color_theme = "gruvbox_dark";
       };
     };
   };
