@@ -31,7 +31,8 @@
       gaps = 10;
       border = {
         enable = true;
-        active.color = "#458588";
+        active.color = "#83a598";
+        inactive.color = "#d3869b";
         width = 4;
       };
       focus-ring = { enable = false; };
