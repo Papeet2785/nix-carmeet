@@ -241,7 +241,6 @@
       lingot
       simple-scan
       supertuxkart
-      filezilla
       gnome-themes-extra
       onlyoffice-desktopeditors
     ];
