@@ -2,7 +2,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = lib.mkForce "onedarker";
+      theme = lib.mkForce "gruvbox_dark_hard";
       editor = {
         default-yank-register = "+";
         idle-timeout = 0;
