@@ -4,7 +4,7 @@
   ];
   programs.fetch = {
     enable = true;
-    labelColor = "magenta";
+    labelColor = "green";
     info = [
       "os"
       "host"
