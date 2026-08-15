@@ -42,6 +42,13 @@
       settings = {
         save = true;
         numlock = true;
+        bigclock = true;
+        animation = "matrix";
+        clear_password = true;
+        vi_mode = true;
+        vi_default_mode = "insert";
+        fg = lib.mkForce "0x0083a598";
+        matrix_fg = lib.mkForce "0x00458588";
       };
     };
     upower.enable = true;
@@ -148,6 +155,7 @@
     };
     systemPackages = with pkgs; [
       #shell
+      fastfetch
       fzf
       glib
       bash

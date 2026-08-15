@@ -1,10 +1,6 @@
 {
   description = "My NixOS configuration";
   inputs = {
-    areofyl-fetch = {
-      url = "github:areofyl/fetch";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     freesmlauncher = {
       url = "github:FreesmTeam/FreesmLauncher";
