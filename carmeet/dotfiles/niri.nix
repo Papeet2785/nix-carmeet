@@ -73,6 +73,24 @@
         clip-to-geometry = true;
         draw-border-with-background = true;
       }
+      {
+        matches = [
+          {app-id="^main\\.py$";}
+        ]; 
+        open-floating = true;
+        default-column-width = {
+          fixed = 1024;
+        };
+        default-window-height = {
+          fixed = 768;
+        };
+        geometry-corner-radius = {
+          top-left = 12.0;
+          top-right = 12.0;
+          bottom-left = 12.0;
+          bottom-right = 12.0;
+        };
+        }
     ];
     binds = {
       # Applications

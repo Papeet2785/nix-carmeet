@@ -149,7 +149,7 @@
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
       QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
       QT_QPA_PLATFORMTHEME_QT6 = lib.mkForce "qt6ct";
-      #QT_QPA_PLATFORM = "xcb";
+      PKG_CONFIG_PATH = "${pkgs.raylib}/lib/pkgconfig";
     };
     systemPackages = with pkgs; [
       #shell
@@ -177,6 +177,8 @@
       clang-tools
       lld
       raylib
+      pkg-config
+      gnumake
       binutils
       arduino
       processing
