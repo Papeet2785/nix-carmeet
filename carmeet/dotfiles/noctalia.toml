@@ -1,0 +1,285 @@
+config_version = 12
+
+[backdrop]
+blur_intensity = 0.0
+enabled = true
+
+[bar.default]
+center = [ "control-center", "spacer_4", "clock", "date", "spacer_2", "tray" ]
+end = [ "volume", "spacer_6", "group:g2", "spacer_5", "battery", "spacer_3", "session" ]
+margin_ends = 0
+padding = 10
+panel_overlap = 0
+radius_top_left = 0
+radius_top_right = 0
+start = [ "launcher", "spacer_7", "group:g1", "spacer_8", "active_window" ]
+thickness = 30
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "workspaces" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "cpu", "ram", "temp" ]
+    opacity = 1.0
+    padding = 7.0
+    radius = 10.0
+    widget_spacing = 23
+
+[battery]
+warning_threshold = 30
+
+[control_center]
+hidden_tabs = [ "media", "audio", "monitor", "screen-time" ]
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+icon_size = 30
+shadow = false
+show_dots = true
+smart_auto_hide = true
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = false
+    timeout = 300.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 500.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = false
+    timeout = 400.0
+
+[location]
+auto_locate = true
+
+[lockscreen]
+fingerprint = false
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-0000000000000001" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 872.5
+    cy = 525.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 872.5
+    cy = 283.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+[nightlight]
+enabled = true
+force = true
+temperature_day = 6000
+temperature_night = 6000
+
+[notification]
+position = "top_center"
+
+[osd.kinds]
+keyboard_backlight = false
+
+[plugins]
+auto_update = false
+enabled = []
+
+    [[plugins.source]]
+    enabled = false
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    enabled = false
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+[shell]
+app_icon_color = "tertiary"
+niri_overview_type_to_launch_enabled = true
+panel_anchor_bar = "default"
+
+    [shell.animation]
+    speed = 1.3500000201165676
+
+    [shell.launcher]
+    app_grid = true
+    fetch_exchange_rates = false
+
+        [shell.launcher.providers.emoji]
+        global = true
+
+        [shell.launcher.providers.windows]
+        global = true
+
+    [shell.panel]
+    clipboard_placement = "attached"
+    floating_layer = "top"
+    launcher_placement = "attached"
+    polkit_placement = "attached"
+
+    [shell.screen_corners]
+    size = 12
+
+    [shell.screenshot]
+    directory = "/home/carmeet/Pictures/Screenshots"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "destructive"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "3"
+    variant = "default"
+
+    [shell.shadow]
+    alpha = 0.4999999888241291
+
+[theme]
+builtin = "Ayu"
+community_palette = "One Dark Two"
+custom_palette = "stylix"
+mode = "dark"
+source = "custom"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper"
+fill_mode = "stretch"
+transition = [ "fade" ]
+
+    [wallpaper.default]
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+
+    [wallpaper.last]
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+
+[widget.active_window]
+max_length = 400
+
+[widget.battery]
+display_mode = "graphic"
+
+[widget.clock]
+format = "{:%I:%M %p}"
+
+[widget.launcher]
+glyph = "snowflake"
+
+[widget.spacer_2]
+type = "spacer"
+
+[widget.spacer_3]
+type = "spacer"
+
+[widget.spacer_4]
+type = "spacer"
+
+[widget.spacer_5]
+type = "spacer"
+
+[widget.spacer_6]
+type = "spacer"
+
+[widget.spacer_7]
+type = "spacer"
+
+[widget.spacer_8]
+type = "spacer"

@@ -104,8 +104,8 @@
       "Mod+Q".action.close-window = {};
       "Mod+Space".action.toggle-window-floating = {};
       "Mod+Shift+Space".action.switch-focus-between-floating-and-tiling = {};
-      "Mod+Shift+F".action.switch-preset-column-width = {};
-      "Mod+F".action.fullscreen-window = {};
+      "Mod+F".action.switch-preset-column-width = {};
+      "Mod+Shift+F".action.fullscreen-window = {};
       # Focus
       "Mod+H".action.focus-column-left = {};
       "Mod+J".action.focus-window-down = {};
