@@ -12,7 +12,6 @@
       gotrash = "sudo rm -rf ~/.local/share/Trash/*";
       tinstall = "nix-shell -p";
       nixupgrade = "cd ~/nix-carmeet && nix flake update && sudo nixos-rebuild switch --flake .#myMachine";
-      #backupnoctalia = "cd ~/nix-carmeet/carmeet/dotfiles && nix run nixpkgs#noctalia-shell \ ipc call state all > ./noctalia.json";
     };
     interactiveShellInit = ''
       set -g fish_greeting ""

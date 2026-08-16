@@ -129,6 +129,10 @@ widget_order = [ "lockscreen-login-box@eDP-1", "lockscreen-widget-00000000000000
     rotation = 0.0
     type = "clock"
 
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background_color = "surface_variant"
+        background_opacity = 1.0
+
 [nightlight]
 enabled = true
 force = true
