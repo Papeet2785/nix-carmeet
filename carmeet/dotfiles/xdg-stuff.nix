@@ -24,9 +24,9 @@
     enable = true;
     defaultApplications = {
       # Browser
-      "text/html" = "google-chrome.desktop";
-      "x-scheme-handler/http" = "google-chrome.desktop";
-      "x-scheme-handler/https" = "google-chrome.desktop";
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
       # Text / programming
       "text/plain" = "helix-terminal.desktop";
       "text/markdown" = "helix-terminal.desktop";

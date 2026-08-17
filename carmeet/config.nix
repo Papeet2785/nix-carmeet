@@ -112,6 +112,7 @@
     nix-ld.enable = true;
     dconf.enable = true;
     fish.enable = true;
+    bash.enable = true;
     starship.enable = true;
     auto-cpufreq = {
       enable = true;
@@ -138,7 +139,8 @@
     isNormalUser = true;
     description = "carmeet";
     extraGroups = [ "networkmanager" "wheel" "lp" "lpadmin" "dialout"];
-    shell = pkgs.fish;
+    #shell = pkgs.fish;
+    shell = pkgs.bash;
   };
   nixpkgs = {
     config.allowUnfree = true;
@@ -187,7 +189,8 @@
       ruff
       jdt-language-server
       vscode-langservers-extracted
-      fish-lsp
+      #fish-lsp
+      bash-language-server
       nil
       marksman
       nixfmt
@@ -236,6 +239,7 @@
       cheese
       obs-studio
       proton-vpn
+      firefox
       google-chrome
       vlc
       discord
@@ -306,7 +310,7 @@
     targets = {
       gtk.enable = true;
       qt.enable = true;
-      fish.enable = true;
+      #fish.enable = true;
     };
   };
   system.stateVersion = "26.05";

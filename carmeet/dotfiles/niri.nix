@@ -98,7 +98,8 @@
       "Mod+Escape".action.spawn = [ "ghostty" "-e" "btop" ];
       "Mod+Tab".action.toggle-overview = {};
       "Mod+C".action.spawn = [ "ghostty" "-e" "hx" "~" ];
-      "Mod+B".action.spawn = "google-chrome";
+      "Mod+B".action.spawn = "firefox";
+      "Mod+Shift+B".action.spawn = "google-chrome";
       "Mod+E".action.spawn = "nautilus";
       "Mod+R".action.spawn = [ "niri" "msg" "action" "load-config-file" ];
       # Noctalia

@@ -30,6 +30,7 @@
   };
   imports = [
     ./dotfiles/fish.nix
+    ./dotfiles/bash.nix
     ./dotfiles/xdg-stuff.nix
     ./dotfiles/helix.nix
     ./dotfiles/niri.nix
