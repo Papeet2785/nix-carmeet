@@ -112,6 +112,7 @@
     nix-ld.enable = true;
     dconf.enable = true;
     fish.enable = true;
+    bash.enable = true;
     starship.enable = true;
     auto-cpufreq = {
       enable = true;
