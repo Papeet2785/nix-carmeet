@@ -1,5 +1,12 @@
-{ config, pkgs, lib, inputs, ... }:
-{ imports = [ ./hardware.nix ];
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
+  imports = [ ./hardware.nix ];
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
@@ -32,8 +39,18 @@
     firewall = {
       allowedTCPPorts = [ 631 ];
       allowedUDPPorts = [ 5353 ];
-      allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
-      allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
+      allowedTCPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      allowedUDPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
     };
   };
   services = {
@@ -52,7 +69,9 @@
     upower.enable = true;
     xserver = {
       enable = true;
-      xkb = { layout = "us"; };
+      xkb = {
+        layout = "us";
+      };
     };
     logind.settings.Login = {
       HandleLidSwitch = "suspend";
@@ -138,7 +157,13 @@
   users.users.carmeet = {
     isNormalUser = true;
     description = "carmeet";
-    extraGroups = [ "networkmanager" "wheel" "lp" "lpadmin" "dialout"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "lp"
+      "lpadmin"
+      "dialout"
+    ];
     shell = pkgs.fish;
   };
   nixpkgs = {
@@ -163,15 +188,17 @@
       #code
       helix
       openjdk
-      (python3.withPackages (ps: with ps; [
-        pyqt6
-        pyqt6-webengine
-        pyside6
-        tkinter
-        manim
-        numpy
-        pygame
-      ]))
+      (python3.withPackages (
+        ps: with ps; [
+          pyqt6
+          pyqt6-webengine
+          pyside6
+          tkinter
+          manim
+          numpy
+          pygame
+        ]
+      ))
       uv
       clang
       gcc
@@ -248,6 +275,7 @@
       gnome-themes-extra
       onlyoffice-desktopeditors
     ];
+    nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   };
   xdg.portal = {
     enable = true;
@@ -273,8 +301,7 @@
   };
   stylix = {
     enable = true;
-    base16Scheme =
-      "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
