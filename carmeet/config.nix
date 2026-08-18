@@ -189,7 +189,7 @@
       jdt-language-server
       vscode-langservers-extracted
       #fish-lsp
-      nil
+      nixd
       marksman
       nixfmt
       prettier
