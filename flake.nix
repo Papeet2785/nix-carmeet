@@ -22,8 +22,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ self, nixpkgs, freesmlauncher, auto-cpufreq, stylix, home-manager, noctalia, ... }: {
-    nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      freesmlauncher,
+      auto-cpufreq,
+      stylix,
+      home-manager,
+      noctalia,
+      ...
+    }:
+    {
+      nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
@@ -31,7 +42,8 @@
           inputs.niri.nixosModules.niri
           stylix.nixosModules.stylix
           auto-cpufreq.nixosModules.default
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
@@ -46,6 +58,6 @@
             };
           }
         ];
+      };
     };
-  };
 }
