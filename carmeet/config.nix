@@ -274,7 +274,6 @@
       gnome-themes-extra
       onlyoffice-desktopeditors
     ];
-    nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   };
   xdg.portal = {
     enable = true;
