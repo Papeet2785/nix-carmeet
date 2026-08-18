@@ -1,4 +1,11 @@
-{ config, pkgs, lib, inputs, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+{
   home = {
     username = "carmeet";
     homeDirectory = "/home/carmeet";
@@ -15,6 +22,7 @@
     };
     niri.settings = {
       outputs."eDP-1".scale = 1.1;
+      outputs."HDMI-A-1".scale = 1.25;
     };
     noctalia.enable = true;
     btop = {
@@ -29,12 +37,12 @@
     btop.enable = false;
   };
   imports = [
-    ./dotfiles/fish.nix
+    #./dotfiles/fish.nix
+    ./dotfiles/bash.nix
     ./dotfiles/xdg-stuff.nix
     ./dotfiles/helix.nix
     ./dotfiles/niri.nix
   ];
   home.file.".local/state/noctalia/settings.toml".source =
-    config.lib.file.mkOutOfStoreSymlink
-      "/home/carmeet/nix-carmeet/carmeet/dotfiles/noctalia.toml";
+    config.lib.file.mkOutOfStoreSymlink "/home/carmeet/nix-carmeet/carmeet/dotfiles/noctalia.toml";
 }

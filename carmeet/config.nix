@@ -130,7 +130,7 @@
     };
     nix-ld.enable = true;
     dconf.enable = true;
-    fish.enable = true;
+    #fish.enable = true;
     bash.enable = true;
     starship.enable = true;
     auto-cpufreq = {
@@ -214,7 +214,7 @@
       ruff
       jdt-language-server
       vscode-langservers-extracted
-      #fish-lsp
+      bash-language-server
       nixd
       marksman
       nixfmt
@@ -331,7 +331,7 @@
     targets = {
       gtk.enable = true;
       qt.enable = true;
-      fish.enable = true;
+      #fish.enable = true;
     };
   };
   system.stateVersion = "26.05";
