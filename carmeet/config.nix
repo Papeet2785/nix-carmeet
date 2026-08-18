@@ -196,7 +196,6 @@
           tkinter
           manim
           numpy
-          pygame
         ]
       ))
       uv
@@ -288,9 +287,7 @@
         default = [ "gtk" ];
         "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
         "org.freedesktop.impl.portal.OpenURI" = [ "gtk" ];
-        # PipeWire screencast backend
         "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
-        # Optional
         "org.freedesktop.impl.portal.Screenshot" = [ "gtk" ];
       };
     };
