@@ -1,4 +1,13 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+
+let
+  esc = builtins.fromJSON ''"\u001b"'';
+in
 
 {
   programs.fastfetch = {
@@ -43,7 +52,18 @@
           key = "│ ├";
           keyColor = "yellow";
           text = ''
-            birth_install=$(stat -c %W / 2>/dev/null || stat -f %B / 2>/dev/null || echo 0); case $birth_install in ''|0|-1) echo unknown;; *) current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days;; esac
+            birth_install=$(stat -c %W / 2>/dev/null || stat -f %B / 2>/dev/null || echo 0)
+            case $birth_install in
+              ""|0|-1)
+                echo unknown
+                ;;
+              *)
+                current=$(date +%s)
+                time_progression=$((current - birth_install))
+                days_difference=$((time_progression / 86400))
+                echo $days_difference days
+                ;;
+            esac
           '';
         }
 
@@ -154,7 +174,28 @@
 
         {
           type = "custom";
-          format = "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m  \u001b[39m    \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m ";
+          format =
+            "${esc}[90m  "
+            + "${esc}[31m  "
+            + "${esc}[32m  "
+            + "${esc}[33m  "
+            + "${esc}[34m  "
+            + "${esc}[35m  "
+            + "${esc}[36m  "
+            + "${esc}[37m  "
+            + "${esc}[38m  "
+            + "${esc}[39m  "
+            + "${esc}[39m  "
+            + "  "
+            + "${esc}[38m  "
+            + "${esc}[37m  "
+            + "${esc}[36m  "
+            + "${esc}[35m  "
+            + "${esc}[34m  "
+            + "${esc}[33m  "
+            + "${esc}[32m  "
+            + "${esc}[31m  "
+            + "${esc}[90m";
         }
 
         "break"

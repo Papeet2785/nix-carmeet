@@ -20,15 +20,8 @@
       tinstall = "nix-shell -p";
       nixupgrade = "cd ~/nix-carmeet && nix flake update && sudo nixos-rebuild switch --flake .#myMachine";
     };
-    initExtra = ''
-      bind '"\C-h": backward-kill-word'
-    '';
   };
   programs.starship = {
-    enable = true;
-    enableBashIntegration = true;
-  };
-  programs.carapace = {
     enable = true;
     enableBashIntegration = true;
   };
