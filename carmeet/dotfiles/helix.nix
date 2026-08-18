@@ -21,66 +21,31 @@
       language = [
         {
           name = "bash";
-          auto-format = false;
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
+          auto-format = true;
         }
         {
           name = "nix";
-          auto-format = false;
-          indent = {
-            tab-width = 2;
-            unit = "  ";
-          };
+          auto-format = true;
         }
         {
           name = "html";
-          auto-format = false;
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
+          auto-format = true;
         }
         {
           name = "python";
-          auto-format = false;
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
-          language-servers = [ "pyright" ];
+          auto-format = true;
         }
         {
           name = "java";
-          auto-format = false;
-          roots = [
-            "pom.xml"
-            "build.gradle"
-            ".git"
-          ];
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
-          language-servers = [ "jdtls" ];
+          auto-format = true;
         }
         {
           name = "c";
-          auto-format = false;
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
+          auto-format = true;
         }
         {
           name = "cpp";
-          auto-format = false;
-          indent = {
-            tab-width = 4;
-            unit = "    ";
-          };
+          auto-format = true;
         }
       ];
     };
