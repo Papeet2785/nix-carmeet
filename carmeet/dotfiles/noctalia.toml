@@ -227,7 +227,7 @@ panel_anchor_bar = "default"
     variant = "default"
 
     [shell.shadow]
-    alpha = 0.4999999888241291
+    alpha = 0.99999997764825821
 
 [theme]
 builtin = "Ayu"
