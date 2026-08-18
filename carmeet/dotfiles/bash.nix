@@ -24,7 +24,6 @@
       bind '"\C-h": backward-kill-word'
     '';
   };
-  };
   programs.starship = {
     enable = true;
     enableBashIntegration = true;

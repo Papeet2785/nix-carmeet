@@ -37,8 +37,8 @@
     btop.enable = false;
   };
   imports = [
-    #./dotfiles/fish.nix
     ./dotfiles/bash.nix
+    ./dotfiles/fastfetch.nix
     ./dotfiles/xdg-stuff.nix
     ./dotfiles/helix.nix
     ./dotfiles/niri.nix
