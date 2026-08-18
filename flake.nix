@@ -22,17 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      freesmlauncher,
-      auto-cpufreq,
-      stylix,
-      home-manager,
-      noctalia,
-      ...
-    }:
+  outputs = inputs@{ self, nixpkgs, freesmlauncher, auto-cpufreq, stylix, home-manager, noctalia, ... }:
     {
       nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

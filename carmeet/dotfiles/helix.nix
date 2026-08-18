@@ -1,4 +1,10 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   programs.helix = {
     enable = true;
     settings = {
@@ -21,31 +27,31 @@
       language = [
         {
           name = "bash";
-          auto-format = true;
+          auto-format = false;
         }
         {
           name = "nix";
-          auto-format = true;
+          auto-format = false;
         }
         {
           name = "html";
-          auto-format = true;
+          auto-format = false;
         }
         {
           name = "python";
-          auto-format = true;
+          auto-format = false;
         }
         {
           name = "java";
-          auto-format = true;
+          auto-format = false;
         }
         {
           name = "c";
-          auto-format = true;
+          auto-format = false;
         }
         {
           name = "cpp";
-          auto-format = true;
+          auto-format = false;
         }
       ];
     };
