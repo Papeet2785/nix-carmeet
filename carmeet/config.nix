@@ -164,7 +164,7 @@
       "lpadmin"
       "dialout"
     ];
-    shell = pkgs.fish;
+    shell = pkgs.bash;
   };
   nixpkgs = {
     config.allowUnfree = true;

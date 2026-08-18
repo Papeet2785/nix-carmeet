@@ -21,8 +21,9 @@
       nixupgrade = "cd ~/nix-carmeet && nix flake update && sudo nixos-rebuild switch --flake .#myMachine";
     };
     initExtra = ''
-      bind '"\C-h":
+      bind '"\C-h": backward-kill-word'
     '';
+  };
   };
   programs.starship = {
     enable = true;
