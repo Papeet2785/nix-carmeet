@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ ... }:
 
 let
   esc = builtins.fromJSON ''"\u001b"'';

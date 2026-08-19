@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ ... }:
 {
   programs.niri.settings = {
     spawn-at-startup = [
@@ -32,7 +32,7 @@
       border.enable = false;
       focus-ring = {
         enable = true;
-        width = 3;
+        width = 4;
         active.color = "#83a598";
       };
       preset-column-widths = [

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ ... }: {
   xdg.desktopEntries.arduino = {
     name = "Arduino IDE";
     exec = "env GDK_BACKEND=x11 _JAVA_AWT_WM_NONREPARENTING=1 arduino %F";
