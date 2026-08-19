@@ -28,7 +28,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./carmeet/config.nix
+          ./carmeet/etc.nix
           inputs.niri.nixosModules.niri
           stylix.nixosModules.stylix
           auto-cpufreq.nixosModules.default
