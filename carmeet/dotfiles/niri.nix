@@ -29,13 +29,12 @@
     };
     layout = {
       gaps = 10;
-      border = {
+      border.enable = false;
+      focus-ring = {
         enable = true;
+        width = 3;
         active.color = "#83a598";
-        inactive.color = "#d3869b";
-        width = 4;
       };
-      focus-ring = { enable = false; };
       preset-column-widths = [
         { proportion = 0.50; }
         { proportion = 1.00; }
@@ -73,24 +72,6 @@
         clip-to-geometry = true;
         draw-border-with-background = true;
       }
-      {
-        matches = [
-          {app-id="^main\\.py$";}
-        ]; 
-        open-floating = true;
-        default-column-width = {
-          fixed = 1024;
-        };
-        default-window-height = {
-          fixed = 768;
-        };
-        geometry-corner-radius = {
-          top-left = 12.0;
-          top-right = 12.0;
-          bottom-left = 12.0;
-          bottom-right = 12.0;
-        };
-        }
     ];
     binds = {
       # Applications
