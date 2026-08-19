@@ -98,6 +98,7 @@
       "Mod+Escape".action.spawn = [ "ghostty" "-e" "btop" ];
       "Mod+Tab".action.toggle-overview = {};
       "Mod+C".action.spawn = [ "ghostty" "-e" "hx" "~" ];
+      "Mod+Shift+C".action.spawn = [ "ghostty" "-e" "hx" "~/nix-carmeet" ];
       "Mod+B".action.spawn = "firefox";
       "Mod+Shift+B".action.spawn = "google-chrome";
       "Mod+E".action.spawn = "nautilus";
