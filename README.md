@@ -64,6 +64,11 @@ Collect old generations:
 ```bash
 sudo nix-collect-garbage -d
 ```
+Or:
+
+```bash
+nixfreespace
+```
 
 Validate Niri configuration:
 
@@ -75,9 +80,9 @@ niri validate
 
 - Niri
 - Noctalia
-- Kitty
+- Ghostty
 - Helix
-- Fish
+- Bash
 - Firefox
 - Stylix
 - Home Manager
