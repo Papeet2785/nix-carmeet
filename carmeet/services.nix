@@ -29,6 +29,7 @@
       xkb = {
         layout = "us";
       };
+    };
     logind.settings.Login = {
       HandleLidSwitch = "suspend";
       HandleLidSwitchExternalPower = "suspend";
@@ -59,7 +60,6 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-    };
     };
   };
 }
