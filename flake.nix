@@ -1,5 +1,5 @@
 {
-  description = "My NixOS configuration";
+  description = "Carmeet2785's NixOS configuration";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     freesmlauncher = {

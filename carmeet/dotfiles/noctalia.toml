@@ -261,11 +261,10 @@ panel_anchor_bar = "default"
     alpha = 0.99999997764825821
 
 [theme]
-builtin = "Ayu"
-community_palette = "One Dark Two"
+builtin = "Gruvbox"
+community_palette = "Gruvbox Material"
 custom_palette = "stylix"
 mode = "dark"
-source = "custom"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]

@@ -30,7 +30,7 @@ Build and switch to this configuration:
 sudo nixos-rebuild switch --flake .#myMachine
 ```
 
-Or use my fish alias:
+Or use my alias:
 
 ```bash
 nixbuild

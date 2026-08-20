@@ -42,6 +42,7 @@
       ps: with ps; [
         pyqt6
         pyqt6-webengine
+        pygame
         pyside6
         tkinter
         manim
