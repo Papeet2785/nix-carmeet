@@ -32,7 +32,6 @@
     ./dotfiles/fastfetch.nix
     ./dotfiles/xdg-stuff.nix
     ./dotfiles/helix.nix
-    ./dotfiles/nvf.nix
     ./dotfiles/bash.nix
     ./dotfiles/niri.nix
   ];
