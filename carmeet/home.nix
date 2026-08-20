@@ -10,8 +10,6 @@
       enable = true;
       settings = {
         confirm-close-surface = false;
-        font-family = "MesloLGM Nerd Font";
-        font-size = 12;
       };
     };
     niri.settings = {
@@ -35,6 +33,8 @@
     ./dotfiles/fastfetch.nix
     ./dotfiles/xdg-stuff.nix
     ./dotfiles/helix.nix
+    ./dotfiles/nvf.nix
+    ./dotfiles/bash.nix
     ./dotfiles/niri.nix
   ];
   home.file.".local/state/noctalia/settings.toml".source =

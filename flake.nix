@@ -2,6 +2,10 @@
   description = "Carmeet2785's NixOS configuration";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     freesmlauncher = {
       url = "github:FreesmTeam/FreesmLauncher";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,13 +26,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ self, nixpkgs, freesmlauncher, auto-cpufreq, stylix, home-manager, noctalia, ... }:
+  outputs = inputs@{ self, nixpkgs, nvf, freesmlauncher, auto-cpufreq, stylix, home-manager, noctalia, ... }:
     {
       nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           ./carmeet/etc.nix
+          nvf.nixosModules.default
           inputs.niri.nixosModules.niri
           stylix.nixosModules.stylix
           auto-cpufreq.nixosModules.default
