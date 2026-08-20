@@ -33,7 +33,6 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./carmeet/etc.nix
-          nvf.nixosModules.default
           inputs.niri.nixosModules.niri
           stylix.nixosModules.stylix
           auto-cpufreq.nixosModules.default
@@ -48,7 +47,12 @@
               sharedModules = [
                 inputs.noctalia.homeModules.default
               ];
-              users.carmeet = import ./carmeet/home.nix;
+              users.carmeet = {
+                imports = [
+                  inputs.nvf.homeManagerModules.default
+                  ./carmeet/home.nix
+                ];
+              };
               backupFileExtension = "backup";
             };
           }

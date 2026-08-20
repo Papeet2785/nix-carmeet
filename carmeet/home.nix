@@ -29,7 +29,6 @@
     btop.enable = false;
   };
   imports = [
-    ./dotfiles/bash.nix
     ./dotfiles/fastfetch.nix
     ./dotfiles/xdg-stuff.nix
     ./dotfiles/helix.nix
