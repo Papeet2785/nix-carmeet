@@ -6,36 +6,14 @@ enabled = true
 
 [bar.default]
 center = [ "control-center", "spacer_4", "clock", "date", "spacer_2", "tray" ]
-end = [ "volume", "spacer_6", "group:g2", "spacer_5", "battery", "spacer_3", "session" ]
+end = [ "volume", "spacer_6", "cpu", "spacer_9", "ram", "spacer_10", "temp", "spacer_5", "battery", "spacer_3", "session" ]
 margin_ends = 0
 padding = 10
 panel_overlap = 0
 radius_top_left = 0
 radius_top_right = 0
-start = [ "launcher", "spacer_7", "group:g1", "spacer_8", "active_window" ]
+start = [ "launcher", "spacer_7", "workspaces", "spacer_8", "active_window" ]
 thickness = 30
-
-    [[bar.default.capsule_group]]
-    accordion = false
-    accordion_direction = "end"
-    enabled = true
-    fill = "surface_variant"
-    id = "g1"
-    members = [ "workspaces" ]
-    opacity = 1.0
-    padding = 6.0
-
-    [[bar.default.capsule_group]]
-    accordion = false
-    accordion_direction = "end"
-    enabled = true
-    fill = "surface_variant"
-    id = "g2"
-    members = [ "cpu", "ram", "temp" ]
-    opacity = 1.0
-    padding = 7.0
-    radius = 10.0
-    widget_spacing = 23
 
 [battery]
 warning_threshold = 30
@@ -262,7 +240,7 @@ panel_anchor_bar = "default"
 
 [theme]
 builtin = "Gruvbox"
-community_palette = "Ayu Blue"
+community_palette = "GitHub Dark"
 custom_palette = "stylix"
 mode = "dark"
 wallpaper_scheme = "m3-content"
@@ -297,6 +275,9 @@ format = "{:%I:%M %p}"
 [widget.launcher]
 glyph = "snowflake"
 
+[widget.spacer_10]
+type = "spacer"
+
 [widget.spacer_2]
 type = "spacer"
 
@@ -316,4 +297,7 @@ type = "spacer"
 type = "spacer"
 
 [widget.spacer_8]
+type = "spacer"
+
+[widget.spacer_9]
 type = "spacer"
