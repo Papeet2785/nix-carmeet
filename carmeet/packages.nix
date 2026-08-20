@@ -50,6 +50,8 @@
       ]
     ))
     uv
+    pkg-config
+    raylib
     clang
     clang-tools
     binutils
