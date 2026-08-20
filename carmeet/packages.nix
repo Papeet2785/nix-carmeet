@@ -53,6 +53,8 @@
     uv
     clang
     clang-tools
+    gcc
+    gdb
     binutils
     arduino
     processing
