@@ -262,7 +262,7 @@ panel_anchor_bar = "default"
 
 [theme]
 builtin = "Gruvbox"
-community_palette = "Gruvbox Material"
+community_palette = "Ayu Blue"
 custom_palette = "stylix"
 mode = "dark"
 wallpaper_scheme = "m3-content"
@@ -277,13 +277,13 @@ fill_mode = "stretch"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
 
 [widget.active_window]
 max_length = 400

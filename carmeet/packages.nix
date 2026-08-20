@@ -51,12 +51,7 @@
     ))
     uv
     clang
-    gcc
     clang-tools
-    lld
-    raylib
-    pkg-config
-    gnumake
     binutils
     arduino
     processing
