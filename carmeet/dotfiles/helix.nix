@@ -25,6 +25,10 @@
           auto-format = false;
         }
         {
+          name = "rust";
+          auto-format = false;
+        }
+        {
           name = "nix";
           auto-format = false;
         }

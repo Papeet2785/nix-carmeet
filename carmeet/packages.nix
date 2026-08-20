@@ -49,6 +49,7 @@
         numpy
       ]
     ))
+    basedpyright
     uv
     pkg-config
     raylib
@@ -57,8 +58,6 @@
     binutils
     arduino
     processing
-    #lsps
-    basedpyright
     ruff
     jdt-language-server
     vscode-langservers-extracted
@@ -68,6 +67,9 @@
     nixfmt
     prettier
     shfmt
+    cargo
+    rustc
+    rust-analyzer
     #services
     polkit_gnome
     udiskie
