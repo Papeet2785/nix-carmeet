@@ -162,12 +162,6 @@ in
         }
 
         {
-          type = "media";
-          key = "│ └󰝚";
-          keyColor = "magenta";
-        }
-
-        {
           type = "custom";
           format =
             "${esc}[90m  "
