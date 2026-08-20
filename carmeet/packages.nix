@@ -36,7 +36,8 @@
     vimPlugins.fzf-wrapper
     trash-cli
     #code
-    helix
+    micro
+    vscode.fhs
     openjdk
     (python3.withPackages (
       ps: with ps; [
