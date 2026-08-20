@@ -36,8 +36,7 @@
     vimPlugins.fzf-wrapper
     trash-cli
     #code
-    micro
-    vscode.fhs
+    helix
     openjdk
     (python3.withPackages (
       ps: with ps; [
@@ -53,8 +52,6 @@
     uv
     clang
     clang-tools
-    gcc
-    gdb
     binutils
     arduino
     processing
