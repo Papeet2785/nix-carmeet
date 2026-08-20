@@ -37,6 +37,7 @@
     trash-cli
     #code
     helix
+    zed-editor
     openjdk
     (python3.withPackages (
       ps: with ps; [
