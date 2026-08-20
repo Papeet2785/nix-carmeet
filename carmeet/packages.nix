@@ -51,10 +51,10 @@
     ))
     basedpyright
     uv
-    pkg-config
-    raylib
     clang
     clang-tools
+    raylib
+    raylib-games
     binutils
     arduino
     processing
@@ -67,9 +67,7 @@
     nixfmt
     prettier
     shfmt
-    cargo
-    rustc
-    rust-analyzer
+    pkg-config
     #services
     polkit_gnome
     udiskie
