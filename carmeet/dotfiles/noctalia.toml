@@ -243,6 +243,7 @@ builtin = "Gruvbox"
 community_palette = "GitHub Dark"
 custom_palette = "stylix"
 mode = "dark"
+source = "builtin"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
@@ -255,13 +256,13 @@ fill_mode = "stretch"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/abstract.png"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/abstract.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/abstract.png"
 
 [widget.active_window]
 max_length = 400
