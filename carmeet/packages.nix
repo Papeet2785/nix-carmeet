@@ -39,23 +39,6 @@
     helix
     arduino
     processing
-    # openjdk
-    # (python3.withPackages (
-    #   ps: with ps; [
-    #     pyqt6
-    #     pyqt6-webengine
-    #     pygame
-    #     pyside6
-    #     tkinter
-    #     manim
-    #     numpy
-    #   ]
-    # ))
-    # basedpyright
-    # uv
-    # binutils
-    # ruff
-    # jdt-language-server
     vscode-langservers-extracted
     bash-language-server
     nixd
