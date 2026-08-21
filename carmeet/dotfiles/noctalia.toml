@@ -240,7 +240,7 @@ panel_anchor_bar = "default"
 
 [theme]
 builtin = "Gruvbox"
-community_palette = "GitHub Dark"
+community_palette = "Gruvbox Material Hard"
 custom_palette = "stylix"
 mode = "dark"
 source = "builtin"

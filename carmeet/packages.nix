@@ -37,37 +37,37 @@
     trash-cli
     #code
     helix
-    openjdk
-    (python3.withPackages (
-      ps: with ps; [
-        pyqt6
-        pyqt6-webengine
-        pygame
-        pyside6
-        tkinter
-        manim
-        numpy
-      ]
-    ))
-    basedpyright
-    uv
-    clang
-    clang-tools
-    raylib
-    raylib-games
-    binutils
-    arduino
-    processing
-    ruff
-    jdt-language-server
-    vscode-langservers-extracted
-    bash-language-server
+    # openjdk
+    # (python3.withPackages (
+    #   ps: with ps; [
+    #     pyqt6
+    #     pyqt6-webengine
+    #     pygame
+    #     pyside6
+    #     tkinter
+    #     manim
+    #     numpy
+    #   ]
+    # ))
+    # basedpyright
+    # uv
+    # clang
+    # clang-tools
+    # raylib
+    # raylib-games
+    # binutils
+    # arduino
+    # processing
+    # ruff
+    # jdt-language-server
+    # vscode-langservers-extracted
+    # bash-language-server
     nixd
-    marksman
+    # marksman
     nixfmt
     prettier
-    shfmt
-    pkg-config
+    # shfmt
+    # pkg-config
     #services
     polkit_gnome
     udiskie
