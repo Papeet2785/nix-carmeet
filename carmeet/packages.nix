@@ -37,6 +37,8 @@
     trash-cli
     #code
     helix
+    arduino
+    processing
     # openjdk
     # (python3.withPackages (
     #   ps: with ps; [
@@ -51,23 +53,16 @@
     # ))
     # basedpyright
     # uv
-    # clang
-    # clang-tools
-    # raylib
-    # raylib-games
     # binutils
-    # arduino
-    # processing
     # ruff
     # jdt-language-server
-    # vscode-langservers-extracted
-    # bash-language-server
+    vscode-langservers-extracted
+    bash-language-server
     nixd
-    # marksman
+    marksman
     nixfmt
     prettier
-    # shfmt
-    # pkg-config
+    shfmt
     #services
     polkit_gnome
     udiskie
@@ -112,6 +107,7 @@
     obs-studio
     proton-vpn
     firefox
+    raylib-games
     google-chrome
     vlc
     discord
