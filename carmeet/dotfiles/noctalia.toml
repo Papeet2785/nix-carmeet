@@ -243,7 +243,7 @@ builtin = "Gruvbox"
 community_palette = "Gruvbox Material Hard"
 custom_palette = "stylix"
 mode = "dark"
-source = "builtin"
+source = "community"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
@@ -256,13 +256,13 @@ fill_mode = "stretch"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/abstract.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/wreck.png"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/abstract.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/wreck.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/abstract.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/wreck.png"
 
 [widget.active_window]
 max_length = 400
