@@ -26,6 +26,9 @@
     upower.enable = true;
     xserver = {
       enable = true;
+      excludePackages = [
+        pkgs.xterm
+      ];
       xkb = {
         layout = "us";
       };
