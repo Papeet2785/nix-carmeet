@@ -18,41 +18,6 @@
         };
       };
     };
-    languages = {
-      language = [
-        {
-          name = "bash";
-          auto-format = false;
-        }
-        {
-          name = "rust";
-          auto-format = false;
-        }
-        {
-          name = "nix";
-          auto-format = false;
-        }
-        {
-          name = "html";
-          auto-format = false;
-        }
-        {
-          name = "python";
-          auto-format = false;
-        }
-        {
-          name = "java";
-          auto-format = false;
-        }
-        {
-          name = "c";
-          auto-format = false;
-        }
-        {
-          name = "cpp";
-          auto-format = false;
-        }
-      ];
-    };
+    languages.auto-format = false;
   };
 }

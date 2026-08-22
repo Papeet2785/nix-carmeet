@@ -1,15 +1,5 @@
-{ pkgs, lib, ... }:
-
+{ pkgs, ... }:
 {
-  environment = {
-    sessionVariables = {
-      NIXOS_OZONE_WL = "1";
-      ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
-      QT_QPA_PLATFORMTHEME_QT6 = lib.mkForce "qt6ct";
-      PKG_CONFIG_PATH = "${pkgs.raylib}/lib/pkgconfig";
-    };
-  };
   services = {
     displayManager.ly = {
       enable = true;

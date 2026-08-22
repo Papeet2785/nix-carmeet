@@ -2,7 +2,7 @@
 {
   imports = [
     ./hardware.nix
-    ./packages.nix
+    ./environment.nix
     ./services.nix
     ./theme.nix
   ];
