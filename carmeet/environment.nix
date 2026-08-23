@@ -90,6 +90,7 @@
       #apps
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
       networkmanagerapplet
+      blueman
       qalculate-gtk
       evince
       gimp
