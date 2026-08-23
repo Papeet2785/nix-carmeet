@@ -89,6 +89,7 @@
       brightnessctl
       #apps
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
+      networkmanagerapplet
       qalculate-gtk
       evince
       gimp
