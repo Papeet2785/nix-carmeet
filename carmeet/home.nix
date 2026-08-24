@@ -16,7 +16,7 @@
     btop = {
       enable = true;
       settings = {
-        color_theme = "gruvbox_dark";
+        color_theme = "TTY";
       };
     };
   };
