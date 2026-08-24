@@ -6,7 +6,7 @@ enabled = true
 
 [bar.default]
 capsule_radius = 0
-center = [ "control-center", "spacer_4", "clock", "date", "spacer_2", "tray" ]
+center = [ "control-center", "spacer_4", "clock", "spacer_2", "tray" ]
 contact_shadow = true
 end = [ "volume", "spacer_6", "cpu", "spacer_9", "ram", "spacer_10", "temp", "spacer_5", "battery", "spacer_7", "session" ]
 margin_ends = 0
@@ -305,15 +305,12 @@ display_mode = "graphic"
 
 [widget.clock]
 color = "hover"
-format = "{:%I:%M %p}"
+format = "{:%I:%M %p, %a %d %b}"
 icon_color = "on_surface_variant"
 
 [widget.control-center]
 color = "error"
 glyph = "toggle-right-filled"
-
-[widget.date]
-color = "hover"
 
 [widget.launcher]
 color = "tertiary"
