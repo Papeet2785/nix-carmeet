@@ -6,16 +6,16 @@ enabled = true
 
 [bar.default]
 capsule_radius = 0
-center = [ "control-center", "spacer_4", "clock", "date", "spacer_2", "tray" ]
+center = [ "clock", "date", "spacer_2", "tray" ]
 contact_shadow = true
-end = [ "volume", "spacer_6", "cpu", "spacer_9", "ram", "spacer_10", "temp", "spacer_5", "battery", "spacer_3", "session" ]
+end = [ "volume", "spacer_6", "cpu", "spacer_9", "ram", "spacer_10", "temp", "spacer_5", "battery" ]
 margin_ends = 0
 padding = 10
 panel_overlap = 0
 radius = 0
 radius_top_left = 0
 radius_top_right = 0
-start = [ "launcher", "spacer_7", "workspaces", "spacer_8", "active_window" ]
+start = [ "control-center", "spacer_4", "workspaces", "spacer_8", "active_window" ]
 thickness = 30
 
 [battery]
@@ -125,11 +125,11 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1", 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 810.0
-    cx = 872.4998779296875
-    cy = 525.0
+    cx = 959.99981689453125
+    cy = 577.39306640625
     output = "eDP-1"
-    placement_height = 982.0
-    placement_width = 1745.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "login_box"
 
@@ -152,11 +152,11 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1", 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 0.0
     box_width = 0.0
-    cx = 872.4998779296875
-    cy = 282.99993896484375
+    cx = 959.99981689453125
+    cy = 311.24227905273438
     output = "eDP-1"
-    placement_height = 982.0
-    placement_width = 1745.0
+    placement_height = 1080.0
+    placement_width = 1920.0
     rotation = 0.0
     type = "clock"
 
@@ -213,10 +213,10 @@ panel_anchor_bar = "default"
         global = true
 
     [shell.panel]
-    clipboard_placement = "attached"
+    control_center_placement = "floating"
     floating_layer = "top"
-    launcher_placement = "attached"
-    polkit_placement = "attached"
+    session_placement = "floating"
+    wallpaper_placement = "floating"
 
     [shell.screen_corners]
     size = 1
@@ -270,7 +270,6 @@ builtin = "Gruvbox"
 community_palette = "Gruvbox Material Hard"
 custom_palette = "stylix"
 mode = "dark"
-source = "community"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
@@ -283,13 +282,13 @@ fill_mode = "stretch"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/scientist.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/car.jpeg"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/scientist.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/car.jpeg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/scientist.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/car.jpeg"
 
 [widget.active_window]
 max_length = 400
@@ -300,6 +299,9 @@ display_mode = "graphic"
 [widget.clock]
 format = "{:%I:%M %p}"
 
+[widget.control-center]
+glyph = "snowflake"
+
 [widget.launcher]
 glyph = "snowflake"
 
@@ -309,9 +311,6 @@ type = "spacer"
 [widget.spacer_2]
 type = "spacer"
 
-[widget.spacer_3]
-type = "spacer"
-
 [widget.spacer_4]
 type = "spacer"
 
@@ -319,9 +318,6 @@ type = "spacer"
 type = "spacer"
 
 [widget.spacer_6]
-type = "spacer"
-
-[widget.spacer_7]
 type = "spacer"
 
 [widget.spacer_8]

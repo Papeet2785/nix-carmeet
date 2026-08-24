@@ -12,10 +12,6 @@
         confirm-close-surface = false;
       };
     };
-    niri.settings = {
-      outputs."eDP-1".scale = 1.1;
-      outputs."HDMI-A-1".scale = 1.25;
-    };
     noctalia.enable = true;
     btop = {
       enable = true;
