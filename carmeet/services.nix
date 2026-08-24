@@ -6,7 +6,7 @@
       settings = {
         save = true;
         numlock = true;
-        bigclock = true;
+        bigclock = 2;
         animation = "matrix";
         clear_password = true;
         vi_mode = true;
