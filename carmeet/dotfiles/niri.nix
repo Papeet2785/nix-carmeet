@@ -36,7 +36,7 @@
       border.enable = false;
       focus-ring = {
         enable = true;
-        width = 4;
+        width = 2;
         active.color = "#d5c4a1";
       };
       preset-column-widths = [
@@ -47,13 +47,6 @@
     };
     window-rules = [
       {
-        geometry-corner-radius = {
-          top-left = 12.0;
-          top-right = 12.0;
-          bottom-left = 12.0;
-          bottom-right = 12.0;
-        };
-        clip-to-geometry = true;
         draw-border-with-background = true;
       }
       {
@@ -67,13 +60,6 @@
         default-window-height = {
           fixed = 920;
         };
-        geometry-corner-radius = {
-          top-left = 12.0;
-          top-right = 12.0;
-          bottom-left = 12.0;
-          bottom-right = 12.0;
-        };
-        clip-to-geometry = true;
         draw-border-with-background = true;
       }
     ];

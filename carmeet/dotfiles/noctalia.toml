@@ -5,11 +5,14 @@ blur_intensity = 0.0
 enabled = true
 
 [bar.default]
+capsule_radius = 0
 center = [ "control-center", "spacer_4", "clock", "date", "spacer_2", "tray" ]
+contact_shadow = true
 end = [ "volume", "spacer_6", "cpu", "spacer_9", "ram", "spacer_10", "temp", "spacer_5", "battery", "spacer_3", "session" ]
 margin_ends = 0
 padding = 10
 panel_overlap = 0
+radius = 0
 radius_top_left = 0
 radius_top_right = 0
 start = [ "launcher", "spacer_7", "workspaces", "spacer_8", "active_window" ]
@@ -53,6 +56,7 @@ widget_order = []
 
 [dock]
 icon_size = 30
+radius = 0
 shadow = false
 show_dots = true
 smart_auto_hide = true
@@ -191,6 +195,7 @@ enabled = []
 
 [shell]
 app_icon_color = "tertiary"
+corner_radius_scale = 0.0
 niri_overview_type_to_launch_enabled = true
 panel_anchor_bar = "default"
 
@@ -214,7 +219,7 @@ panel_anchor_bar = "default"
     polkit_placement = "attached"
 
     [shell.screen_corners]
-    size = 12
+    size = 1
 
     [shell.screenshot]
     copy_to_clipboard = false
