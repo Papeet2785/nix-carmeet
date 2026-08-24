@@ -217,7 +217,10 @@ panel_anchor_bar = "default"
     size = 12
 
     [shell.screenshot]
+    copy_to_clipboard = false
     directory = "/home/carmeet/Pictures/Screenshots"
+    freeze_screen = false
+    save_to_file = false
 
     [[shell.session.actions]]
     action = "shutdown"
