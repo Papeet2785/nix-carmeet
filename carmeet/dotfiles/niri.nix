@@ -1,10 +1,14 @@
 { ... }:
 {
   programs.niri.settings = {
+    screenshot-path = "~/Pictures/Screenshots/screenshot_%Y-%m-%d_%H-%M-%S.png";
     spawn-at-startup = [
       { argv = [ "noctalia" "--daemon" ]; }
       { argv = [ "polkit-gnome-authentication-agent-1" ]; }
     ];
+    hotkey-overlay = {
+      skip-at-startup = true;
+    };
     prefer-no-csd = true;
     debug = {
       honor-xdg-activation-with-invalid-serial = true;
@@ -122,7 +126,9 @@
       "Mod+Control+K".action.move-window-up = {};
       "Mod+Control+J".action.move-window-down = {};
       # Screenshots
-      "Mod+Shift+S".action.spawn = [ "noctalia" "msg" "screenshot-region" ];
+      # "Mod+Shift+S".action.spawn = [ "noctalia" "msg" "screenshot-region" ];
+      "Mod+Shift+S".action.screenshot = {};
+      "Print".action.screenshot-screen = {};
       # Workspaces
       "Mod+1".action.focus-workspace = 1;
       "Mod+2".action.focus-workspace = 2;
