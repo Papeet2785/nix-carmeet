@@ -300,16 +300,27 @@ transition = [ "fade" ]
 max_length = 400
 
 [widget.battery]
+color = "primary"
 display_mode = "graphic"
 
 [widget.clock]
+color = "hover"
 format = "{:%I:%M %p}"
+icon_color = "on_surface_variant"
 
 [widget.control-center]
+color = "error"
 glyph = "toggle-right-filled"
 
+[widget.date]
+color = "hover"
+
 [widget.launcher]
+color = "tertiary"
 glyph = "snowflake"
+
+[widget.session]
+color = "error"
 
 [widget.spacer_10]
 type = "spacer"
@@ -337,3 +348,9 @@ type = "spacer"
 
 [widget.spacer_9]
 type = "spacer"
+
+[widget.volume]
+color = "secondary"
+
+[widget.workspaces]
+empty_color = "on_secondary"
