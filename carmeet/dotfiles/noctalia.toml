@@ -6,16 +6,16 @@ enabled = true
 
 [bar.default]
 capsule_radius = 0
-center = [ "clock", "date", "spacer_2", "tray" ]
+center = [ "control-center", "spacer_4", "clock", "date", "spacer_2", "tray" ]
 contact_shadow = true
-end = [ "volume", "spacer_6", "cpu", "spacer_9", "ram", "spacer_10", "temp", "spacer_5", "battery" ]
+end = [ "volume", "spacer_6", "cpu", "spacer_9", "ram", "spacer_10", "temp", "spacer_5", "battery", "spacer_7", "session" ]
 margin_ends = 0
 padding = 10
 panel_overlap = 0
 radius = 0
 radius_top_left = 0
 radius_top_right = 0
-start = [ "control-center", "spacer_4", "workspaces", "spacer_8", "active_window" ]
+start = [ "launcher", "spacer_3", "workspaces", "spacer_8", "active_window" ]
 thickness = 30
 
 [battery]
@@ -213,10 +213,16 @@ panel_anchor_bar = "default"
         global = true
 
     [shell.panel]
+    clipboard_position = "top_center"
     control_center_placement = "floating"
+    control_center_position = "top_center"
     floating_layer = "top"
+    launcher_position = "top_left"
+    polkit_position = "top_center"
     session_placement = "floating"
+    session_position = "top_right"
     wallpaper_placement = "floating"
+    wallpaper_position = "top_center"
 
     [shell.screen_corners]
     size = 1
@@ -300,7 +306,7 @@ display_mode = "graphic"
 format = "{:%I:%M %p}"
 
 [widget.control-center]
-glyph = "snowflake"
+glyph = "toggle-right-filled"
 
 [widget.launcher]
 glyph = "snowflake"
@@ -311,6 +317,9 @@ type = "spacer"
 [widget.spacer_2]
 type = "spacer"
 
+[widget.spacer_3]
+type = "spacer"
+
 [widget.spacer_4]
 type = "spacer"
 
@@ -318,6 +327,9 @@ type = "spacer"
 type = "spacer"
 
 [widget.spacer_6]
+type = "spacer"
+
+[widget.spacer_7]
 type = "spacer"
 
 [widget.spacer_8]
