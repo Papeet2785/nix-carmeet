@@ -6,17 +6,18 @@ enabled = true
 
 [bar.default]
 capsule_radius = 0
-center = [ "control-center", "spacer_4", "clock", "spacer_2", "tray" ]
-end = [ "cpu", "spacer_9", "ram", "spacer_10", "temp", "spacer_6", "volume", "spacer_5", "battery", "spacer_7", "session" ]
+center = [ "control-center", "clock" ]
+end = [ "cpu", "ram", "temp", "volume", "battery", "session" ]
 margin_ends = 0
 padding = 10
 panel_overlap = 0
+position = "left"
 radius = 0
 radius_top_left = 0
 radius_top_right = 0
 shadow = false
-start = [ "launcher", "spacer_3", "workspaces", "spacer_8", "active_window" ]
-thickness = 30
+start = [ "launcher", "workspaces", "tray" ]
+thickness = 36
 
 [battery]
 warning_threshold = 30
@@ -171,11 +172,15 @@ temperature_day = 6000
 temperature_night = 6000
 
 [notification]
-position = "top_center"
+position = "bottom_right"
 
-[osd.kinds]
-keyboard_backlight = false
-wifi = false
+[osd]
+position = "bottom_right"
+position_vertical = "bottom_right"
+
+    [osd.kinds]
+    keyboard_backlight = false
+    wifi = false
 
 [plugins]
 auto_update = false
@@ -214,17 +219,15 @@ popup_shadows = false
         global = true
 
     [shell.panel]
-    clipboard_position = "top_center"
     control_center_placement = "floating"
-    control_center_position = "top_center"
+    control_center_position = "center_left"
     floating_layer = "top"
     launcher_position = "top_left"
-    polkit_position = "top_center"
     session_placement = "floating"
-    session_position = "top_right"
+    session_position = "bottom_left"
     shadow = false
     wallpaper_placement = "floating"
-    wallpaper_position = "top_center"
+    wallpaper_position = "center"
 
     [shell.screen_corners]
     size = 1
@@ -278,6 +281,7 @@ builtin = "Gruvbox"
 community_palette = "Gruvbox Material Hard"
 custom_palette = "stylix"
 mode = "dark"
+source = "custom"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
@@ -326,33 +330,6 @@ color = "outline"
 
 [widget.session]
 color = "error"
-
-[widget.spacer_10]
-type = "spacer"
-
-[widget.spacer_2]
-type = "spacer"
-
-[widget.spacer_3]
-type = "spacer"
-
-[widget.spacer_4]
-type = "spacer"
-
-[widget.spacer_5]
-type = "spacer"
-
-[widget.spacer_6]
-type = "spacer"
-
-[widget.spacer_7]
-type = "spacer"
-
-[widget.spacer_8]
-type = "spacer"
-
-[widget.spacer_9]
-type = "spacer"
 
 [widget.temp]
 color = "outline"

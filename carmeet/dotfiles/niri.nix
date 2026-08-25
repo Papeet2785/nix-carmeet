@@ -31,12 +31,13 @@
         accel-profile = "flat";
       };
     };
+    gestures.hot-corners.enable = false;
     layout = {
       gaps = 10;
       border.enable = false;
       focus-ring = {
         enable = true;
-        width = 2;
+        width = 5;
         active.color = "#d5c4a1";
       };
       preset-column-widths = [
