@@ -37,7 +37,7 @@
       border.enable = false;
       focus-ring = {
         enable = true;
-        width = 5;
+        width = 3;
         active.color = "#d5c4a1";
       };
       preset-column-widths = [
