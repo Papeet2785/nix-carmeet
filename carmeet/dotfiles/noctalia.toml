@@ -311,12 +311,18 @@ format = "{:%I:%M %p, %a %d %b}"
 icon_color = "on_surface_variant"
 
 [widget.control-center]
-color = "error"
-glyph = "toggle-right-filled"
+color = "primary"
+glyph = "wheel"
+
+[widget.cpu]
+color = "outline"
 
 [widget.launcher]
 color = "tertiary"
 glyph = "snowflake"
+
+[widget.ram]
+color = "outline"
 
 [widget.session]
 color = "error"
@@ -347,6 +353,9 @@ type = "spacer"
 
 [widget.spacer_9]
 type = "spacer"
+
+[widget.temp]
+color = "outline"
 
 [widget.volume]
 color = "secondary"

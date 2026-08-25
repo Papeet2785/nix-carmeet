@@ -32,7 +32,7 @@
       };
     };
     layout = {
-      gaps = 5;
+      gaps = 10;
       border.enable = false;
       focus-ring = {
         enable = true;
