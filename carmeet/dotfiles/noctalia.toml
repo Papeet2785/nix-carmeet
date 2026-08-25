@@ -7,7 +7,6 @@ enabled = true
 [bar.default]
 capsule_radius = 0
 center = [ "control-center", "spacer_4", "clock", "spacer_2", "tray" ]
-contact_shadow = true
 end = [ "volume", "spacer_6", "cpu", "spacer_9", "ram", "spacer_10", "temp", "spacer_5", "battery", "spacer_7", "session" ]
 margin_ends = 0
 padding = 10
@@ -15,6 +14,7 @@ panel_overlap = 0
 radius = 0
 radius_top_left = 0
 radius_top_right = 0
+shadow = false
 start = [ "launcher", "spacer_3", "workspaces", "spacer_8", "active_window" ]
 thickness = 30
 
@@ -198,6 +198,7 @@ app_icon_color = "tertiary"
 corner_radius_scale = 0.0
 niri_overview_type_to_launch_enabled = true
 panel_anchor_bar = "default"
+popup_shadows = false
 
     [shell.animation]
     speed = 1.3500000201165676
@@ -221,6 +222,7 @@ panel_anchor_bar = "default"
     polkit_position = "top_center"
     session_placement = "floating"
     session_position = "top_right"
+    shadow = false
     wallpaper_placement = "floating"
     wallpaper_position = "top_center"
 
@@ -269,7 +271,7 @@ panel_anchor_bar = "default"
     variant = "default"
 
     [shell.shadow]
-    alpha = 0.99999997764825821
+    alpha = 0.0
 
 [theme]
 builtin = "Gruvbox"
