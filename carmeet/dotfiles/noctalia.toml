@@ -6,17 +6,17 @@ enabled = true
 
 [bar.default]
 capsule_radius = 0
-center = [ "control-center", "clock" ]
-end = [ "cpu", "ram", "temp", "volume", "battery", "session" ]
+center = [ "control-center", "spacer_4", "clock" ]
+end = [ "temp", "spacer_5", "volume", "spacer_6", "battery", "spacer_7", "session" ]
 margin_ends = 0
-padding = 10
+padding = 5
 panel_overlap = 0
 position = "left"
 radius = 0
 radius_top_left = 0
 radius_top_right = 0
 shadow = false
-start = [ "launcher", "workspaces", "tray" ]
+start = [ "launcher", "spacer_2", "workspaces", "spacer_3", "tray" ]
 thickness = 36
 
 [battery]
@@ -318,18 +318,30 @@ icon_color = "on_surface_variant"
 color = "primary"
 glyph = "wheel"
 
-[widget.cpu]
-color = "outline"
-
 [widget.launcher]
 color = "tertiary"
 glyph = "snowflake"
 
-[widget.ram]
-color = "outline"
-
 [widget.session]
 color = "error"
+
+[widget.spacer_2]
+type = "spacer"
+
+[widget.spacer_3]
+type = "spacer"
+
+[widget.spacer_4]
+type = "spacer"
+
+[widget.spacer_5]
+type = "spacer"
+
+[widget.spacer_6]
+type = "spacer"
+
+[widget.spacer_7]
+type = "spacer"
 
 [widget.temp]
 color = "outline"
