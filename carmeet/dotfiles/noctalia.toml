@@ -7,7 +7,7 @@ enabled = true
 [bar.default]
 capsule_radius = 0
 center = [ "control-center", "spacer_4", "clock", "spacer_2", "tray" ]
-end = [ "volume", "spacer_6", "cpu", "spacer_9", "ram", "spacer_10", "temp", "spacer_5", "battery", "spacer_7", "session" ]
+end = [ "cpu", "spacer_9", "ram", "spacer_10", "temp", "spacer_6", "volume", "spacer_5", "battery", "spacer_7", "session" ]
 margin_ends = 0
 padding = 10
 panel_overlap = 0
