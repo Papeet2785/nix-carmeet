@@ -356,3 +356,4 @@ color = "secondary"
 
 [widget.workspaces]
 empty_color = "on_secondary"
+occupied_color = "tertiary"
