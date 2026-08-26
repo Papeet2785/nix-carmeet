@@ -188,14 +188,16 @@ panel_position = "center"
 
 [plugins]
 auto_update = true
-enabled = [ "nightwatch75/file-search" ]
+enabled = []
 
     [[plugins.source]]
+    enabled = false
     kind = "git"
     location = "https://github.com/noctalia-dev/official-plugins"
     name = "official"
 
     [[plugins.source]]
+    enabled = false
     kind = "git"
     location = "https://github.com/noctalia-dev/community-plugins"
     name = "community"
