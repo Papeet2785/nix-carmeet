@@ -38,6 +38,9 @@
       #shell
       fastfetch
       fzf
+      fd
+      ripgrep
+      desktop-file-utils
       glib
       bash
       vimPlugins.fzf-wrapper

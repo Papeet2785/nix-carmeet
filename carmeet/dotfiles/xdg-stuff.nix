@@ -1,4 +1,7 @@
-{ ... }: {
+{  ... }: {
+  # Ensure the desktop MIME database and application caches are generated properly
+  xdg.mime.enable = true;
+
   xdg.desktopEntries = {
     arduino = {
       name = "Arduino IDE";
@@ -41,7 +44,6 @@
     enable = true;
     defaultApplications = 
       let
-        # Maps a list of MIME types to a desktop entry
         mapMimeTypes = app: mimes: 
           builtins.listToAttrs (map (mime: { name = mime; value = app; }) mimes);
       in
@@ -73,8 +75,6 @@
           "application/vnd.ms-excel"
           "application/vnd.openxmlformats-officedocument.presentationml.presentation"
           "application/vnd.ms-powerpoint"
-          
-          # Extended MIME types often required by file pickers / plugins
           "application/wps-office.docx"
           "application/wps-office.doc"
           "application/wps-office.xlsx"
@@ -84,7 +84,7 @@
           "application/vnd.oasis.opendocument.text"
           "application/vnd.oasis.opendocument.spreadsheet"
           "application/vnd.oasis.opendocument.presentation"
-          "application/zip" # Fallback detection for docx/xlsx archives
+          "application/zip"
         ]
         // mapMimeTypes "vlc.desktop" [
           "audio/mpeg"
