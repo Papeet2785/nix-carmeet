@@ -316,10 +316,11 @@ icon_color = "on_surface_variant"
 
 [widget.control-center]
 color = "primary"
-glyph = "wheel"
+glyph = "settings-filled"
 
 [widget.launcher]
 color = "tertiary"
+custom_image = "/home/carmeet/nix-carmeet/Adobe Express - file.png"
 glyph = "snowflake"
 
 [widget.session]
