@@ -6,8 +6,8 @@ enabled = true
 
 [bar.default]
 capsule_radius = 0
-center = [ "control-center", "spacer_4", "clock" ]
-end = [ "temp", "spacer_5", "volume", "spacer_6", "battery", "spacer_7", "session" ]
+center = [ "control-center", "spacer_4", "clock", "spacer_5", "temp" ]
+end = [ "volume", "spacer_6", "battery", "spacer_7", "session" ]
 margin_ends = 0
 padding = 5
 panel_overlap = 0
