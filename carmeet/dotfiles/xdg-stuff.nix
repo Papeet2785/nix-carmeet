@@ -1,70 +1,111 @@
 { ... }: {
-  xdg.desktopEntries.arduino = {
-    name = "Arduino IDE";
-    exec = "env GDK_BACKEND=x11 _JAVA_AWT_WM_NONREPARENTING=1 arduino %F";
-    terminal = false;
-    categories = [ "Development" "IDE" ];
+  xdg.desktopEntries = {
+    arduino = {
+      name = "Arduino IDE";
+      exec = "env GDK_BACKEND=x11 _JAVA_AWT_WM_NONREPARENTING=1 arduino %F";
+      terminal = false;
+      categories = [ "Development" "IDE" ];
+      icon = "arduino";
+    };  
+    
+    processing = {
+      name = "Processing";
+      exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 processing %F";
+      terminal = false;
+      categories = [ "Development" "IDE" ];
+      icon = "processing";
+    };
+
+    helix-terminal = {
+      name = "Helix";
+      comment = "Helix";
+      exec = "ghostty -e hx %F";
+      terminal = false;
+      type = "Application";
+      mimeType = [
+        "text/plain"
+        "text/markdown"
+        "text/x-c"
+        "text/x-java"
+        "text/html"
+        "text/css"
+        "text/javascript"
+        "application/json"
+        "text/x-python"
+        "text/x-nix"
+      ];
+    };
   };  
-   xdg.desktopEntries.processing = {
-    name = "Processing";
-    exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 processing %F";
-    terminal = false;
-    categories = [ "Development" "IDE" ];
-  };  
-  home.file.".local/share/applications/helix-terminal.desktop".text = ''
-    [Desktop Entry]
-    Name=Helix
-    Comment=Helix in Ghostty
-    Exec=ghostty -e hx %F
-    Terminal=false
-    Type=Application
-    MimeType=text/plain;text/markdown;text/x-c;text/x-java;text/html;text/css;text/javascript;application/json;text/x-python;text/x-nix;
-  '';
+
   xdg.mimeApps = {
     enable = true;
-    defaultApplications = {
-      # Browser
-      "text/html" = "firefox.desktop";
-      "x-scheme-handler/http" = "firefox.desktop";
-      "x-scheme-handler/https" = "firefox.desktop";
-      # Text / programming
-      "text/plain" = "helix-terminal.desktop";
-      "text/markdown" = "helix-terminal.desktop";
-      "text/x-c" = "helix-terminal.desktop";
-      "text/x-java" = "helix-terminal.desktop";
-      "text/x-python" = "helix-terminal.desktop";
-      "text/x-nix" = "helix-terminal.desktop";
-      "text/css" = "helix-terminal.desktop";
-      "text/javascript" = "helix-terminal.desktop";
-      "application/json" = "helix-terminal.desktop";
-      # PDF
-      "application/pdf" = "org.gnome.Evince.desktop";
-      # OnlyOffice 
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "onlyoffice-desktopeditors.desktop";
-      "application/msword" = "onlyoffice-desktopeditors.desktop";
-      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = "onlyoffice-desktopeditors.desktop";
-      "application/vnd.ms-excel" = "onlyoffice-desktopeditors.desktop";
-      "application/vnd.openxmlformats-officedocument.presentationml.presentation" = "onlyoffice-desktopeditors.desktop";
-      "application/vnd.ms-powerpoint" = "onlyoffice-desktopeditors.desktop";        
-      # Media
-      "audio/mpeg" = "vlc.desktop";
-      "audio/mp4" = "vlc.desktop";
-      "audio/x-wav" = "vlc.desktop";
-      "audio/flac" = "vlc.desktop";
-      "video/mp4" = "vlc.desktop";
-      "video/x-matroska" = "vlc.desktop";
-      "video/webm" = "vlc.desktop";
-      "video/mpeg" = "vlc.desktop";
-       # Images
-      "image/jpeg" = "org.gnome.Loupe.desktop";
-      "image/png" = "org.gnome.Loupe.desktop";
-      "image/gif" = "org.gnome.Loupe.desktop";
-      "image/webp" = "org.gnome.Loupe.desktop";
-      "image/tiff" = "org.gnome.Loupe.desktop";
-      "image/bmp" = "org.gnome.Loupe.desktop";
-      "image/x-icon" = "org.gnome.Loupe.desktop";
-      "image/heif" = "org.gnome.Loupe.desktop";
-      "image/avif" = "org.gnome.Loupe.desktop";
-   };
+    defaultApplications = 
+      let
+        # Maps a list of MIME types to a desktop entry
+        mapMimeTypes = app: mimes: 
+          builtins.listToAttrs (map (mime: { name = mime; value = app; }) mimes);
+      in
+        {
+          "x-scheme-handler/http" = "firefox.desktop";
+          "x-scheme-handler/https" = "firefox.desktop";
+        }
+        // mapMimeTypes "firefox.desktop" [
+          "text/html"
+        ]
+        // mapMimeTypes "helix-terminal.desktop" [
+          "text/plain"
+          "text/markdown"
+          "text/x-c"
+          "text/x-java"
+          "text/x-python"
+          "text/x-nix"
+          "text/css"
+          "text/javascript"
+          "application/json"
+        ]
+        // mapMimeTypes "org.gnome.Evince.desktop" [
+          "application/pdf"
+        ]
+        // mapMimeTypes "onlyoffice-desktopeditors.desktop" [
+          "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+          "application/msword"
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          "application/vnd.ms-excel"
+          "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+          "application/vnd.ms-powerpoint"
+          
+          # Extended MIME types often required by file pickers / plugins
+          "application/wps-office.docx"
+          "application/wps-office.doc"
+          "application/wps-office.xlsx"
+          "application/wps-office.xls"
+          "application/wps-office.pptx"
+          "application/wps-office.ppt"
+          "application/vnd.oasis.opendocument.text"
+          "application/vnd.oasis.opendocument.spreadsheet"
+          "application/vnd.oasis.opendocument.presentation"
+          "application/zip" # Fallback detection for docx/xlsx archives
+        ]
+        // mapMimeTypes "vlc.desktop" [
+          "audio/mpeg"
+          "audio/mp4"
+          "audio/x-wav"
+          "audio/flac"
+          "video/mp4"
+          "video/x-matroska"
+          "video/webm"
+          "video/mpeg"
+        ]
+        // mapMimeTypes "org.gnome.Loupe.desktop" [
+          "image/jpeg"
+          "image/png"
+          "image/gif"
+          "image/webp"
+          "image/tiff"
+          "image/bmp"
+          "image/x-icon"
+          "image/heif"
+          "image/avif"
+        ];
   };
 }

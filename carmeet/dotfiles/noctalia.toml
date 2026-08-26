@@ -182,6 +182,10 @@ position_vertical = "bottom_right"
     keyboard_backlight = false
     wifi = false
 
+[plugin_settings."nightwatch75/file-search"]
+panel_placement = "floating"
+panel_position = "center"
+
 [plugins]
 auto_update = false
 enabled = []
@@ -320,7 +324,7 @@ glyph = "settings-filled"
 
 [widget.launcher]
 color = "tertiary"
-custom_image = "/home/carmeet/nix-carmeet/Adobe Express - file.png"
+custom_image = "/home/carmeet/nix-carmeet/logo.png"
 glyph = "snowflake"
 
 [widget.session]
