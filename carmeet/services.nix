@@ -6,8 +6,6 @@
       settings = {
         save = true;
         numlock = true;
-        bigclock = true;
-        animation = "matrix";
         clear_password = true;
         vi_mode = true;
         vi_default_mode = "insert";
