@@ -298,13 +298,13 @@ fill_mode = "stretch"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/car.jpeg"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/car.jpeg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/car.jpeg"
 
 [widget.active_window]
 max_length = 400
