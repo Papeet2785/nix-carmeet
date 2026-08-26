@@ -14,6 +14,10 @@
       honor-xdg-activation-with-invalid-serial = true;
     };
     input = {
+      focus-follows-mouse = {
+        enable = true;
+        max-scroll-amount = "0%";
+      };
       keyboard = {
         xkb.layout = "us";
         repeat-rate = 50;
