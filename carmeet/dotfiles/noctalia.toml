@@ -164,6 +164,7 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1", 
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
         background_color = "surface_variant"
         background_opacity = 1.0
+        format = "{:%I:%M %p, %a %d %b}"
 
 [nightlight]
 enabled = true
@@ -285,7 +286,6 @@ builtin = "Gruvbox"
 community_palette = "Gruvbox Material Hard"
 custom_palette = "stylix"
 mode = "dark"
-source = "custom"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]

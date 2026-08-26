@@ -90,6 +90,7 @@
       cliphist
       pavucontrol
       brightnessctl
+      xwayland-satellite
       #apps
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
       networkmanagerapplet
