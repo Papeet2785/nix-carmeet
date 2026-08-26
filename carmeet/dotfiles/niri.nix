@@ -104,10 +104,10 @@
       "Mod+K".action.focus-window-up = {};
       "Mod+L".action.focus-column-right = {};
       # Move windows
-      "Mod+Shift+H".action.set-column-width = "-10%";
-      "Mod+Shift+L".action.set-column-width = "+10%";
-      "Mod+Shift+J".action.set-window-height = "+10%";
-      "Mod+Shift+K".action.set-window-height = "-10%";
+      "Mod+Shift+H".action.set-column-width = "-5%";
+      "Mod+Shift+L".action.set-column-width = "+5%";
+      "Mod+Shift+J".action.set-window-height = "+5%";
+      "Mod+Shift+K".action.set-window-height = "-5%";
       "Mod+Control+H".action.consume-or-expel-window-left = {};
       "Mod+Control+L".action.consume-or-expel-window-right = {};
       "Mod+Control+K".action.move-window-up = {};
