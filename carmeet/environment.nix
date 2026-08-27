@@ -13,11 +13,11 @@
       enable = true;
       settings = {
         charger = {
-          governer = "performance";
+          governor = "performance";
           turbo = "auto";
         };
         battery = {
-          governer = "powersave";
+          governor = "powersave";
           turbo = "auto";
         };
       };
@@ -28,11 +28,15 @@
   };
   environment = {
     sessionVariables = {
-      NIXOS_OZONE_WL = "1";
+      GDK_BACKEND = "wayland,x11,*";
+      QT_QPA_PLATFORM = "wayland;xcb";
+      CLUTTER_BACKEND = "wayland";
+      XDG_CURRENT_DESKTOP = "niri";
+      XDG_SESSION_DESKTOP = "niri";
+      XDG_SESSION_TYPE = "wayland";
+      MOZ_ENABLE_WAYLAND = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      QT_QPA_PLATFORMTHEME = lib.mkForce "qt5ct";
-      QT_QPA_PLATFORMTHEME_QT6 = lib.mkForce "qt6ct";
-      PKG_CONFIG_PATH = "${pkgs.raylib}/lib/pkgconfig";
+      NIXOS_OZONE_WL = "1";
     };
     systemPackages = with pkgs; [
       #shell
