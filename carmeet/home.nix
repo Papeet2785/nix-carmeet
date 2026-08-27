@@ -32,10 +32,6 @@
     ./dotfiles/niri.nix
   ];
   home.file = {
-    ".config/hypr".source = ./dotfiles/hypr;
-    ".config/waybar".source = ./dotfiles/waybar;
-    ".config/swaync".source = ./dotfiles/swaync;
-    ".config/rofi".source = ./dotfiles/rofi;
     ".local/state/noctalia/settings.toml".source = config.lib.file.mkOutOfStoreSymlink "/home/carmeet/nix-carmeet/carmeet/dotfiles/noctalia.toml";
   };
 }

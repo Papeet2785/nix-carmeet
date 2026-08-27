@@ -5,12 +5,6 @@
       enable = true;
       package = pkgs.niri;
     };
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-      xwayland.enable = true;
-    };
     nix-ld.enable = true;
     dconf.enable = true;
     bash.enable = true;
@@ -86,7 +80,7 @@
       xwayland-satellite
       appimage-run
       fuse
-      #niri/hyprland
+      #niri
       playerctl
       wireplumber
       jq
@@ -100,18 +94,7 @@
       cliphist
       pavucontrol
       brightnessctl
-      # xwayland-satellite
-      hyprlock
-      hyprsunset
-      hypridle
-      swaynotificationcenter
-      rofi
-      waybar
-      waypaper
-      awww
-      grim
-      slurp
-      swappy
+      xwayland-satellite
       #apps
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
       networkmanagerapplet
