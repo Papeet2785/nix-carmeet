@@ -3,10 +3,11 @@ config_version = 12
 [backdrop]
 blur_intensity = 0.0
 enabled = true
+tint_intensity = 0.0
 
 [bar.default]
 capsule_radius = 0
-center = [ "control-center", "spacer_4", "clock", "spacer_5", "temp" ]
+center = [ "control-center", "spacer_4", "clock", "spacer_5", "tray" ]
 end = [ "volume", "spacer_6", "battery", "spacer_7", "session" ]
 margin_ends = 0
 padding = 5
@@ -16,7 +17,7 @@ radius = 0
 radius_top_left = 0
 radius_top_right = 0
 shadow = false
-start = [ "launcher", "spacer_2", "workspaces", "spacer_3", "tray" ]
+start = [ "launcher", "spacer_2", "workspaces", "spacer_3", "temp" ]
 thickness = 36
 
 [battery]
@@ -355,5 +356,6 @@ color = "outline"
 color = "secondary"
 
 [widget.workspaces]
+active_pill_size = 1.5
 empty_color = "on_secondary"
 occupied_color = "tertiary"
