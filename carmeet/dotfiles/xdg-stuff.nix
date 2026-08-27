@@ -1,44 +1,22 @@
 {  ... }: {
   # Ensure the desktop MIME database and application caches are generated properly
   xdg.mime.enable = true;
-
-  xdg.desktopEntries = {
-    arduino = {
-      name = "Arduino IDE";
-      exec = "env GDK_BACKEND=x11 _JAVA_AWT_WM_NONREPARENTING=1 arduino %F";
-      terminal = false;
-      categories = [ "Development" "IDE" ];
-      icon = "arduino";
-    };  
+  # xdg.desktopEntries = {
+  #   arduino = {
+  #     name = "Arduino IDE";
+  #     exec = "env GDK_BACKEND=x11 _JAVA_AWT_WM_NONREPARENTING=1 arduino %F";
+  #     terminal = false;
+  #     categories = [ "Development" "IDE" ];
+  #     icon = "arduino";
+  #   };  
     
-    processing = {
-      name = "Processing";
-      exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 processing %F";
-      terminal = false;
-      categories = [ "Development" "IDE" ];
-      icon = "processing";
-    };
-
-    helix-terminal = {
-      name = "Helix";
-      comment = "Helix";
-      exec = "ghostty -e hx %F";
-      terminal = false;
-      type = "Application";
-      mimeType = [
-        "text/plain"
-        "text/markdown"
-        "text/x-c"
-        "text/x-java"
-        "text/html"
-        "text/css"
-        "text/javascript"
-        "application/json"
-        "text/x-python"
-        "text/x-nix"
-      ];
-    };
-  };  
+  #   processing = {
+  #     name = "Processing";
+  #     exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 processing %F";
+  #     terminal = false;
+  #     categories = [ "Development" "IDE" ];
+  #     icon = "processing";
+  #   };
 
   xdg.mimeApps = {
     enable = true;
@@ -54,7 +32,7 @@
         // mapMimeTypes "firefox.desktop" [
           "text/html"
         ]
-        // mapMimeTypes "helix-terminal.desktop" [
+        // mapMimeTypes "helix.desktop" [
           "text/plain"
           "text/markdown"
           "text/x-c"
