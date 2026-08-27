@@ -1,0 +1,129 @@
+/* Gruvbox Dark */
+
+* {
+    font-family: "Comfortaa";
+    font-size: 13px;
+}
+
+.notification-row {
+    outline: none;
+    margin: 6px 12px;
+}
+
+.notification {
+    background: #282828;
+    border: 2px solid #b8bb26;
+    border-radius: 12px;
+    color: #ebdbb2;
+    padding: 12px;
+}
+
+.notification-content {
+    background: transparent;
+}
+
+.notification-default-action,
+.notification-action {
+    background: transparent;
+    color: #ebdbb2;
+    border-radius: 8px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    background: #3c3836;
+}
+
+.notification-action {
+    border: 1px solid #665c54;
+}
+
+.notification-title {
+    color: #fabd2f;
+    font-weight: bold;
+}
+
+.notification-body {
+    color: #ebdbb2;
+}
+
+.notification-time {
+    color: #a89984;
+}
+
+.notification-close-button {
+    background: #cc241d;
+    color: #fbf1c7;
+    border-radius: 8px;
+}
+
+.notification-close-button:hover {
+    background: #fb4934;
+}
+
+/* Control Center */
+
+.control-center {
+    background: #282828;
+    color: #ebdbb2;
+    border-left: 2px solid #689d6a;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center .notification {
+    margin: 8px;
+}
+
+/* Widgets */
+
+.widget-title {
+    color: #fabd2f;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px;
+}
+
+.widget-title > button {
+    background: #689d6a;
+    color: #fbf1c7;
+    border-radius: 8px;
+    padding: 4px 10px;
+}
+
+.widget-title > button:hover {
+    background: #8ec07c;
+}
+
+.widget-dnd {
+    padding: 10px 14px;
+}
+
+.widget-dnd > switch {
+    background: #3c3836;
+}
+
+.widget-dnd > switch:checked {
+    background: #689d6a;
+}
+
+.widget-label {
+    color: #d5c4a1;
+}
+
+/* Scrollbars */
+
+scrollbar {
+    background: transparent;
+}
+
+scrollbar slider {
+    background: #b8bb26;
+    border-radius: 6px;
+}
+
+scrollbar slider:hover {
+    background: #665c54;
+}
