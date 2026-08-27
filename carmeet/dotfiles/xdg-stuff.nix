@@ -79,7 +79,7 @@ xdg.mimeApps = {
         "video/webm"
         "video/mpeg"
       ]
-      // mapMimeTypes "org.gnome.eog.desktop" [
+      // mapMimeTypes "org.gnome.Loupe.desktop" [
         "image/jpeg"
         "image/png"
         "image/gif"
