@@ -1,4 +1,4 @@
-{ pkgs, inputs, lib, ... }:
+{ pkgs, inputs, ... }:
 {
   programs = {
     niri = {
@@ -96,6 +96,7 @@
       brightnessctl
       xwayland-satellite
       #apps
+      loupe
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
       networkmanagerapplet
       blueman
