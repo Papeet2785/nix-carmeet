@@ -117,7 +117,6 @@
       "Mod+Control+K".action.move-window-up = {};
       "Mod+Control+J".action.move-window-down = {};
       # Screenshots
-      # "Mod+Shift+S".action.spawn = [ "noctalia" "msg" "screenshot-region" ];
       "Mod+Shift+S".action.screenshot = {};
       "Print".action.screenshot-screen = {};
       # Workspaces
