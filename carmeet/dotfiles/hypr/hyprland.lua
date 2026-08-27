@@ -113,7 +113,7 @@ hl.config({
         kb_layout = "us",
         repeat_rate = 50,
         repeat_delay = 300,
-        sensitivity = 1.1,
+        sensitivity = 1,
         accel_profile = "flat",
         numlock_by_default = true,
         left_handed = false,
