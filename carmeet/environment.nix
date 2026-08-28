@@ -35,15 +35,11 @@
   };
   environment = {
     sessionVariables = {
-      GDK_BACKEND = "wayland,x11,*";
-      QT_QPA_PLATFORM = "wayland;xcb";
-      CLUTTER_BACKEND = "wayland";
-      XDG_CURRENT_DESKTOP = "niri";
-      XDG_SESSION_DESKTOP = "niri";
-      XDG_SESSION_TYPE = "wayland";
+      GDK_BACKEND = "x11,*";
+      QT_QPA_PLATFORM = "xcb";
+      XDG_CURRENT_DESKTOP = "dwm";
       MOZ_ENABLE_WAYLAND = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      NIXOS_OZONE_WL = "1";
     };
     systemPackages = with pkgs; [
       #shell
