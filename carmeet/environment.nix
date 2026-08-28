@@ -78,15 +78,11 @@
       shared-mime-info
       file
       xwayland-satellite
-      appimage-run
-      fuse
       #niri
       playerctl
       wireplumber
       jq
       gtk4
-      qt6Packages.qt6ct
-      libsForQt5.qt5ct
       bc
       ghostty
       libnotify
