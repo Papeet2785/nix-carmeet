@@ -43,7 +43,6 @@
         corner-radius = 0;
         fading = false;
         use-damage = true;
-        glx-no-stencil = true;
         glx-copy-from-front = false;
       };
     };
