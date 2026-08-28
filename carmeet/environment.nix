@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, ... }:
 {
   programs = {
     niri = {
@@ -40,6 +40,8 @@
       XDG_CURRENT_DESKTOP = "dwm";
       MOZ_ENABLE_WAYLAND = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
+      XCURSOR_THEME = config.stylix.cursor.name;
+      XCURSOR_SIZE = toString config.stylix.cursor.size;
     };
     systemPackages = with pkgs; [
       #shell

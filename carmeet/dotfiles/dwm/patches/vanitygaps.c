@@ -18,25 +18,13 @@ index 9efa774..357dc6f 100644
  static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
  static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
  
-+#define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
++#define FORCE_VSPLIT 1  /* layout: force two clients to always split vertically */
 +#include "vanitygaps.c"
 +
  static const Layout layouts[] = {
  	/* symbol     arrange function */
  	{ "[]=",      tile },    /* first entry is default */
 -	{ "><>",      NULL },    /* no layout function means floating behavior */
- 	{ "[M]",      monocle },
-+	{ "[@]",      spiral },
-+	{ "[\\]",     dwindle },
-+	{ "H[]",      deck },
-+	{ "TTT",      bstack },
-+	{ "===",      bstackhoriz },
-+	{ "HHH",      grid },
-+	{ "###",      nrowgrid },
-+	{ "---",      horizgrid },
-+	{ ":::",      gaplessgrid },
-+	{ "|M|",      centeredmaster },
-+	{ ">M>",      centeredfloatingmaster },
 +	{ "><>",      NULL },    /* no layout function means floating behavior */
 +	{ NULL,       NULL },
  };
@@ -46,26 +34,6 @@ index 9efa774..357dc6f 100644
  	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
  	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
  	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-+	{ MODKEY|ShiftMask,             XK_h,      setcfact,       {.f = +0.25} },
-+	{ MODKEY|ShiftMask,             XK_l,      setcfact,       {.f = -0.25} },
-+	{ MODKEY|ShiftMask,             XK_o,      setcfact,       {.f =  0.00} },
- 	{ MODKEY,                       XK_Return, zoom,           {0} },
-+	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
-+	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
-+	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
-+	{ MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
-+	{ MODKEY|Mod4Mask,              XK_o,      incrogaps,      {.i = +1 } },
-+	{ MODKEY|Mod4Mask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
-+	{ MODKEY|Mod4Mask,              XK_6,      incrihgaps,     {.i = +1 } },
-+	{ MODKEY|Mod4Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } },
-+	{ MODKEY|Mod4Mask,              XK_7,      incrivgaps,     {.i = +1 } },
-+	{ MODKEY|Mod4Mask|ShiftMask,    XK_7,      incrivgaps,     {.i = -1 } },
-+	{ MODKEY|Mod4Mask,              XK_8,      incrohgaps,     {.i = +1 } },
-+	{ MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
-+	{ MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } },
-+	{ MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
-+	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
-+	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
  	{ MODKEY,                       XK_Tab,    view,           {0} },
  	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
  	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
@@ -193,26 +161,13 @@ index 0000000..1a816b6
 --- /dev/null
 +++ b/vanitygaps.c
 @@ -0,0 +1,822 @@
-+/* Key binding functions */
-+static void defaultgaps(const Arg *arg);
-+static void incrgaps(const Arg *arg);
-+static void incrigaps(const Arg *arg);
-+static void incrogaps(const Arg *arg);
-+static void incrohgaps(const Arg *arg);
-+static void incrovgaps(const Arg *arg);
-+static void incrihgaps(const Arg *arg);
-+static void incrivgaps(const Arg *arg);
-+static void togglegaps(const Arg *arg);
 +/* Layouts (delete the ones you do not need) */
-+static void bstack(Monitor *m);
-+static void bstackhoriz(Monitor *m);
 +static void centeredmaster(Monitor *m);
 +static void centeredfloatingmaster(Monitor *m);
 +static void deck(Monitor *m);
 +static void dwindle(Monitor *m);
 +static void fibonacci(Monitor *m, int s);
 +static void grid(Monitor *m);
-+static void nrowgrid(Monitor *m);
 +static void spiral(Monitor *m);
 +static void tile(Monitor *m);
 +/* Internals */
@@ -238,100 +193,6 @@ index 0000000..1a816b6
 +	selmon->gappih = ih;
 +	selmon->gappiv = iv;
 +	arrange(selmon);
-+}
-+
-+void
-+togglegaps(const Arg *arg)
-+{
-+	#if PERTAG_PATCH
-+	selmon->pertag->enablegaps[selmon->pertag->curtag] = !selmon->pertag->enablegaps[selmon->pertag->curtag];
-+	#else
-+	enablegaps = !enablegaps;
-+	#endif // PERTAG_PATCH
-+	arrange(NULL);
-+}
-+
-+void
-+defaultgaps(const Arg *arg)
-+{
-+	setgaps(gappoh, gappov, gappih, gappiv);
-+}
-+
-+void
-+incrgaps(const Arg *arg)
-+{
-+	setgaps(
-+		selmon->gappoh + arg->i,
-+		selmon->gappov + arg->i,
-+		selmon->gappih + arg->i,
-+		selmon->gappiv + arg->i
-+	);
-+}
-+
-+void
-+incrigaps(const Arg *arg)
-+{
-+	setgaps(
-+		selmon->gappoh,
-+		selmon->gappov,
-+		selmon->gappih + arg->i,
-+		selmon->gappiv + arg->i
-+	);
-+}
-+
-+void
-+incrogaps(const Arg *arg)
-+{
-+	setgaps(
-+		selmon->gappoh + arg->i,
-+		selmon->gappov + arg->i,
-+		selmon->gappih,
-+		selmon->gappiv
-+	);
-+}
-+
-+void
-+incrohgaps(const Arg *arg)
-+{
-+	setgaps(
-+		selmon->gappoh + arg->i,
-+		selmon->gappov,
-+		selmon->gappih,
-+		selmon->gappiv
-+	);
-+}
-+
-+void
-+incrovgaps(const Arg *arg)
-+{
-+	setgaps(
-+		selmon->gappoh,
-+		selmon->gappov + arg->i,
-+		selmon->gappih,
-+		selmon->gappiv
-+	);
-+}
-+
-+void
-+incrihgaps(const Arg *arg)
-+{
-+	setgaps(
-+		selmon->gappoh,
-+		selmon->gappov,
-+		selmon->gappih + arg->i,
-+		selmon->gappiv
-+	);
-+}
-+
-+void
-+incrivgaps(const Arg *arg)
-+{
-+	setgaps(
-+		selmon->gappoh,
-+		selmon->gappov,
-+		selmon->gappih,
-+		selmon->gappiv + arg->i
-+	);
 +}
 +
 +void
@@ -387,37 +248,6 @@ index 0000000..1a816b6
 + * Layouts
 + */
 +
-+/*
-+ * Bottomstack layout + gaps
-+ * https://dwm.suckless.org/patches/bottomstack/
-+ */
-+static void
-+bstack(Monitor *m)
-+{
-+	unsigned int i, n;
-+	int oh, ov, ih, iv;
-+	int mx = 0, my = 0, mh = 0, mw = 0;
-+	int sx = 0, sy = 0, sh = 0, sw = 0;
-+	float mfacts, sfacts;
-+	int mrest, srest;
-+	Client *c;
-+
-+	getgaps(m, &oh, &ov, &ih, &iv, &n);
-+	if (n == 0)
-+		return;
-+
-+	sx = mx = m->wx + ov;
-+	sy = my = m->wy + oh;
-+	sh = mh = m->wh - 2*oh;
-+	mw = m->ww - 2*ov - iv * (MIN(n, m->nmaster) - 1);
-+	sw = m->ww - 2*ov - iv * (n - m->nmaster - 1);
-+
-+	if (m->nmaster && n > m->nmaster) {
-+		sh = (mh - ih) * (1 - m->mfact);
-+		mh = mh - ih - sh;
-+		sx = mx;
-+		sy = my + mh + ih;
-+	}
 +
 +	getfacts(m, mw, sw, &mfacts, &sfacts, &mrest, &srest);
 +
@@ -431,35 +261,6 @@ index 0000000..1a816b6
 +		}
 +	}
 +}
-+
-+static void
-+bstackhoriz(Monitor *m)
-+{
-+	unsigned int i, n;
-+	int oh, ov, ih, iv;
-+	int mx = 0, my = 0, mh = 0, mw = 0;
-+	int sx = 0, sy = 0, sh = 0, sw = 0;
-+	float mfacts, sfacts;
-+	int mrest, srest;
-+	Client *c;
-+
-+	getgaps(m, &oh, &ov, &ih, &iv, &n);
-+	if (n == 0)
-+		return;
-+
-+	sx = mx = m->wx + ov;
-+	sy = my = m->wy + oh;
-+	mh = m->wh - 2*oh;
-+	sh = m->wh - 2*oh - ih * (n - m->nmaster - 1);
-+	mw = m->ww - 2*ov - iv * (MIN(n, m->nmaster) - 1);
-+	sw = m->ww - 2*ov;
-+
-+	if (m->nmaster && n > m->nmaster) {
-+		sh = (mh - ih) * (1 - m->mfact);
-+		mh = mh - ih - sh;
-+		sy = my + mh + ih;
-+		sh = m->wh - mh - 2*oh - ih * (n - m->nmaster);
-+	}
 +
 +	getfacts(m, mw, sh, &mfacts, &sfacts, &mrest, &srest);
 +
@@ -478,51 +279,6 @@ index 0000000..1a816b6
 + * Centred master layout + gaps
 + * https://dwm.suckless.org/patches/centeredmaster/
 + */
-+void
-+centeredmaster(Monitor *m)
-+{
-+	unsigned int i, n;
-+	int oh, ov, ih, iv;
-+	int mx = 0, my = 0, mh = 0, mw = 0;
-+	int lx = 0, ly = 0, lw = 0, lh = 0;
-+	int rx = 0, ry = 0, rw = 0, rh = 0;
-+	float mfacts = 0, lfacts = 0, rfacts = 0;
-+	int mtotal = 0, ltotal = 0, rtotal = 0;
-+	int mrest = 0, lrest = 0, rrest = 0;
-+	Client *c;
-+
-+	getgaps(m, &oh, &ov, &ih, &iv, &n);
-+	if (n == 0)
-+		return;
-+
-+	/* initialize areas */
-+	mx = m->wx + ov;
-+	my = m->wy + oh;
-+	mh = m->wh - 2*oh - ih * ((!m->nmaster ? n : MIN(n, m->nmaster)) - 1);
-+	mw = m->ww - 2*ov;
-+	lh = m->wh - 2*oh - ih * (((n - m->nmaster) / 2) - 1);
-+	rh = m->wh - 2*oh - ih * (((n - m->nmaster) / 2) - ((n - m->nmaster) % 2 ? 0 : 1));
-+
-+	if (m->nmaster && n > m->nmaster) {
-+		/* go mfact box in the center if more than nmaster clients */
-+		if (n - m->nmaster > 1) {
-+			/* ||<-S->|<---M--->|<-S->|| */
-+			mw = (m->ww - 2*ov - 2*iv) * m->mfact;
-+			lw = (m->ww - mw - 2*ov - 2*iv) / 2;
-+			rw = (m->ww - mw - 2*ov - 2*iv) - lw;
-+			mx += lw + iv;
-+		} else {
-+			/* ||<---M--->|<-S->|| */
-+			mw = (mw - iv) * m->mfact;
-+			lw = 0;
-+			rw = m->ww - mw - iv - 2*ov;
-+		}
-+		lx = m->wx + ov;
-+		ly = m->wy + oh;
-+		rx = mx + mw + iv;
-+		ry = m->wy + oh;
-+	}
-+
 +	/* calculate facts */
 +	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++) {
 +		if (!m->nmaster || n < m->nmaster)
@@ -917,11 +673,8 @@ index 0000000..1a816b6
 +}
 +
 +/*
-+ * nrowgrid layout + gaps
-+ * https://dwm.suckless.org/patches/nrowgrid/
 + */
 +void
-+nrowgrid(Monitor *m)
 +{
 +	unsigned int n;
 +	int ri = 0, ci = 0;  /* counters */

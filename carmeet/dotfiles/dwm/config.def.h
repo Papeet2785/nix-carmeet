@@ -68,7 +68,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *autostartcmd[] = {
     "sh", "-c",
-    "nm-applet"
+    "nm-applet & "
     "blueman-applet"
     NULL
 };

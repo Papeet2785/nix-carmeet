@@ -40,9 +40,8 @@
     polarity = "dark";
     targets = {
       gtk.enable = true;
-      qt.enable = true;
       feh.enable = true;
-      x11.enable = true;
+      qt.enable = true;
     };
   };
 }
