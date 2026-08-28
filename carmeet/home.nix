@@ -18,9 +18,6 @@
         confirm-close-surface = false;
       };
     };
-    flameshot = {
-      enable = true;
-    };
     noctalia.enable = true;
     btop = {
       enable = true;
@@ -29,7 +26,7 @@
       };
     };
   };
-  environment.etc."xdg/flameshot/flameshot.ini".text = ''
+  xdg.configFile."flameshot/flameshot.ini".text = ''
     [General]
     uiColor=#7daea3
     contrastUiColor=#292828

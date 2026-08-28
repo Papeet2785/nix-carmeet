@@ -95,6 +95,7 @@
       brightnessctl
       xwayland-satellite
       #dwm
+      flameshot
       arandr
       rofi
       xclip
