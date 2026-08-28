@@ -11,6 +11,7 @@
         vi_default_mode = "insert";
       };
     };
+    dunst.enable = true;
     upower.enable = true;
     xserver = {
       enable = true;
@@ -29,7 +30,23 @@
         };
       };
     };
-    picom.enable = true;
+    picom = {
+      enable = true;
+      package = pkgs.picom-pijulius;
+      settings = {
+        backend = "glx";
+        vsync = true;
+        active-opacity = 1.0;
+        inactive-opacity = 1.0;
+        frame-opacity = 1.0;
+        shadow = false;
+        corner-radius = 0;
+        fading = false;
+        use-damage = true;
+        glx-no-stencil = true;
+        glx-copy-from-front = false;
+      };
+    };
     logind.settings.Login = {
       HandleLidSwitch = "suspend";
       HandleLidSwitchExternalPower = "suspend";

@@ -40,9 +40,9 @@
 #include <X11/extensions/Xinerama.h>
 #endif /* XINERAMA */
 #include <X11/Xft/Xft.h>
-
 #include "drw.h"
 #include "util.h"
+#include <X11/XF86keysym.h>
 
 /* macros */
 #define BUTTONMASK              (ButtonPressMask|ButtonReleaseMask)
@@ -1677,8 +1677,6 @@ spawn(const Arg *arg)
 {
 	struct sigaction sa;
 
-	if (arg->v == dmenucmd)
-		dmenumon[0] = '0' + selmon->num;
 	if (fork() == 0) {
 		if (dpy)
 			close(ConnectionNumber(dpy));
@@ -2138,6 +2136,21 @@ zoom(const Arg *arg)
 	if (c == nexttiled(selmon->clients) && !(c = nexttiled(c->next)))
 		return;
 	pop(c);
+}
+
+static void
+autostart(void)
+{
+    spawn(&(const Arg){ .v = autostartcmd });
+}
+
+void
+togglemonocle(const Arg *arg)
+{
+    if (selmon->lt[selmon->sellt]->arrange == monocle)
+        setlayout(&(Arg){ .v = &layouts[0] });
+    else
+        setlayout(&(Arg){ .v = &layouts[1] });
 }
 
 int

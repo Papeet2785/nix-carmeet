@@ -93,10 +93,10 @@
       xwayland-satellite
       #dwm
       arandr
-      picom-pijulis
+      rofi
       flameshot
       xclip
-      nitrogen
+      feh
       i3lock-fancy-rapid
       #apps
       loupe
