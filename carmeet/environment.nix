@@ -91,6 +91,13 @@
       pavucontrol
       brightnessctl
       xwayland-satellite
+      #dwm
+      arandr
+      picom-pijulis
+      flameshot
+      xclip
+      nitrogen
+      i3lock-fancy-rapid
       #apps
       loupe
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
