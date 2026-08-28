@@ -97,7 +97,6 @@
       #dwm
       arandr
       rofi
-      flameshot
       xclip
       feh
       i3lock-fancy-rapid

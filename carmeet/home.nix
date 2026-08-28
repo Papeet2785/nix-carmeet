@@ -18,6 +18,15 @@
         confirm-close-surface = false;
       };
     };
+    flameshot = {
+      enable = true;
+    };
+    environment.etc."xdg/flameshot/flameshot.ini".text = ''
+      [General]
+      uiColor=#7daea3
+      contrastUiColor=#292828
+      useX11LegacyScreenshot=true
+    '';
     noctalia.enable = true;
     btop = {
       enable = true;
