@@ -70,7 +70,7 @@ static const char *autostartcmd[] = {
     "sh", "-c",
     "nm-applet"
     "blueman-applet"
-    "feh --bg-fill \"$HOME/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg\" &"
+    "feh --bg-fill -bg-scale \"$HOME/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
     "export XCURSOR_THEME=Bibata-Modern-Classic; "
     "export XCURSOR_SIZE=24; ",
     NULL
