@@ -26,6 +26,13 @@
    nixpkgs = {
     config.allowUnfree = true;
   };
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+  };
   environment = {
     sessionVariables = {
       GDK_BACKEND = "wayland,x11,*";
