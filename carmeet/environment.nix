@@ -99,7 +99,6 @@
       rofi
       xclip
       feh
-      i3lock-fancy-rapid
       #apps
       loupe
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
