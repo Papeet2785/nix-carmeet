@@ -14,7 +14,7 @@ static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=12" };
 static const char col_bg[]          = "#292828";
 static const char col_bg1[]         = "#32302f";
 static const char col_bg2[]         = "#45403d";
-static const char col_fg[]          = "#d4be98";
+static const char col_fg[]          = "#292828";
 static const char col_fg_dim[]      = "#a89984";
 static const char col_blue[]        = "#7daea3";
 static const char *colors[][3]      = {
@@ -50,17 +50,6 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
 	{ "[M]",      monocle },
-	{ "[@]",      spiral },
-	{ "[\\]",     dwindle },
-	{ "H[]",      deck },
-	{ "TTT",      bstack },
-	{ "===",      bstackhoriz },
-	{ "HHH",      grid },
-	{ "###",      nrowgrid },
-	{ "---",      horizgrid },
-	{ ":::",      gaplessgrid },
-	{ "|M|",      centeredmaster },
-	{ ">M>",      centeredfloatingmaster },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
 };
@@ -89,8 +78,8 @@ static const char *autostartcmd[] = {
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          SHCMD("rofi -show drun -show-icons")},
-	{ MODKEY,                       XK_Return, spawn,          SHCMD("ghostty")},
-	{ MODKEY,                       XK_Escape, spawn,          SHCMD("ghostty -e btop")},
+	{ MODKEY,                       XK_Return, spawn,          SHCMD("kitty")},
+	{ MODKEY,                       XK_Escape, spawn,          SHCMD("kitty -e btop")},
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

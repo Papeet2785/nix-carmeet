@@ -12,6 +12,12 @@
         confirm-close-surface = false;
       };
     };
+    kitty = {
+      enable = true;
+      settings = {
+        confirm-close-surface = false;
+      };
+    };
     noctalia.enable = true;
     btop = {
       enable = true;
