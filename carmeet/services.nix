@@ -20,7 +20,16 @@
       xkb = {
         layout = "us";
       };
+      autoRepeatDelay = 250;
+      autoRepeatInterval = 50;
+      windowManager.dwm = {
+        enable = true;
+        package = pkgs.dwm.overrideAttrs {
+          src = ./dotfiles/dwm;
+        };
+      };
     };
+    picom.enable = true;
     logind.settings.Login = {
       HandleLidSwitch = "suspend";
       HandleLidSwitchExternalPower = "suspend";
