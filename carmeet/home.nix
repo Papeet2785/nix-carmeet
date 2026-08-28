@@ -6,7 +6,7 @@
     stateVersion = "26.11";
     sessionVariables = {
       XCURSOR_THEME = "Bibata-Modern-Classic";
-      XCURSOR_SIZE = 24;
+      XCURSOR_SIZE = "24";
     };
   };
   programs = {
