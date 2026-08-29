@@ -1,4 +1,9 @@
 { pkgs, ... }:
+let
+  slstatus = pkgs.slstatus.overrideAttrs (finalAttrs: previousAttrs: {
+    src = ./dotfiles/slstatus;
+  });
+in
 {
   services = {
     displayManager.ly = {
