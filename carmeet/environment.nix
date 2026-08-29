@@ -1,4 +1,4 @@
-{ pkgs, inputs, config, ... }:
+{ pkgs, inputs, ... }:
 {
   programs = {
     niri = {
@@ -35,13 +35,9 @@
   };
   environment = {
     sessionVariables = {
-      GDK_BACKEND = "x11,*";
-      QT_QPA_PLATFORM = "xcb";
       XDG_CURRENT_DESKTOP = "niri";
       MOZ_ENABLE_WAYLAND = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
-      XCURSOR_THEME = config.stylix.cursor.name;
-      XCURSOR_SIZE = toString config.stylix.cursor.size;
     };
     systemPackages = with pkgs; [
       #shell
