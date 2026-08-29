@@ -35,6 +35,9 @@ in
       };
       autoRepeatDelay = 250;
       autoRepeatInterval = 50;
+      displayManager.sessionCommands = ''
+        ${slstatus}/bin/slstatus &
+      '';
       windowManager.dwm = {
         enable = true;
         package = pkgs.dwm.overrideAttrs (finalAttrs: previousAttrs: {
