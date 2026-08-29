@@ -11,7 +11,7 @@ let
   });
 in
 {
-  environment.systemPackges = [
+  environment.systemPackages = [
     slstatus
   ];
   services = {
