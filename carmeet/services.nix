@@ -13,6 +13,13 @@
     };
     dunst.enable = true;
     upower.enable = true;
+    services.libinput = {
+      enable = true;
+      touchpad = {
+        naturalScrolling = true;
+        tapping = true;
+      };
+    };
     xserver = {
       enable = true;
       excludePackages = [
