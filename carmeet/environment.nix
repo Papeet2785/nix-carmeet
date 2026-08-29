@@ -97,7 +97,6 @@
       brightnessctl
       xwayland-satellite
       #dwm
-      slstatus
       flameshot
       arandr
       rofi

@@ -2,6 +2,12 @@
 let
   slstatus = pkgs.slstatus.overrideAttrs (finalAttrs: previousAttrs: {
     src = ./dotfiles/slstatus;
+    nativeBuildInputs = previousAttrs.nativeBuildInputs ++ [
+      pkgs.pkg-config
+    ];
+    buildInputs = previousAttrs.buildInputs ++ [
+      pkgs.wireplumber
+    ];
   });
 in
 {
