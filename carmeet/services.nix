@@ -25,9 +25,10 @@
       autoRepeatInterval = 50;
       windowManager.dwm = {
         enable = true;
-        package = pkgs.dwm.overrideAttrs {
+        package = pkgs.dwm.overrideAttrs (finalAttrs: previousAttrs: {
           src = ./dotfiles/dwm;
-        };
+          buildInputs = previousAttrs.buildInputs ++ [ pkgs.libXcursor ];
+        });
       };
     };
     picom = {
