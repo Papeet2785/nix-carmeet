@@ -1,19 +1,5 @@
 { pkgs, ... }:
-let
-  slstatus = pkgs.slstatus.overrideAttrs (finalAttrs: previousAttrs: {
-    src = ./dotfiles/slstatus;
-    nativeBuildInputs = previousAttrs.nativeBuildInputs ++ [
-      pkgs.pkg-config
-    ];
-    buildInputs = previousAttrs.buildInputs ++ [
-      pkgs.wireplumber
-    ];
-  });
-in
 {
-  environment.systemPackages = [
-    slstatus
-  ];
   services = {
     displayManager.ly = {
       enable = true;
@@ -41,34 +27,6 @@ in
       ];
       xkb = {
         layout = "us";
-      };
-      autoRepeatDelay = 250;
-      autoRepeatInterval = 50;
-      displayManager.sessionCommands = ''
-        ${slstatus}/bin/slstatus &
-      '';
-      windowManager.dwm = {
-        enable = true;
-        package = pkgs.dwm.overrideAttrs (finalAttrs: previousAttrs: {
-          src = ./dotfiles/dwm;
-          buildInputs = previousAttrs.buildInputs ++ [ pkgs.libXcursor ];
-        });
-      };
-    };
-    picom = {
-      enable = true;
-      package = pkgs.picom-pijulius;
-      settings = {
-        backend = "glx";
-        vsync = true;
-        active-opacity = 1.0;
-        inactive-opacity = 1.0;
-        frame-opacity = 1.0;
-        shadow = false;
-        corner-radius = 0;
-        fading = false;
-        use-damage = true;
-        glx-copy-from-front = false;
       };
     };
     logind.settings.Login = {

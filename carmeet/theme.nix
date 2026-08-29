@@ -6,7 +6,6 @@
   };
   stylix = {
     enable = true;
-    image = ./dotfiles/wallpaper/odyssey.jpg;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     cursor = {
       package = pkgs.bibata-cursors;
@@ -40,7 +39,6 @@
     polarity = "dark";
     targets = {
       gtk.enable = true;
-      feh.enable = true;
       qt.enable = true;
     };
   };

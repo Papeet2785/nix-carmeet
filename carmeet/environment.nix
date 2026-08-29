@@ -37,7 +37,7 @@
     sessionVariables = {
       GDK_BACKEND = "x11,*";
       QT_QPA_PLATFORM = "xcb";
-      XDG_CURRENT_DESKTOP = "dwm";
+      XDG_CURRENT_DESKTOP = "niri";
       MOZ_ENABLE_WAYLAND = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
       XCURSOR_THEME = config.stylix.cursor.name;
@@ -96,12 +96,6 @@
       pavucontrol
       brightnessctl
       xwayland-satellite
-      #dwm
-      flameshot
-      arandr
-      rofi
-      xclip
-      feh
       #apps
       loupe
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
