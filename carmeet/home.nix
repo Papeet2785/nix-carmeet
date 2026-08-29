@@ -6,10 +6,10 @@
     stateVersion = "26.11";
   };
   programs = {
-    ghostty = {
+    kitty = {
       enable = true;
       settings = {
-        confirm-close-surface = false;
+        confirm_os_window_close = 0;
       };
     };
     noctalia.enable = true;

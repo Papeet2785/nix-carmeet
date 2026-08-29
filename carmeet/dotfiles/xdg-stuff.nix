@@ -18,7 +18,7 @@ xdg.desktopEntries = {
 
   Helix = {
     name = "Helix";
-    exec = "ghostty -e hx";
+    exec = "kitty -e hx";
     terminal = false;
     categories = [ "Development" "IDE" ];
   };

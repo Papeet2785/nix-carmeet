@@ -70,8 +70,8 @@
     ];
     binds = {
       # Applications
-      "Mod+Return".action.spawn = "ghostty";
-      "Mod+Escape".action.spawn = [ "ghostty" "-e" "btop" ];
+      "Mod+Return".action.spawn = "kitty";
+      "Mod+Escape".action.spawn = [ "kitty" "-e" "btop" ];
       "Mod+Tab".action.toggle-overview = {};
       "Mod+B".action.spawn = "firefox";
       "Mod+Shift+B".action.spawn = "google-chrome";
