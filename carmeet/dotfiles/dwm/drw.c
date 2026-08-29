@@ -5,7 +5,6 @@
 #include <X11/Xlib.h>
 #include <X11/Xft/Xft.h>
 #include <X11/cursorfont.h>
-#include <X11/Xcursor/Xcursor.h>
 #include "drw.h"
 #include "util.h"
 
@@ -456,20 +455,7 @@ drw_cur_create(Drw *drw, int shape)
 	if (!drw || !(cur = ecalloc(1, sizeof(Cur))))
 		return NULL;
 
-	switch (shape) {
-	case XC_left_ptr:
-		cur->cursor = XcursorLibraryLoadCursor(drw->dpy, "left_ptr");
-		break;
-	case XC_sizing:
-		cur->cursor = XcursorLibraryLoadCursor(drw->dpy, "sizing");
-		break;
-	case XC_fleur:
-		cur->cursor = XcursorLibraryLoadCursor(drw->dpy, "fleur");
-		break;
-	default:
-		cur->cursor = XCreateFontCursor(drw->dpy, shape);
-		break;
-	}
+	cur->cursor = XCreateFontCursor(drw->dpy, shape);
 
 	return cur;
 }
