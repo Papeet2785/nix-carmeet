@@ -69,7 +69,8 @@ static const Layout layouts[] = {
 static const char *autostartcmd[] = {
     "sh", "-c",
     "nm-applet & "
-    "blueman-applet",
+    "blueman-applet & "
+    "slstatus & ",
     NULL
 };
 static const Key keys[] = {
