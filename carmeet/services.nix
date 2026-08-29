@@ -11,7 +11,6 @@
         vi_default_mode = "insert";
       };
     };
-    dunst.enable = true;
     upower.enable = true;
     libinput = {
       enable = true;
