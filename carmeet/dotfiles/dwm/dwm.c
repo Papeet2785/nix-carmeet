@@ -193,6 +193,7 @@ static void propertynotify(XEvent *e);
 static Monitor *recttomon(int x, int y, int w, int h);
 static void resize(Client *c, int x, int y, int w, int h, int interact);
 static void resizeclient(Client *c, int x, int y, int w, int h);
+static void resizecfact(const Arg *arg);
 static void resizemouse(const Arg *arg);
 static void restack(Monitor *m);
 static void run(void);
@@ -2101,6 +2102,23 @@ togglemonocle(const Arg *arg)
         setlayout(&(Arg){ .v = &layouts[0] });
     else
         setlayout(&(Arg){ .v = &layouts[1] });
+}
+
+void
+resizecfact(const Arg *arg)
+{
+	float f;
+
+	if (!selmon->sel || selmon->sel->isfloating)
+		return;
+
+	f = selmon->sel->cfact + arg->f;
+
+	if (f < 0.25 || f > 4.0)
+		return;
+
+	selmon->sel->cfact = f;
+	arrange(selmon);
 }
 
 int
