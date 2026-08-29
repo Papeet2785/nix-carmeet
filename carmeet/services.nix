@@ -13,7 +13,7 @@
     };
     dunst.enable = true;
     upower.enable = true;
-    services.libinput = {
+    libinput = {
       enable = true;
       touchpad = {
         naturalScrolling = true;
