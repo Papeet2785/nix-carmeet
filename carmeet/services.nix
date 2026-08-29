@@ -11,6 +11,9 @@ let
   });
 in
 {
+  environment.systemPackges = [
+    slstatus
+  ];
   services = {
     displayManager.ly = {
       enable = true;
