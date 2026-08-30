@@ -61,6 +61,7 @@
       nixfmt
       prettier
       shfmt
+      vscode-fhs
       #services
       polkit_gnome
       udiskie
