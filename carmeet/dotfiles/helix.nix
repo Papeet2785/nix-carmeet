@@ -3,7 +3,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = lib.mkForce "gruvbox-material";
+      theme = lib.mkForce "tokyonight";
       editor = {
         default-yank-register = "+";
         idle-timeout = 0;
