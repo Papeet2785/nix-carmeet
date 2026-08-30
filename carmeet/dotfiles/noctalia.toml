@@ -299,13 +299,13 @@ fill_mode = "stretch"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/pininfarina.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/pininfarina.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/pininfarina.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
 
 [widget.active_window]
 max_length = 400
@@ -325,7 +325,7 @@ glyph = "settings-filled"
 
 [widget.launcher]
 color = "tertiary"
-custom_image = "/home/carmeet/nix-carmeet/logo.png"
+custom_image = "/home/carmeet/nix-carmeet/nixos.png"
 glyph = "snowflake"
 
 [widget.session]

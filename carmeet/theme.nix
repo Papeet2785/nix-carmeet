@@ -6,7 +6,7 @@
   };
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
