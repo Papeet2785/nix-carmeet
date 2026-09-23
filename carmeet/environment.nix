@@ -109,6 +109,7 @@
       google-chrome
       vlc
       discord
+      inkscape
       zapzap
       lingot
       simple-scan

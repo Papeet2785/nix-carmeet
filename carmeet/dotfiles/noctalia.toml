@@ -1,4 +1,4 @@
-config_version = 12
+config_version = 14
 
 [backdrop]
 blur_intensity = 0.0
@@ -189,7 +189,7 @@ panel_placement = "floating"
 panel_position = "center"
 
 [plugins]
-auto_update = true
+auto_update = "all"
 enabled = []
 
     [[plugins.source]]
