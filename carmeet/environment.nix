@@ -61,12 +61,10 @@
       nixfmt
       prettier
       shfmt
-      pkg-config
-      raylib
       clang
-      clangd
+      clang-tools
       pyright
-      rust-analyzer
+      ruff
       jdt-language-server
       (python314.withPackages (python-pkgs: with python-pkgs; [
         manim
