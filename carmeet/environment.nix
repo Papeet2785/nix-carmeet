@@ -7,7 +7,7 @@
     };
     nix-ld.enable = true;
     dconf.enable = true;
-    bash.enable = true;
+    fish.enable = true;
     starship.enable = true;
     auto-cpufreq = {
       enable = true;
@@ -48,6 +48,7 @@
       desktop-file-utils
       glib
       bash
+      fish
       vimPlugins.fzf-wrapper
       trash-cli
       #code
@@ -56,6 +57,7 @@
       processing
       vscode-langservers-extracted
       bash-language-server
+      fish-lsp
       nixd
       marksman
       nixfmt

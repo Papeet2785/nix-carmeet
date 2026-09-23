@@ -28,7 +28,7 @@
     ./dotfiles/fastfetch.nix
     ./dotfiles/xdg-stuff.nix
     ./dotfiles/helix.nix
-    ./dotfiles/bash.nix
+    ./dotfiles/fish.nix
     ./dotfiles/niri.nix
   ];
   home.file = {
