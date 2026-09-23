@@ -87,7 +87,7 @@
       "lpadmin"
       "dialout"
     ];
-    shell = pkgs.bash;
+    shell = pkgs.fish;
   };
   xdg.portal = {
     enable = true;
