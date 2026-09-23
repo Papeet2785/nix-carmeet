@@ -61,6 +61,10 @@
       nixfmt
       prettier
       shfmt
+      godot
+      cmake
+      cmake-format
+      cmake-language-server
       clang
       clang-tools
       pyright
