@@ -2,7 +2,6 @@
 {
   programs.fish= {
     enable = true;
-    enableCompletion = true;
     shellAliases = {
       cp = "cp -i";
       mv = "mv -i";
@@ -13,6 +12,6 @@
   };
   programs.starship = {
     enable = true;
-    enableBashIntegration = true;
+    enableFishIntegration = true;
   };
 }
