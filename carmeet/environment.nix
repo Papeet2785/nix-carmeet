@@ -68,6 +68,7 @@
       cmake
       cmake-format
       cmake-language-server
+      pkg-config
       clang
       clang-tools
       libX11

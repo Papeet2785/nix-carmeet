@@ -8,16 +8,15 @@ tint_intensity = 0.0
 [bar.default]
 capsule_radius = 0
 center = [ "control-center", "spacer_4", "clock", "spacer_5", "tray" ]
-end = [ "volume", "spacer_6", "battery", "spacer_7", "session" ]
+end = [ "cpu", "spacer_9", "temp", "spacer_8", "volume", "spacer_6", "battery", "spacer_7", "session" ]
 margin_ends = 0
 padding = 5
 panel_overlap = 0
-position = "left"
 radius = 0
 radius_top_left = 0
 radius_top_right = 0
 shadow = false
-start = [ "launcher", "spacer_2", "workspaces", "spacer_3", "temp" ]
+start = [ "launcher", "spacer_2", "workspaces", "spacer_3", "active_window" ]
 thickness = 36
 
 [battery]
@@ -225,15 +224,13 @@ popup_shadows = false
         global = true
 
     [shell.panel]
+    clipboard_position = "auto"
     control_center_placement = "floating"
-    control_center_position = "center_left"
     floating_layer = "top"
-    launcher_position = "top_left"
+    launcher_position = "auto"
     session_placement = "floating"
-    session_position = "bottom_left"
     shadow = false
     wallpaper_placement = "floating"
-    wallpaper_position = "center"
 
     [shell.screen_corners]
     size = 1
@@ -323,6 +320,9 @@ icon_color = "on_surface_variant"
 color = "primary"
 glyph = "settings-filled"
 
+[widget.cpu]
+color = "outline"
+
 [widget.launcher]
 color = "tertiary"
 custom_image = "/home/carmeet/nix-carmeet/nixos.png"
@@ -347,6 +347,12 @@ type = "spacer"
 type = "spacer"
 
 [widget.spacer_7]
+type = "spacer"
+
+[widget.spacer_8]
+type = "spacer"
+
+[widget.spacer_9]
 type = "spacer"
 
 [widget.temp]
