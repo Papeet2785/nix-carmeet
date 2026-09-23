@@ -9,6 +9,9 @@
       mkdir = "mkdir -p";
       la = "ls -Alh";
     };
+     functions = {
+      fish_greeting = "";
+    };
   };
   programs.starship = {
     enable = true;

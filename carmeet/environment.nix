@@ -70,6 +70,13 @@
       cmake-language-server
       clang
       clang-tools
+      libX11
+      libXcursor
+      libXi
+      libXinerama
+      libXrandr
+      libXext
+      libXfixes
       pyright
       ruff
       jdt-language-server
