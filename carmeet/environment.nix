@@ -61,7 +61,15 @@
       nixfmt
       prettier
       shfmt
-      vscode-fhs
+      clang
+      clangd
+      pyright
+      rust-analyzer
+      jdt-language-server
+      uv
+      cargo
+      rustup
+      openjdk
       #services
       polkit_gnome
       udiskie
@@ -70,6 +78,7 @@
       bluez-tools
       ffmpeg_6-full
       wget
+      gh
       git
       kdePackages.kdeconnect-kde
       kdePackages.kdenlive
