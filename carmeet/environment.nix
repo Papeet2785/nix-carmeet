@@ -62,6 +62,7 @@
       prettier
       shfmt
       godot
+      gnumake
       cmake
       cmake-format
       cmake-language-server
