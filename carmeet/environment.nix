@@ -61,14 +61,35 @@
       nixfmt
       prettier
       shfmt
+      pkg-config
+      raylib
       clang
       clangd
       pyright
       rust-analyzer
       jdt-language-server
-      uv
-      cargo
-      rustup
+      (python314.withPackages (python-pkgs: with python-pkgs; [
+        manim
+        numpy
+        langchain
+        langchain-openai
+        langchain-community
+        ddgs
+        torch
+        pygame
+      ]))
+      qt6.qtbase
+      qt6.qtwayland
+      wayland
+      wayland-protocols
+      wayland-scanner
+      SDL2
+      SDL2_image
+      SDL2_mixer
+      SDL2_ttf
+      SDL2_gfx
+      libdecor
+      libxkbcommon
       openjdk
       #services
       polkit_gnome
