@@ -88,6 +88,7 @@
         langchain-openai
         langchain-community
         ddgs
+        wikipedia
         torch
         pygame
       ]))
