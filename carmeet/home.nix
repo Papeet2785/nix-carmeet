@@ -11,6 +11,9 @@
       settings = {
         confirm_os_window_close = 0;
         window_padding_width = 5;
+        window_padding_height = 5;
+        window_margin_width = 0;
+        single_window_margin_width = 0;
       };
     };
     noctalia.enable = true;
