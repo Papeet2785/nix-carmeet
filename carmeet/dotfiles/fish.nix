@@ -11,6 +11,7 @@
       nixbuild = "cd nix-carmeet && sudo nixos-rebuild switch --flake .#myMachine";
       nixupgrade = "cd nix-carmeet && nix flake update && sudo nixos-rebuild switch --flake .#myMachine";
       fetch = "fastfetch";
+      nixfreespace = "sudo nix-collect-garbage -d";
     };
      functions = {
       fish_greeting = "";
@@ -23,4 +24,7 @@
       format = "$directory$character ";
     };
   };
+  programs.fish.interactiveShellInit = ''
+    nix-your-shell fish | source
+  '';  
 }

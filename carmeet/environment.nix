@@ -49,6 +49,7 @@
       glib
       bash
       fish
+      nix-your-shell
       vimPlugins.fzf-wrapper
       trash-cli
       #code
