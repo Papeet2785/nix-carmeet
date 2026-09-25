@@ -10,6 +10,7 @@
       la = "ls -Alh";
       nixbuild = "cd ~/nix-carmeet && sudo nixos-rebuild switch --flake .#myMachine";
       nixupgrade = "cd nix-carmeet && nix flake update && sudo nixos-rebuild switch --flake .#myMachine";
+      tinstall = "nix-shell -p";
       fetch = "fastfetch";
       nixfreespace = "sudo nix-collect-garbage -d";
     };
