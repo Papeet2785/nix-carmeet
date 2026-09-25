@@ -42,7 +42,7 @@
       focus-ring = {
         enable = true;
         width = 3;
-        active.color = "#ebdbb2";
+        active.color = "#458588";
       };
       preset-column-widths = [
         { proportion = 0.50; }
