@@ -1,5 +1,6 @@
-{ ... }: {
-  # Ensure the desktop MIME database and application caches are generated properly
+{ ... }:
+
+{
 xdg.mime.enable = true;
 xdg.desktopEntries = {
   arduino = {
@@ -18,7 +19,7 @@ xdg.desktopEntries = {
 
   Helix = {
     name = "Helix";
-    exec = "kitty -e hx";
+    exec = "ghostty -e hx";
     terminal = false;
     categories = [ "Development" "IDE" ];
   };
