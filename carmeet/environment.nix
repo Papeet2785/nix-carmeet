@@ -7,8 +7,8 @@
     };
     hyprland.enable = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
-      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.xdg-desktop-portal-hyprland};
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform}.xdg-desktop-portal-hyprland;
       hardware.graphics.enable = true;
       xwayland.enable = true;
     };
@@ -133,6 +133,7 @@
       file
       xwayland-satellite
       #niri
+      grimblast
       playerctl
       wireplumber
       jq
