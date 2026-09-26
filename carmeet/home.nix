@@ -9,8 +9,9 @@
     ghostty = {
       enable = true;
       settings = {
-        confirm-close-surface = "always";
+        confirm-close-surface = false;
         window-decoration = false;
+        window-padding-x = 10;
       };
     };
     noctalia.enable = true;
