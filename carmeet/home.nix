@@ -11,7 +11,7 @@
       settings = {
         confirm-close-surface = false;
         window-decoration = false;
-        window-padding-x = 10;
+        "window-padding-x" = "10";
       };
     };
     noctalia.enable = true;
