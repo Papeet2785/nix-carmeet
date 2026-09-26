@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
 xdg.mime.enable = true;
@@ -6,6 +6,7 @@ xdg.desktopEntries = {
   arduino = {
     name = "Arduino IDE";
     exec = "env GDK_BACKEND=x11 _JAVA_AWT_WM_NONREPARENTING=1 arduino %F";
+    icon = "${pkgs.arduino}/share/icons/hicolor/scalable/apps/arduino.svg";
     terminal = false;
     categories = [ "Development" "IDE" ];
   };  
@@ -13,6 +14,7 @@ xdg.desktopEntries = {
   processing = {
     name = "Processing";
     exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 processing %F";
+    icon = "${pkgs.processing}/share/pixmaps/processing.png";
     terminal = false;
     categories = [ "Development" "IDE" ];
   };
@@ -20,6 +22,7 @@ xdg.desktopEntries = {
   Helix = {
     name = "Helix";
     exec = "ghostty -e hx";
+    icon = "${pkgs.helix}/share/icons/hicolor/scalable/apps/helix.svg";
     terminal = false;
     categories = [ "Development" "IDE" ];
   };
