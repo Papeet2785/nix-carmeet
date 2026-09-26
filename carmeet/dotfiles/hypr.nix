@@ -143,488 +143,172 @@
 
           # Applications
 
-          (bind
-            "SUPER + Return"
-            (dsp.exec_cmd "kitty")
-            { }
-          )
+          (bind "SUPER + Return" (dsp.exec_cmd "kitty") { })
 
-          (bind
-            "SUPER + Escape"
-            (dsp.exec_cmd "kitty -e btop")
-            { }
-          )
+          (bind "SUPER + Escape" (dsp.exec_cmd "kitty -e btop") { })
 
-          (bind
-            "SUPER + C"
-            (dsp.exec_cmd "kitty -e hx /home/carmeet")
-            { }
-          )
+          (bind "SUPER + C" (dsp.exec_cmd "kitty -e hx /home/carmeet") { })
 
-          (bind
-            "SUPER + SHIFT + C"
-            (dsp.exec_cmd "kitty -e hx /home/carmeet/nix-carmeet")
-            { }
-          )
+          (bind "SUPER + SHIFT + C" (dsp.exec_cmd "kitty -e hx /home/carmeet/nix-carmeet") { })
 
-          (bind
-            "SUPER + B"
-            (dsp.exec_cmd "firefox")
-            { }
-          )
+          (bind "SUPER + B" (dsp.exec_cmd "firefox") { })
 
-          (bind
-            "SUPER + SHIFT + B"
-            (dsp.exec_cmd "google-chrome")
-            { }
-          )
+          (bind "SUPER + SHIFT + B" (dsp.exec_cmd "google-chrome") { })
 
-          (bind
-            "SUPER + E"
-            (dsp.exec_cmd "nautilus")
-            { }
-          )
+          (bind "SUPER + E" (dsp.exec_cmd "nautilus") { })
 
 
           # Noctalia
 
-          (bind
-            "SUPER + D"
-            (dsp.exec_cmd "noctalia msg panel-toggle launcher")
-            { }
-          )
+          (bind "SUPER + D" (dsp.exec_cmd "noctalia msg panel-toggle launcher") { })
 
-          (bind
-            "SUPER + V"
-            (dsp.exec_cmd "noctalia msg panel-toggle clipboard")
-            { }
-          )
+          (bind "SUPER + V" (dsp.exec_cmd "noctalia msg panel-toggle clipboard") { })
 
-          (bind
-            "SUPER + N"
-            (dsp.exec_cmd "noctalia msg panel-toggle control-center")
-            { }
-          )
+          (bind "SUPER + N" (dsp.exec_cmd "noctalia msg panel-toggle control-center") { })
 
-          (bind
-            "SUPER + comma"
-            (dsp.exec_cmd "noctalia msg settings-toggle")
-            { }
-          )
+          (bind "SUPER + comma" (dsp.exec_cmd "noctalia msg settings-toggle") { })
 
-          (bind
-            "CTRL + ALT + Delete"
-            (dsp.exec_cmd "noctalia msg panel-toggle session")
-            { }
-          )
+          (bind "CTRL + ALT + Delete" (dsp.exec_cmd "noctalia msg panel-toggle session") { })
 
-          (bind
-            "SUPER + W"
-            (dsp.exec_cmd "noctalia msg panel-toggle wallpaper")
-            { }
-          )
+          (bind "SUPER + W" (dsp.exec_cmd "noctalia msg panel-toggle wallpaper") { })
 
 
           # Function Keys
 
-          (bind
-            "XF86AudioRaiseVolume"
-            (dsp.exec_cmd "noctalia msg volume-up")
-            { }
-          )
+          (bind "XF86AudioRaiseVolume" (dsp.exec_cmd "noctalia msg volume-up") { })
 
-          (bind
-            "XF86AudioLowerVolume"
-            (dsp.exec_cmd "noctalia msg volume-down")
-            { }
-          )
+          (bind "XF86AudioLowerVolume" (dsp.exec_cmd "noctalia msg volume-down") { })
 
-          (bind
-            "XF86AudioMute"
-            (dsp.exec_cmd "noctalia msg volume-mute")
-            { }
-          )
+          (bind "XF86AudioMute" (dsp.exec_cmd "noctalia msg volume-mute") { })
 
-          (bind
-            "XF86MonBrightnessUp"
-            (dsp.exec_cmd "noctalia msg brightness-up")
-            { }
-          )
+          (bind "XF86MonBrightnessUp" (dsp.exec_cmd "noctalia msg brightness-up") { })
 
-          (bind
-            "XF86MonBrightnessDown"
-            (dsp.exec_cmd "noctalia msg brightness-down")
-            { }
-          )
+          (bind "XF86MonBrightnessDown" (dsp.exec_cmd "noctalia msg brightness-down") { })
 
-          (bind
-            "XF86AudioPlay"
-            (dsp.exec_cmd "playerctl play-pause")
-            { }
-          )
+          (bind "XF86AudioPlay" (dsp.exec_cmd "playerctl play-pause") { })
 
-          (bind
-            "XF86AudioNext"
-            (dsp.exec_cmd "playerctl next")
-            { }
-          )
+          (bind "XF86AudioNext" (dsp.exec_cmd "playerctl next") { })
 
-          (bind
-            "XF86AudioPrev"
-            (dsp.exec_cmd "playerctl previous")
-            { }
-          )
+          (bind "XF86AudioPrev" (dsp.exec_cmd "playerctl previous") { })
 
-          (bind
-            "XF86AudioStop"
-            (dsp.exec_cmd "playerctl stop")
-            { }
-          )
+          (bind "XF86AudioStop" (dsp.exec_cmd "playerctl stop") { })
 
 
           # Window management
 
-          (bind
-            "SUPER + Q"
-            dsp.window.close
-            { }
-          )
+          (bind "SUPER + Q" dsp.window.close { })
 
-          (bind
-            "SUPER + SPACE"
-            (dsp.window.float { action = "toggle"; })
-            { }
-          )
+          (bind "SUPER + SPACE" (dsp.window.float { action = "toggle"; }) { })
 
-          (bind
-            "SUPER + SHIFT + SPACE"
-            (dsp.focus { last = true; })
-            { }
-          )
+          (bind "SUPER + SHIFT + SPACE" (dsp.focus { last = true; }) { })
 
-          (bind
-            "SUPER + F"
-            (dsp.window.fullscreen {
-              mode = "fullscreen";
-              action = "toggle";
-            })
-            { }
-          )
+          (bind "SUPER + F" (dsp.window.fullscreen { mode = "fullscreen"; action = "toggle"; }) { })
 
 
           # Focus
 
-          (bind
-            "SUPER + H"
-            (dsp.focus { direction = "l"; })
-            { }
-          )
+          (bind "SUPER + H" (dsp.focus { direction = "l"; }) { })
 
-          (bind
-            "SUPER + J"
-            (dsp.focus { direction = "d"; })
-            { }
-          )
+          (bind "SUPER + J" (dsp.focus { direction = "d"; }) { })
 
-          (bind
-            "SUPER + K"
-            (dsp.focus { direction = "u"; })
-            { }
-          )
+          (bind "SUPER + K" (dsp.focus { direction = "u"; }) { })
 
-          (bind
-            "SUPER + L"
-            (dsp.focus { direction = "r"; })
-            { }
-          )
+          (bind "SUPER + L" (dsp.focus { direction = "r"; }) { })
 
 
           # Resize
 
-          (bind
-            "SUPER + SHIFT + H"
-            (dsp.exec_cmd "hyprctl dispatch resizeactive -5% 0")
-            { }
-          )
+          (bind "SUPER + SHIFT + H" (dsp.exec_cmd "hyprctl dispatch resizeactive -5% 0") { })
 
-          (bind
-            "SUPER + SHIFT + L"
-            (dsp.exec_cmd "hyprctl dispatch resizeactive 5% 0")
-            { }
-          )
+          (bind "SUPER + SHIFT + L" (dsp.exec_cmd "hyprctl dispatch resizeactive 5% 0") { })
 
-          (bind
-            "SUPER + SHIFT + J"
-            (dsp.exec_cmd "hyprctl dispatch resizeactive 0 5%")
-            { }
-          )
+          (bind "SUPER + SHIFT + J" (dsp.exec_cmd "hyprctl dispatch resizeactive 0 5%") { })
 
-          (bind
-            "SUPER + SHIFT + K"
-            (dsp.exec_cmd "hyprctl dispatch resizeactive 0 -5%")
-            { }
-          )
+          (bind "SUPER + SHIFT + K" (dsp.exec_cmd "hyprctl dispatch resizeactive 0 -5%") { })
 
 
           # Master / stack
 
-          (bind
-            "SUPER + CTRL + H"
-            (dsp.layout "swapprev")
-            { }
-          )
+          (bind "SUPER + CTRL + H" (dsp.layout "swapprev") { })
 
-          (bind
-            "SUPER + CTRL + L"
-            (dsp.layout "swapnext")
-            { }
-          )
+          (bind "SUPER + CTRL + L" (dsp.layout "swapnext") { })
 
-          (bind
-            "SUPER + CTRL + K"
-            (dsp.layout "rollprev")
-            { }
-          )
+          (bind "SUPER + CTRL + K" (dsp.layout "rollprev") { })
 
-          (bind
-            "SUPER + CTRL + J"
-            (dsp.layout "rollnext")
-            { }
-          )
+          (bind "SUPER + CTRL + J" (dsp.layout "rollnext") { })
 
 
           # Screenshots
+          (bind "SUPER + SHIFT + S" (dsp.exec_cmd "noctalia msg screenshot-region") { })
 
-          (bind
-            "SUPER + SHIFT + S"
-            (dsp.exec_cmd "grimblast save area ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png")
-            { }
-          )
-
-          (bind
-            "Print"
-            (dsp.exec_cmd "grimblast save screen ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png")
-            { }
-          )
-
-
+          (bind "Print" (dsp.exec_cmd "noctalia msg screenshot-fullscreen") { })
           # Workspace binds
 
-          (bind
-            "SUPER + 1"
-            (dsp.focus { workspace = 1; })
-            { }
-          )
+          (bind "SUPER + 1" (dsp.focus { workspace = 1; }) { })
 
-          (bind
-            "SUPER + 2"
-            (dsp.focus { workspace = 2; })
-            { }
-          )
+          (bind "SUPER + 2" (dsp.focus { workspace = 2; }) { })
 
-          (bind
-            "SUPER + 3"
-            (dsp.focus { workspace = 3; })
-            { }
-          )
+          (bind "SUPER + 3" (dsp.focus { workspace = 3; }) { })
 
-          (bind
-            "SUPER + 4"
-            (dsp.focus { workspace = 4; })
-            { }
-          )
+          (bind "SUPER + 4" (dsp.focus { workspace = 4; }) { })
 
-          (bind
-            "SUPER + 5"
-            (dsp.focus { workspace = 5; })
-            { }
-          )
+          (bind "SUPER + 5" (dsp.focus { workspace = 5; }) { })
 
-          (bind
-            "SUPER + 6"
-            (dsp.focus { workspace = 6; })
-            { }
-          )
+          (bind "SUPER + 6" (dsp.focus { workspace = 6; }) { })
 
-          (bind
-            "SUPER + 7"
-            (dsp.focus { workspace = 7; })
-            { }
-          )
+          (bind "SUPER + 7" (dsp.focus { workspace = 7; }) { })
 
-          (bind
-            "SUPER + 8"
-            (dsp.focus { workspace = 8; })
-            { }
-          )
+          (bind "SUPER + 8" (dsp.focus { workspace = 8; }) { })
 
-          (bind
-            "SUPER + 9"
-            (dsp.focus { workspace = 9; })
-            { }
-          )
+          (bind "SUPER + 9" (dsp.focus { workspace = 9; }) { })
 
-          (bind
-            "SUPER + 0"
-            (dsp.focus { workspace = 10; })
-            { }
-          )
+          (bind "SUPER + 0" (dsp.focus { workspace = 10; }) { })
 
 
           # Move to workspace
 
-          (bind
-            "SUPER + SHIFT + 1"
-            (dsp.window.move { workspace = 1; })
-            { }
-          )
+          (bind "SUPER + SHIFT + 1" (dsp.window.move { workspace = 1; }) { })
 
-          (bind
-            "SUPER + SHIFT + 2"
-            (dsp.window.move { workspace = 2; })
-            { }
-          )
+          (bind "SUPER + SHIFT + 2" (dsp.window.move { workspace = 2; }) { })
 
-          (bind
-            "SUPER + SHIFT + 3"
-            (dsp.window.move { workspace = 3; })
-            { }
-          )
+          (bind "SUPER + SHIFT + 3" (dsp.window.move { workspace = 3; }) { })
 
-          (bind
-            "SUPER + SHIFT + 4"
-            (dsp.window.move { workspace = 4; })
-            { }
-          )
+          (bind "SUPER + SHIFT + 4" (dsp.window.move { workspace = 4; }) { })
 
-          (bind
-            "SUPER + SHIFT + 5"
-            (dsp.window.move { workspace = 5; })
-            { }
-          )
+          (bind "SUPER + SHIFT + 5" (dsp.window.move { workspace = 5; }) { })
 
-          (bind
-            "SUPER + SHIFT + 6"
-            (dsp.window.move { workspace = 6; })
-            { }
-          )
+          (bind "SUPER + SHIFT + 6" (dsp.window.move { workspace = 6; }) { })
 
-          (bind
-            "SUPER + SHIFT + 7"
-            (dsp.window.move { workspace = 7; })
-            { }
-          )
+          (bind "SUPER + SHIFT + 7" (dsp.window.move { workspace = 7; }) { })
 
-          (bind
-            "SUPER + SHIFT + 8"
-            (dsp.window.move { workspace = 8; })
-            { }
-          )
+          (bind "SUPER + SHIFT + 8" (dsp.window.move { workspace = 8; }) { })
 
-          (bind
-            "SUPER + SHIFT + 9"
-            (dsp.window.move { workspace = 9; })
-            { }
-          )
+          (bind "SUPER + SHIFT + 9" (dsp.window.move { workspace = 9; }) { })
 
-          (bind
-            "SUPER + SHIFT + 0"
-            (dsp.window.move { workspace = 10; })
-            { }
-          )
+          (bind "SUPER + SHIFT + 0" (dsp.window.move { workspace = 10; }) { })
 
 
           # Silent move to workspace
 
-          (bind
-            "SUPER + CTRL + 1"
-            (dsp.window.move {
-              workspace = 1;
-              follow = false;
-            })
-            { }
-          )
+          (bind "SUPER + CTRL + 1" (dsp.window.move { workspace = 1; follow = false; }) { })
 
-          (bind
-            "SUPER + CTRL + 2"
-            (dsp.window.move {
-              workspace = 2;
-              follow = false;
-            })
-            { }
-          )
+          (bind "SUPER + CTRL + 2" (dsp.window.move { workspace = 2; follow = false; }) { })
 
-          (bind
-            "SUPER + CTRL + 3"
-            (dsp.window.move {
-              workspace = 3;
-              follow = false;
-            })
-            { }
-          )
+          (bind "SUPER + CTRL + 3" (dsp.window.move { workspace = 3; follow = false; }) { })
 
-          (bind
-            "SUPER + CTRL + 4"
-            (dsp.window.move {
-              workspace = 4;
-              follow = false;
-            })
-            { }
-          )
+          (bind "SUPER + CTRL + 4" (dsp.window.move { workspace = 4; follow = false; }) { })
 
-          (bind
-            "SUPER + CTRL + 5"
-            (dsp.window.move {
-              workspace = 5;
-              follow = false;
-            })
-            { }
-          )
+          (bind "SUPER + CTRL + 5" (dsp.window.move { workspace = 5; follow = false; }) { })
 
-          (bind
-            "SUPER + CTRL + 6"
-            (dsp.window.move {
-              workspace = 6;
-              follow = false;
-            })
-            { }
-          )
+          (bind "SUPER + CTRL + 6" (dsp.window.move { workspace = 6; follow = false; }) { })
 
-          (bind
-            "SUPER + CTRL + 7"
-            (dsp.window.move {
-              workspace = 7;
-              follow = false;
-            })
-            { }
-          )
+          (bind "SUPER + CTRL + 7" (dsp.window.move { workspace = 7; follow = false; }) { })
 
-          (bind
-            "SUPER + CTRL + 8"
-            (dsp.window.move {
-              workspace = 8;
-              follow = false;
-            })
-            { }
-          )
+          (bind "SUPER + CTRL + 8" (dsp.window.move { workspace = 8; follow = false; }) { })
 
-          (bind
-            "SUPER + CTRL + 9"
-            (dsp.window.move {
-              workspace = 9;
-              follow = false;
-            })
-            { }
-          )
+          (bind "SUPER + CTRL + 9" (dsp.window.move { workspace = 9; follow = false; }) { })
 
-          (bind
-            "SUPER + CTRL + 0"
-            (dsp.window.move {
-              workspace = 10;
-              follow = false;
-            })
-            { }
-          )
+          (bind "SUPER + CTRL + 0" (dsp.window.move { workspace = 10; follow = false; }) { })
         ];
 
         # Startup
@@ -641,3 +325,4 @@
       };
   };
 }
+

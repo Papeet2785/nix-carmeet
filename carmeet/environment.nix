@@ -132,7 +132,6 @@
       file
       xwayland-satellite
       #niri
-      grimblast
       playerctl
       wireplumber
       jq

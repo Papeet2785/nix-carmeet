@@ -237,10 +237,10 @@ popup_shadows = false
     size = 1
 
     [shell.screenshot]
-    copy_to_clipboard = false
+    annotate = true
+    confirm_region = true
     directory = "/home/carmeet/Pictures/Screenshots"
-    freeze_screen = false
-    save_to_file = false
+    remember_last_region = true
 
     [[shell.session.actions]]
     action = "shutdown"
