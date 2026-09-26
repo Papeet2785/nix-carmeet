@@ -34,6 +34,7 @@
     ./dotfiles/helix.nix
     ./dotfiles/fish.nix
     ./dotfiles/niri.nix
+    ./dotfiles/hypr.nix
   ];
   home.file = {
     ".local/state/noctalia/settings.toml".source = config.lib.file.mkOutOfStoreSymlink "/home/carmeet/nix-carmeet/carmeet/dotfiles/noctalia.toml";

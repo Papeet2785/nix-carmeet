@@ -5,6 +5,13 @@
       enable = true;
       package = pkgs.niri;
     };
+    hyprland.enable = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.xdg-desktop-portal-hyprland};
+      hardware.graphics.enable = true;
+      xwayland.enable = true;
+    };
     nix-ld.enable = true;
     dconf.enable = true;
     fish.enable = true;
