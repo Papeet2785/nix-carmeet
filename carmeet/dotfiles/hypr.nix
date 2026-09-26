@@ -1,643 +1,643 @@
 { lib, ... }:
+
 {
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "lua";
 
-    settings = {
-      env = [
-        "GDK_BACKEND,wayland,x11,*"
-        "QT_QPA_PLATFORM,wayland;xcb"
-        "CLUTTER_BACKEND,wayland"
+    settings =
+      let
+        mkLuaInline = lib.generators.mkLuaInline;
+        toLua = lib.generators.toLua;
 
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
+        mkArgs = args: { _args = args; };
 
-        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "QT_QPA_PLATFORMTHEME,qt6ct"
-        "QT_STYLE_OVERRIDE,Fusion"
-        "GDK_SCALE,1"
-        "QT_SCALE_FACTOR,1"
+        bind =
+          keys: dispatcher: options:
+          mkArgs [
+            keys
+            dispatcher
+            options
+          ];
 
-        "MOZ_ENABLE_WAYLAND,1"
-        "ELECTRON_OZONE_PLATFORM_HINT,auto"
+        dsp = {
+          exec_cmd = cmd:
+            mkLuaInline "hl.dsp.exec_cmd(${toLua { } cmd})";
 
-        "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-        "HYPRCURSOR_SIZE,24"
-        "XCURSOR_THEME,Bibata-Modern-Ice"
-        "XCURSOR_SIZE,24"
+          focus = args:
+            mkLuaInline "hl.dsp.focus(${toLua { } args})";
 
-        "LIBVA_DRIVER_NAME,nvidia"
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-        "NVD_BACKEND,direct"
-        "GSK_RENDERER,ngl"
-        "WLR_RENDERER_ALLOW_SOFTWARE,1"
-      ];
+          layout = arg:
+            mkLuaInline "hl.dsp.layout(${toLua { } arg})";
 
-      exec_cmd = [
-        "noctalia --daemon"
-        "polkit-gnome-authentication-agent-1"
-      ];
+          window = {
+            close =
+              mkLuaInline "hl.dsp.window.close()";
 
-      # These must be inside "config" for the Lua backend.
-      config = {
-        general = {
-          layout = "master";
-          gaps_in = 10;
-          gaps_out = 10;
-          border_size = 0;
-          "col.active_border" = "rgb(83a598)";
-          "col.inactive_border" = "rgb(665c54)";
+            float = args:
+              mkLuaInline "hl.dsp.window.float(${toLua { } args})";
+
+            fullscreen = args:
+              mkLuaInline "hl.dsp.window.fullscreen(${toLua { } args})";
+
+            move = args:
+              mkLuaInline "hl.dsp.window.move(${toLua { } args})";
+          };
         };
+      in
+      {
 
-        master = {
-          new_status = "slave";
-          new_on_top = false;
-          mfact = 0.55;
-          orientation = "left";
-        };
+        env = [
+          "GDK_BACKEND,wayland,x11,*"
+          "QT_QPA_PLATFORM,wayland;xcb"
+          "CLUTTER_BACKEND,wayland"
 
-        input = {
-          kb_layout = "us";
-          repeat_rate = 50;
-          repeat_delay = 250;
-          follow_mouse = 1;
-          sensitivity = 0;
+          "XDG_CURRENT_DESKTOP,Hyprland"
+          "XDG_SESSION_DESKTOP,Hyprland"
+          "XDG_SESSION_TYPE,wayland"
 
-          touchpad = {
-            natural_scroll = true;
+          "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+          "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+          "QT_QPA_PLATFORMTHEME,qt6ct"
+          "QT_STYLE_OVERRIDE,Fusion"
+          "GDK_SCALE,1"
+          "QT_SCALE_FACTOR,1"
+
+          "MOZ_ENABLE_WAYLAND,1"
+          "ELECTRON_OZONE_PLATFORM_HINT,auto"
+
+          "HYPRCURSOR_THEME,Bibata-Modern-Ice"
+          "HYPRCURSOR_SIZE,24"
+          "XCURSOR_THEME,Bibata-Modern-Ice"
+          "XCURSOR_SIZE,24"
+
+          "LIBVA_DRIVER_NAME,nvidia"
+          "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+          "NVD_BACKEND,direct"
+          "GSK_RENDERER,ngl"
+          "WLR_RENDERER_ALLOW_SOFTWARE,1"
+        ];
+
+        # These must be inside "config" for the Lua backend.
+        config = {
+          general = {
+            layout = "master";
+            gaps_in = 10;
+            gaps_out = 10;
+            border_size = 0;
+            "col.active_border" = "rgb(83a598)";
+            "col.inactive_border" = "rgb(665c54)";
+          };
+
+          master = {
+            new_status = "slave";
+            new_on_top = false;
+            mfact = 0.55;
+            orientation = "left";
+          };
+
+          input = {
+            kb_layout = "us";
+            repeat_rate = 50;
+            repeat_delay = 250;
+            follow_mouse = 1;
+            sensitivity = 0;
+
+            touchpad = {
+              natural_scroll = true;
+            };
+          };
+
+          decoration = {
+            rounding = 0;
+
+            shadow = {
+              color = "rgba(1d202199)";
+            };
+          };
+
+          group = {
+            "col.border_active" = "rgb(83a598)";
+            "col.border_inactive" = "rgb(665c54)";
+            "col.border_locked_active" = "rgb(8ec07c)";
+
+            groupbar = {
+              "col.active" = "rgb(83a598)";
+              "col.inactive" = "rgb(665c54)";
+              "text_color" = "rgb(d5c4a1)";
+            };
+          };
+
+          misc = {
+            background_color = "rgb(1d2021)";
           };
         };
 
-        decoration = {
-          rounding = 0;
-
-          shadow = {
-            color = "rgba(1d202199)";
-          };
+        gesture = {
+          fingers = 3;
+          direction = "horizontal";
+          action = "workspace";
         };
 
-        group = {
-          "col.border_active" = "rgb(83a598)";
-          "col.border_inactive" = "rgb(665c54)";
-          "col.border_locked_active" = "rgb(8ec07c)";
+        bind = [
 
-          groupbar = {
-            "col.active" = "rgb(83a598)";
-            "col.inactive" = "rgb(665c54)";
-            "text_color" = "rgb(d5c4a1)";
-          };
-        };
+          # Applications
 
-        misc = {
-          background_color = "rgb(1d2021)";
-        };
-      };
-
-      gesture = {
-        fingers = 3;
-        direction = "horizontal";
-        action = "workspace";
-      };
-
-      bind = [
-
-        # Applications
-
-        {
-          _args = [
+          (bind
             "SUPER + Return"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty")'')
-          ];
-        }
+            (dsp.exec_cmd "kitty")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + Escape"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty -e btop")'')
-          ];
-        }
+            (dsp.exec_cmd "kitty -e btop")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + C"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty -e hx /home/carmeet")'')
-          ];
-        }
+            (dsp.exec_cmd "kitty -e hx /home/carmeet")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + C"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("kitty -e hx /home/carmeet/nix-carmeet")'')
-          ];
-        }
+            (dsp.exec_cmd "kitty -e hx /home/carmeet/nix-carmeet")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + B"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("firefox")'')
-          ];
-        }
+            (dsp.exec_cmd "firefox")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + B"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("google-chrome")'')
-          ];
-        }
+            (dsp.exec_cmd "google-chrome")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + E"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("nautilus")'')
-          ];
-        }
+            (dsp.exec_cmd "nautilus")
+            { }
+          )
 
 
-        # Noctalia
+          # Noctalia
 
-        {
-          _args = [
+          (bind
             "SUPER + D"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg panel-toggle launcher")'')
-          ];
-        }
+            (dsp.exec_cmd "noctalia msg panel-toggle launcher")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + V"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg panel-toggle clipboard")'')
-          ];
-        }
+            (dsp.exec_cmd "noctalia msg panel-toggle clipboard")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + N"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg panel-toggle control-center")'')
-          ];
-        }
+            (dsp.exec_cmd "noctalia msg panel-toggle control-center")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + comma"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg settings-toggle")'')
-          ];
-        }
+            (dsp.exec_cmd "noctalia msg settings-toggle")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "CTRL + ALT + Delete"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg panel-toggle session")'')
-          ];
-        }
+            (dsp.exec_cmd "noctalia msg panel-toggle session")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + W"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg panel-toggle wallpaper")'')
-          ];
-        }
+            (dsp.exec_cmd "noctalia msg panel-toggle wallpaper")
+            { }
+          )
 
 
-        # Function Keys
+          # Function Keys
 
-        {
-          _args = [
+          (bind
             "XF86AudioRaiseVolume"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg volume-up")'')
-          ];
-        }
+            (dsp.exec_cmd "noctalia msg volume-up")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "XF86AudioLowerVolume"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg volume-down")'')
-          ];
-        }
+            (dsp.exec_cmd "noctalia msg volume-down")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "XF86AudioMute"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg volume-mute")'')
-          ];
-        }
+            (dsp.exec_cmd "noctalia msg volume-mute")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "XF86MonBrightnessUp"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg brightness-up")'')
-          ];
-        }
+            (dsp.exec_cmd "noctalia msg brightness-up")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "XF86MonBrightnessDown"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("noctalia msg brightness-down")'')
-          ];
-        }
+            (dsp.exec_cmd "noctalia msg brightness-down")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "XF86AudioPlay"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("playerctl play-pause")'')
-          ];
-        }
+            (dsp.exec_cmd "playerctl play-pause")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "XF86AudioNext"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("playerctl next")'')
-          ];
-        }
+            (dsp.exec_cmd "playerctl next")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "XF86AudioPrev"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("playerctl previous")'')
-          ];
-        }
+            (dsp.exec_cmd "playerctl previous")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "XF86AudioStop"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("playerctl stop")'')
-          ];
-        }
+            (dsp.exec_cmd "playerctl stop")
+            { }
+          )
 
 
-        # Window management
+          # Window management
 
-        {
-          _args = [
+          (bind
             "SUPER + Q"
-            (lib.generators.mkLuaInline ''hl.dsp.window.close()'')
-          ];
-        }
+            dsp.window.close
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SPACE"
-            (lib.generators.mkLuaInline ''hl.dsp.window.float({ action = "toggle" })'')
-          ];
-        }
+            (dsp.window.float { action = "toggle"; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + SPACE"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ last = true })'')
-          ];
-        }
+            (dsp.focus { last = true; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + F"
-            (lib.generators.mkLuaInline ''hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" })'')
-          ];
-        }
+            (dsp.window.fullscreen {
+              mode = "fullscreen";
+              action = "toggle";
+            })
+            { }
+          )
 
 
-        # Focus
+          # Focus
 
-        {
-          _args = [
+          (bind
             "SUPER + H"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ direction = "l" })'')
-          ];
-        }
+            (dsp.focus { direction = "l"; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + J"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ direction = "d" })'')
-          ];
-        }
+            (dsp.focus { direction = "d"; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + K"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ direction = "u" })'')
-          ];
-        }
+            (dsp.focus { direction = "u"; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + L"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ direction = "r" })'')
-          ];
-        }
+            (dsp.focus { direction = "r"; })
+            { }
+          )
 
 
-        # Resize
+          # Resize
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + H"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("hyprctl dispatch resizeactive -5% 0")'')
-          ];
-        }
+            (dsp.exec_cmd "hyprctl dispatch resizeactive -5% 0")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + L"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("hyprctl dispatch resizeactive 5% 0")'')
-          ];
-        }
+            (dsp.exec_cmd "hyprctl dispatch resizeactive 5% 0")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + J"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("hyprctl dispatch resizeactive 0 5%")'')
-          ];
-        }
+            (dsp.exec_cmd "hyprctl dispatch resizeactive 0 5%")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + K"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("hyprctl dispatch resizeactive 0 -5%")'')
-          ];
-        }
+            (dsp.exec_cmd "hyprctl dispatch resizeactive 0 -5%")
+            { }
+          )
 
 
-        # Master / stack
+          # Master / stack
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + H"
-            (lib.generators.mkLuaInline ''hl.dsp.layout("swapprev")'')
-          ];
-        }
+            (dsp.layout "swapprev")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + L"
-            (lib.generators.mkLuaInline ''hl.dsp.layout("swapnext")'')
-          ];
-        }
+            (dsp.layout "swapnext")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + K"
-            (lib.generators.mkLuaInline ''hl.dsp.layout("rollprev")'')
-          ];
-        }
+            (dsp.layout "rollprev")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + J"
-            (lib.generators.mkLuaInline ''hl.dsp.layout("rollnext")'')
-          ];
-        }
+            (dsp.layout "rollnext")
+            { }
+          )
 
 
-        # Screenshots
+          # Screenshots
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + S"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("grimblast save area ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && grimblast copy area")'')
-          ];
-        }
+            (dsp.exec_cmd "grimblast save area ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png")
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "Print"
-            (lib.generators.mkLuaInline ''hl.dsp.exec_cmd("grimblast save screen ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && grimblast copy screen")'')
-          ];
-        }
+            (dsp.exec_cmd "grimblast save screen ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png")
+            { }
+          )
 
 
-        # Workspace binds
+          # Workspace binds
 
-        {
-          _args = [
+          (bind
             "SUPER + 1"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = 1 })'')
-          ];
-        }
+            (dsp.focus { workspace = 1; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + 2"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = 2 })'')
-          ];
-        }
+            (dsp.focus { workspace = 2; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + 3"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = 3 })'')
-          ];
-        }
+            (dsp.focus { workspace = 3; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + 4"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = 4 })'')
-          ];
-        }
+            (dsp.focus { workspace = 4; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + 5"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = 5 })'')
-          ];
-        }
+            (dsp.focus { workspace = 5; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + 6"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = 6 })'')
-          ];
-        }
+            (dsp.focus { workspace = 6; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + 7"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = 7 })'')
-          ];
-        }
+            (dsp.focus { workspace = 7; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + 8"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = 8 })'')
-          ];
-        }
+            (dsp.focus { workspace = 8; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + 9"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = 9 })'')
-          ];
-        }
+            (dsp.focus { workspace = 9; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + 0"
-            (lib.generators.mkLuaInline ''hl.dsp.focus({ workspace = 10 })'')
-          ];
-        }
+            (dsp.focus { workspace = 10; })
+            { }
+          )
 
 
-        # Move to workspace
+          # Move to workspace
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + 1"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 1 })'')
-          ];
-        }
+            (dsp.window.move { workspace = 1; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + 2"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 2 })'')
-          ];
-        }
+            (dsp.window.move { workspace = 2; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + 3"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 3 })'')
-          ];
-        }
+            (dsp.window.move { workspace = 3; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + 4"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 4 })'')
-          ];
-        }
+            (dsp.window.move { workspace = 4; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + 5"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 5 })'')
-          ];
-        }
+            (dsp.window.move { workspace = 5; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + 6"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 6 })'')
-          ];
-        }
+            (dsp.window.move { workspace = 6; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + 7"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 7 })'')
-          ];
-        }
+            (dsp.window.move { workspace = 7; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + 8"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 8 })'')
-          ];
-        }
+            (dsp.window.move { workspace = 8; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + 9"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 9 })'')
-          ];
-        }
+            (dsp.window.move { workspace = 9; })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + SHIFT + 0"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 10 })'')
-          ];
-        }
+            (dsp.window.move { workspace = 10; })
+            { }
+          )
 
 
-        # Silent move to workspace
+          # Silent move to workspace
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + 1"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 1, follow = false })'')
-          ];
-        }
+            (dsp.window.move {
+              workspace = 1;
+              follow = false;
+            })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + 2"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 2, follow = false })'')
-          ];
-        }
+            (dsp.window.move {
+              workspace = 2;
+              follow = false;
+            })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + 3"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 3, follow = false })'')
-          ];
-        }
+            (dsp.window.move {
+              workspace = 3;
+              follow = false;
+            })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + 4"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 4, follow = false })'')
-          ];
-        }
+            (dsp.window.move {
+              workspace = 4;
+              follow = false;
+            })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + 5"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 5, follow = false })'')
-          ];
-        }
+            (dsp.window.move {
+              workspace = 5;
+              follow = false;
+            })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + 6"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 6, follow = false })'')
-          ];
-        }
+            (dsp.window.move {
+              workspace = 6;
+              follow = false;
+            })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + 7"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 7, follow = false })'')
-          ];
-        }
+            (dsp.window.move {
+              workspace = 7;
+              follow = false;
+            })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + 8"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 8, follow = false })'')
-          ];
-        }
+            (dsp.window.move {
+              workspace = 8;
+              follow = false;
+            })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + 9"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 9, follow = false })'')
-          ];
-        }
+            (dsp.window.move {
+              workspace = 9;
+              follow = false;
+            })
+            { }
+          )
 
-        {
-          _args = [
+          (bind
             "SUPER + CTRL + 0"
-            (lib.generators.mkLuaInline ''hl.dsp.window.move({ workspace = 10, follow = false })'')
-          ];
-        }
-      ];
+            (dsp.window.move {
+              workspace = 10;
+              follow = false;
+            })
+            { }
+          )
+        ];
 
-      # Startup
-      on = {
-        _args = [
+        # Startup
+        on = mkArgs [
           "hyprland.start"
-          (lib.generators.mkLuaInline ''
+          (mkLuaInline ''
             function()
+              hl.exec_cmd("noctalia")
+              hl.exec_cmd("polkit-gnome-authentication-agent-1")
               hl.exec_cmd("dbus-update-activation-environment --systemd DISPLAY HYPRLAND_INSTANCE_SIGNATURE WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE")
             end
           '')
         ];
       };
-    };
   };
 }
