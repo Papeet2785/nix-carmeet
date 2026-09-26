@@ -34,7 +34,7 @@
         "WLR_RENDERER_ALLOW_SOFTWARE,1"
       ];
 
-      exec-once = [
+      exec_cmd = [
         "noctalia --daemon"
         "polkit-gnome-authentication-agent-1"
       ];
