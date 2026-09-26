@@ -1,7 +1,6 @@
 { ... }:
 {
   programs.hyprland.settings = {
-    # Environment
     env = [
       "GDK_BACKEND,wayland,x11,*"
       "QT_QPA_PLATFORM,wayland;xcb"
@@ -33,7 +32,6 @@
       "WLR_RENDERER_ALLOW_SOFTWARE,1"
     ];
 
-    # General
     general = {
       layout = "master";
       gaps_in = 10;
@@ -41,7 +39,6 @@
       border_size = 0;
     };
 
-    # Master layout
     master = {
       new_status = "slave";
       new_on_top = false;
@@ -49,7 +46,6 @@
       orientation = "left";
     };
 
-    # Input
     input = {
       kb_layout = "us";
       repeat_rate = 50;
@@ -62,13 +58,18 @@
       };
     };
 
-    # Decoration
+    gestures = {
+      workspace_swipe = true;
+      workspace_swipe_fingers = 3;
+      workspace_swipe_invert = false;
+    };
+
     decoration = {
       rounding = 0;
     };
 
-    # Applications
     bind = [
+      # Applications
       "$mod, RETURN, exec, kitty"
       "$mod, ESCAPE, exec, kitty -e btop"
       "$mod, C, exec, kitty -e hx /home/carmeet"
@@ -85,16 +86,12 @@
       "CTRL ALT, DELETE, exec, noctalia msg panel-toggle session"
       "$mod, W, exec, noctalia msg panel-toggle wallpaper"
 
-      # Volume
+      # Function Keys
       ", XF86AudioRaiseVolume, exec, noctalia msg volume-up"
       ", XF86AudioLowerVolume, exec, noctalia msg volume-down"
       ", XF86AudioMute, exec, noctalia msg volume-mute"
-
-      # Brightness
       ", XF86MonBrightnessUp, exec, noctalia msg brightness-up"
       ", XF86MonBrightnessDown, exec, noctalia msg brightness-down"
-
-      # Media
       ", XF86AudioPlay, exec, playerctl play-pause"
       ", XF86AudioNext, exec, playerctl next"
       ", XF86AudioPrev, exec, playerctl previous"

@@ -13,7 +13,7 @@
     niri = {
       url = "github:sodiboo/niri-flake";
     };
-    hyprland.url = "git+https://github.com";
+    hyprland.url = "github:hyprwm/Hyprland";
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
