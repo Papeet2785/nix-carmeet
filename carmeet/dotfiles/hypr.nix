@@ -32,6 +32,11 @@
       "WLR_RENDERER_ALLOW_SOFTWARE,1"
     ];
 
+    exec-once = [
+      "noctalia --daemon"
+      "polkit-gnome-authentication-agent-1"
+    ];
+
     general = {
       layout = "master";
       gaps_in = 10;
@@ -122,8 +127,8 @@
       "$mod CTRL, J, layoutmsg, rollnext"
 
       # Screenshots
-      "$mod SHIFT, S, exec, grimblast copy area"
-      ", Print, exec, grimblast copy screen"
+      "$mod SHIFT, S, exec, grimblast save area ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && grimblast copy area"
+      ", Print, exec, grimblast save screen ~/Pictures/Screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png && grimblast copy screen"
 
       # Workspace binds
       "$mod, 1, workspace, 1"
