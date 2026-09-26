@@ -1,6 +1,7 @@
 { ... }:
 {
   wayland.windowManager.hyprland.settings = {
+    enable = true;
     env = [
       "GDK_BACKEND,wayland,x11,*"
       "QT_QPA_PLATFORM,wayland;xcb"
