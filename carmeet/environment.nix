@@ -38,6 +38,9 @@
       XDG_CURRENT_DESKTOP = "niri";
       MOZ_ENABLE_WAYLAND = "1";
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
+      NIXOS_OZONE_WL = "1";
+      _JAVA_AWT_WM_NONREPARENTING = "1";
+      GDK_BACKEND = "x11";
     };
     systemPackages = with pkgs; [
       #shell

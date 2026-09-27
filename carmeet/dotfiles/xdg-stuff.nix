@@ -2,31 +2,31 @@
 
 {
 xdg.mime.enable = true;
-xdg.desktopEntries = {
-  arduino = {
-    name = "Arduino IDE";
-    exec = "env GDK_BACKEND=x11 _JAVA_AWT_WM_NONREPARENTING=1 arduino %F";
-    icon = "${pkgs.arduino}/share/icons/hicolor/scalable/apps/arduino.svg";
-    terminal = false;
-    categories = [ "Development" "IDE" ];
-  };  
+# xdg.desktopEntries = {
+#   arduino = {
+#     name = "Arduino IDE";
+#     exec = "env GDK_BACKEND=x11 _JAVA_AWT_WM_NONREPARENTING=1 arduino %F";
+#     icon = "${pkgs.arduino}/share/icons/hicolor/scalable/apps/arduino.svg";
+#     terminal = false;
+#     categories = [ "Development" "IDE" ];
+#   };  
   
-  processing = {
-    name = "Processing";
-    exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 processing %F";
-    icon = "${pkgs.processing}/share/pixmaps/processing.png";
-    terminal = false;
-    categories = [ "Development" "IDE" ];
-  };
+#   processing = {
+#     name = "Processing";
+#     exec = "env _JAVA_AWT_WM_NONREPARENTING=1 GDK_BACKEND=x11 processing %F";
+#     icon = "${pkgs.processing}/share/pixmaps/processing.png";
+#     terminal = false;
+#     categories = [ "Development" "IDE" ];
+#   };
 
-  Helix = {
-    name = "Helix";
-    exec = "ghostty -e hx";
-    icon = "${pkgs.helix}/share/icons/hicolor/scalable/apps/helix.svg";
-    terminal = false;
-    categories = [ "Development" "IDE" ];
-  };
-};
+#   Helix = {
+#     name = "Helix";
+#     exec = "ghostty -e hx";
+#     icon = "${pkgs.helix}/share/icons/hicolor/scalable/apps/helix.svg";
+#     terminal = false;
+#     categories = [ "Development" "IDE" ];
+#   };
+# };
 xdg.mimeApps = {
   enable = true;
   defaultApplications = 
@@ -37,6 +37,7 @@ xdg.mimeApps = {
       {
         "x-scheme-handler/http" = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";
+        "x-scheme-handler/terminal" = "net.kovidgoyal.kitty.desktop";
       }
       // mapMimeTypes "firefox.desktop" [
         "text/html"
