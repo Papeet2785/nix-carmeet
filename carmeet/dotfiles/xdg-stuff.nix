@@ -2,15 +2,15 @@
 
 {
 xdg.mime.enable = true;
-# xdg.desktopEntries = {
-#   Helix = {
-#     name = "Helix";
-#     exec = "ghostty -e hx";
-#     icon = "${pkgs.helix}/share/icons/hicolor/scalable/apps/helix.svg";
-#     terminal = false;
-#     categories = [ "Development" "IDE" ];
-#   };
-# };
+xdg.desktopEntries = {
+  Helix = {
+    name = "Helix";
+    exec = "ghostty -e hx";
+    icon = "${pkgs.helix}/share/icons/hicolor/scalable/apps/helix.svg";
+    terminal = false;
+    categories = [ "Development" "IDE" ];
+  };
+};
 xdg.mimeApps = {
   enable = true;
   defaultApplications = 
@@ -21,7 +21,6 @@ xdg.mimeApps = {
       {
         "x-scheme-handler/http" = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";
-        "x-scheme-handler/terminal" = "com.mitchellh.ghostty.desktop";
       }
       // mapMimeTypes "firefox.desktop" [
         "text/html"
