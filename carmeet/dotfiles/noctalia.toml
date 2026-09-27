@@ -23,13 +23,10 @@ thickness = 36
 warning_threshold = 30
 
 [control_center]
-hidden_tabs = [ "media", "audio", "monitor", "network", "bluetooth", "screen-time" ]
+hidden_tabs = [ "media", "audio", "monitor", "network", "screen-time" ]
 
     [[control_center.shortcuts]]
     type = "caffeine"
-
-    [[control_center.shortcuts]]
-    type = "nightlight"
 
     [[control_center.shortcuts]]
     type = "notification"
@@ -42,6 +39,9 @@ hidden_tabs = [ "media", "audio", "monitor", "network", "bluetooth", "screen-tim
 
     [[control_center.shortcuts]]
     type = "clipboard"
+
+    [[control_center.shortcuts]]
+    type = "nightlight"
 
 [desktop_widgets]
 enabled = false
