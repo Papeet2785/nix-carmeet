@@ -6,7 +6,7 @@
   };
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
