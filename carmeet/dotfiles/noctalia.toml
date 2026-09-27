@@ -7,7 +7,7 @@ tint_intensity = 0.0
 
 [bar.default]
 capsule_radius = 0
-center = [ "control-center", "spacer_4", "clock", "spacer_5", "tray" ]
+center = [ "clock", "spacer_5", "tray" ]
 end = [ "cpu", "spacer_10", "ram", "spacer_9", "temp", "spacer_8", "volume", "spacer_6", "battery", "spacer_7", "session" ]
 margin_ends = 0
 padding = 5
@@ -321,6 +321,9 @@ color = "hover"
 format = "{:%I:%M %p, %a %d %b}"
 icon_color = "on_surface_variant"
 
+    [widget.clock.actions]
+    left = "panel-toggle control-center"
+
 [widget.control-center]
 color = "primary"
 glyph = "settings-filled"
@@ -346,9 +349,6 @@ type = "spacer"
 type = "spacer"
 
 [widget.spacer_3]
-type = "spacer"
-
-[widget.spacer_4]
 type = "spacer"
 
 [widget.spacer_5]
