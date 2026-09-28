@@ -143,7 +143,6 @@
       xwayland-satellite
       #apps
       loupe
-      inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
       networkmanagerapplet
       qalculate-gtk
       evince

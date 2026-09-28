@@ -2,10 +2,6 @@
   description = "Carmeet2785's NixOS configuration";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    freesmlauncher = {
-      url = "github:FreesmTeam/FreesmLauncher";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     stylix.url = "github:danth/stylix";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -22,7 +18,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ self, nixpkgs, freesmlauncher, auto-cpufreq, stylix, home-manager, noctalia, ... }:
+  outputs = inputs@{ self, nixpkgs, auto-cpufreq, stylix, home-manager, noctalia, ... }:
     {
       nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
