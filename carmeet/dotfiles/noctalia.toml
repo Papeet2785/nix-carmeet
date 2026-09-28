@@ -8,7 +8,21 @@ tint_intensity = 0.0
 [bar.default]
 capsule_radius = 0
 center = [ "clock", "spacer_5", "tray" ]
-end = [ "cpu", "spacer_10", "ram", "spacer_9", "temp", "spacer_8", "volume", "spacer_6", "battery", "spacer_7", "session" ]
+end = [
+    "bar",
+    "spacer_4",
+    "cpu",
+    "spacer_10",
+    "ram",
+    "spacer_9",
+    "temp",
+    "spacer_8",
+    "volume",
+    "spacer_6",
+    "battery",
+    "spacer_7",
+    "session"
+]
 margin_ends = 0
 padding = 5
 panel_overlap = 0
@@ -16,7 +30,7 @@ radius = 0
 radius_top_left = 0
 radius_top_right = 0
 shadow = false
-start = [ "launcher", "spacer_2", "workspaces", "spacer_3", "active_window" ]
+start = [ "launcher", "spacer_2", "workspaces", "spacer_11", "preview", "spacer_3", "active_window" ]
 thickness = 36
 
 [battery]
@@ -189,16 +203,14 @@ panel_position = "center"
 
 [plugins]
 auto_update = "all"
-enabled = []
+enabled = [ "raycursive/niri-displays", "teagar/niri-workspace-preview" ]
 
     [[plugins.source]]
-    enabled = false
     kind = "git"
     location = "https://github.com/noctalia-dev/official-plugins"
     name = "official"
 
     [[plugins.source]]
-    enabled = false
     kind = "git"
     location = "https://github.com/noctalia-dev/community-plugins"
     name = "community"
@@ -312,6 +324,11 @@ transition = [ "fade" ]
 [widget.active_window]
 max_length = 607
 
+[widget.bar]
+color = "outline"
+icon_color = "outline"
+type = "raycursive/niri-displays:bar"
+
 [widget.battery]
 color = "primary"
 display_mode = "graphic"
@@ -336,6 +353,9 @@ color = "tertiary"
 custom_image = "/home/carmeet/nix-carmeet/nixos.png"
 glyph = "snowflake"
 
+[widget.preview]
+type = "teagar/niri-workspace-preview:preview"
+
 [widget.ram]
 color = "outline"
 
@@ -345,10 +365,18 @@ color = "error"
 [widget.spacer_10]
 type = "spacer"
 
+[widget.spacer_11]
+type = "spacer"
+
 [widget.spacer_2]
 type = "spacer"
 
 [widget.spacer_3]
+type = "spacer"
+
+[widget.spacer_4]
+color = "outline"
+icon_color = "outline"
 type = "spacer"
 
 [widget.spacer_5]
