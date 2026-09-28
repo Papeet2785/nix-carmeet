@@ -36,11 +36,11 @@
     printing = {
       enable = true;
       drivers = with pkgs; [
-        hplip
-        canon-cups-ufr2
-        gutenprint
-        gutenprintBin
-        cnijfilter2
+        # hplip
+        # canon-cups-ufr2
+        # gutenprint
+        # gutenprintBin
+        # cnijfilter2
       ];
     };
     udisks2.enable = true;
