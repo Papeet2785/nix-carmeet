@@ -17,6 +17,12 @@
       timeout = 0;
     };
   };
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 8 * 1024;
+    }
+  ];  
   time.timeZone = "America/New_York";
   i18n = {
     defaultLocale = "en_US.UTF-8";
