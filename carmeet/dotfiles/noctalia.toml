@@ -99,11 +99,11 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1", 
     [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
     box_height = 196.0
     box_width = 810.0
-    cx = 1536.0
-    cy = 1582.4000244140625
+    cx = 1920.0
+    cy = 1978.0
     output = "HDMI-A-1"
-    placement_height = 1728.0
-    placement_width = 3072.0
+    placement_height = 2160.0
+    placement_width = 3840.0
     rotation = 0.0
     type = "login_box"
 
@@ -301,13 +301,13 @@ fill_mode = "stretch"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/scientist.jpg"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/scientist.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/scientist.jpg"
 
 [widget.active_window]
 max_length = 607
