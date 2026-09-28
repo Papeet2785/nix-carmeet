@@ -9,6 +9,8 @@ tint_intensity = 0.0
 capsule_radius = 0
 center = [ "clock", "spacer_5", "tray" ]
 end = [
+    "bar_2",
+    "spacer_12",
     "bar",
     "spacer_4",
     "cpu",
@@ -71,7 +73,10 @@ widget_order = []
 
 [dock]
 icon_size = 30
+launcher_custom_image = "/home/carmeet/nix-carmeet/nixos.png"
+launcher_position = "start"
 radius = 0
+reserve_space = false
 shadow = false
 show_dots = true
 smart_auto_hide = true
@@ -203,7 +208,7 @@ panel_position = "center"
 
 [plugins]
 auto_update = "all"
-enabled = [ "raycursive/niri-displays", "teagar/niri-workspace-preview" ]
+enabled = [ "raycursive/niri-displays", "teagar/niri-workspace-preview", "icefish/phone-connect" ]
 
     [[plugins.source]]
     kind = "git"
@@ -226,7 +231,6 @@ popup_shadows = false
     speed = 1.3500000201165676
 
     [shell.launcher]
-    app_grid = true
     fetch_exchange_rates = false
 
         [shell.launcher.providers.emoji]
@@ -329,6 +333,9 @@ color = "outline"
 icon_color = "outline"
 type = "raycursive/niri-displays:bar"
 
+[widget.bar_2]
+type = "icefish/phone-connect:bar"
+
 [widget.battery]
 color = "primary"
 display_mode = "graphic"
@@ -366,6 +373,9 @@ color = "error"
 type = "spacer"
 
 [widget.spacer_11]
+type = "spacer"
+
+[widget.spacer_12]
 type = "spacer"
 
 [widget.spacer_2]
