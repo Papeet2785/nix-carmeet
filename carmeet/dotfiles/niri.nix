@@ -80,8 +80,8 @@
       "Mod+Shift+Space".action.switch-focus-between-floating-and-tiling = {};
       "Mod+F".action.switch-preset-column-width = {};
       "Mod+H".action.focus-column-left = {};
-      "Mod+J".action.focus-column-down = {};
-      "Mod+K".action.focus-column-up = {};
+      "Mod+J".action.focus-window-down = {};
+      "Mod+K".action.focus-window-up = {};
       "Mod+L".action.focus-column-right = {};
       "Mod+Shift+H".action.set-column-width = "-10%";
       "Mod+Shift+J".action.set-window-height = "+10%";
