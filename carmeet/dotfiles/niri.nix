@@ -3,6 +3,7 @@
     spawn-at-startup = [
       { argv = [ "noctalia" "--daemon" ]; }
       { argv = [ "polkit-gnome-authentication-agent-1" ]; }
+      { argv = [ "xwayland-satellite" ]; }
     ];
     prefer-no-csd = true;
     debug.honor-xdg-activation-with-invalid-serial = true;
