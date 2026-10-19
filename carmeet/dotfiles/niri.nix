@@ -48,7 +48,7 @@
         bottom-left = 12.0;
       };
       clip-to-geometry = true;
-      drawborder-with-background = true;
+      draw-border-with-background = true;
     }];
     binds = {
       #apps
@@ -111,16 +111,16 @@
       "Mod+Shift+8".action.move-window-to-workspace = [ { focus = false; } 8 ];
       "Mod+Shift+9".action.move-window-to-workspace = [ { focus = false; } 9 ];
       "Mod+Shift+0".action.move-window-to-workspace = [ { focus = false; } 10 ];
-      "Mod+Shift+1".action.move-window-to-workspace = 1;
-      "Mod+Shift+2".action.move-window-to-workspace = 2;
-      "Mod+Shift+3".action.move-window-to-workspace = 3;
-      "Mod+Shift+4".action.move-window-to-workspace = 4;
-      "Mod+Shift+5".action.move-window-to-workspace = 5;
-      "Mod+Shift+6".action.move-window-to-workspace = 6;
-      "Mod+Shift+7".action.move-window-to-workspace = 7;
-      "Mod+Shift+8".action.move-window-to-workspace = 8;
-      "Mod+Shift+9".action.move-window-to-workspace = 9;
-      "Mod+Shift+0".action.move-window-to-workspace = 10;
+      "Mod+Control+1".action.move-window-to-workspace = 1;
+      "Mod+Control+2".action.move-window-to-workspace = 2;
+      "Mod+Control+3".action.move-window-to-workspace = 3;
+      "Mod+Control+4".action.move-window-to-workspace = 4;
+      "Mod+Control+5".action.move-window-to-workspace = 5;
+      "Mod+Control+6".action.move-window-to-workspace = 6;
+      "Mod+Control+7".action.move-window-to-workspace = 7;
+      "Mod+Control+8".action.move-window-to-workspace = 8;
+      "Mod+Control+9".action.move-window-to-workspace = 9;
+      "Mod+Control+0".action.move-window-to-workspace = 10;
     };
   };
 }

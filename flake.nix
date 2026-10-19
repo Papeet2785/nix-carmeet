@@ -1,7 +1,7 @@
 {
   description = "My NixOS configuration";
   inputs = {
-    nixpkgs.url = "giithub:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     areofyl-fetch = {
       url = "github:areofyl/fetch";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +26,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs @{ self, nixpkgs, home-manager, noctalia, stylix, freesmlauncher, ... }: {
+  outputs = inputs @{ self, nixpkgs, home-manager, noctalia, auto-cpufreq, stylix, freesmlauncher, ... }: {
     nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -34,7 +34,7 @@
         ./carmeet/config.nix
         inputs.niri.nixosModules.niri
         stylix.nixosModules.stylix
-        auto-cpufrew.nixosModules.default
+        auto-cpufreq.nixosModules.default
         home-manager.nixosModules.home-manager {
           home-manager = {
             useGlobalPkgs = true;

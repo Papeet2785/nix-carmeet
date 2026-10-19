@@ -32,8 +32,8 @@
     firewall = {
       allowedTCPPorts = [ 631 ];
       allowedUDPPorts = [ 5353 ];
-      allowedTCPPortRanges = [{ from = 1714; to = 1764 }];
-      allowedUDPPortRanges = [{ from = 1714; to = 1764 }];
+      allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+      allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
     };
   };
   services = {
@@ -225,7 +225,7 @@
       simple-scan
       supertuxkart
       gnome-themes-extra
-      onlyoffice-desktop-editors
+      onlyoffice-desktopeditors
       kdePackages.kdenlive
     ];
   };
@@ -261,19 +261,19 @@
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "Jetbrains Mono Nerd Font";
       };
+      sizes = {
+        applications = 10;
+        terminal = 12;
+        desktop = 10;
+        popups = 12;
+      };
     };
-    sizes = {
-      applications = 10;
-      terminal = 12;
-      desktop = 10;
-      popups = 12;
+    polarity = "dark";
+    targets = {
+      gtk.enable = true;
+      qt.enable = true;
+      fish.enable = true;
     };
-  };
-  polarity = "dark";
-  targets = {
-    gtk.enable = true;
-    qt.enable = true;
-    fish.enable = true;
   };
   system.stateVersion = "26.05";
 }
