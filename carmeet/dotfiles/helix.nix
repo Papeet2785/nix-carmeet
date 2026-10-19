@@ -1,0 +1,21 @@
+{ lib, ... } {
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = lib.mkForce "gruvbox_dark_hard";
+      editor = {
+        default-yank-register = "+";
+        idle-timeout = 0;
+        soft-wrap.enable = true;
+        cursor-shape = {
+          normal = "block";
+          insert = "bar";
+          select = "underline";
+        };
+        file-picker = {
+          hidden = false;
+        };
+      };
+    };
+  };
+}

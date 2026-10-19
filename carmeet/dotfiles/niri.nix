@@ -1,0 +1,126 @@
+{ ... }: {
+  programs.niri.settings = {
+    spawn-at-startup = [
+      { argv = [ "noctalia" "--daemon" ]; }
+      { argv = [ "polkit-gnome-authentication-agent-1" ]; }
+    ];
+    prefer-no-csd = true;
+    debug.honor-xdg-activation-with-invalid-serial = true;
+    input = {
+      keyboard = {
+        xkb.layout = "us";
+        repeat-rate = 50;
+        repeat-delay = 250;
+      };
+      touchpad = {
+        tap = true;
+        natural-scroll = true;
+        dwt = true;
+        accel-speed = 1.0;
+        accel-profile = "flat";
+      };
+      mouse = {
+        accel-speed = 1.0;
+        accel-profile = "flat";
+      };
+    };
+    layout = {
+      gaps = 10;
+      border = {
+        enable = true;
+        width = 3;
+        active.color = "#458588";
+        inactive.color = "#1d2021";
+      };
+      focus-ring.enable = false;
+      background-color = "#1d2021";
+      preset-column-widths = [
+        { proportion = 0.50; }
+        { proportion = 1.00; }
+      ];
+      default-column-width.proportion = 1.00;
+    };
+    window-rules = [{
+      geometry-corner-radius = {
+        top-left = 12.0;
+        top-right = 12.0;
+        bottom-right = 12.0;
+        bottom-left = 12.0;
+      };
+      clip-to-geometry = true;
+      drawborder-with-background = true;
+    }];
+    binds = {
+      #apps
+      "Mod+Return".action.spawn = "ghostty";
+      "Mod+Escape".action.spawn = [ "ghostty" "-e" "btop" ];
+      "Mod+C".action.spawn = [ "ghostty" "-e" "hx" "~" ];
+      "Mod+Tab".action.toggle-overview = {};
+      "Mod+B".action.spawn = "firefox";
+      "Mod+Shift+B".action.spawn = "google-chrome";
+      "Mod+E".action.spawn = "nautilus";
+      "Mod+Shift+R".action.spawn = [ "niri" "msg" "action" "load-config-file" ];
+      #noctalia
+      "Mod+D".action.spawn-sh = "noctalia msg panel-toggle launcher";
+      "Mod+V".action.spawn-sh = "noctalia msg panel-toggle clipboard";
+      "Mod+N".action.spawn-sh = "noctalia msg panel-toggle control-center";
+      "Mod+Comma".action.spawn-sh = "noctalia msg settings toggle";
+      "Control+Alt+Delete".action.spawn-sh = "noctalia msg panel-toggle session";
+      "Mod+W".action.spawn-sh = "noctalia msg panel-toggle wallpaper";
+      "Mod+Shift+S".action.screenshot = {};
+      #media
+      "XF86AudioPlay".action.spawn = [ "playerctl" "play-pause" ];
+      "XF86AudioNext".action.spawn = [ "playerctl" "next" ];
+      "XF86AudioPrev".action.spawn = [ "playerctl" "previous" ];
+      "XF86AudioStop".action.spawn = [ "playerctl" "stop" ];
+      #window
+      "Mod+Q".action.close-window = {};
+      "Mod+Space".action.toggle-window-floating = {};
+      "Mod+Shift+Space".action.switch-focus-between-floating-and-tiling = {};
+      "Mod+F".action.switch-preset-column-width = {};
+      "Mod+H".action.focus-column-left = {};
+      "Mod+J".action.focus-column-down = {};
+      "Mod+K".action.focus-column-up = {};
+      "Mod+L".action.focus-column-right = {};
+      "Mod+Shift+H".action.set-column-width = "-10%";
+      "Mod+Shift+J".action.set-window-height = "+10%";
+      "Mod+Shift+k".action.set-window-height = "-10%";
+      "Mod+Shift+L".action.set-column-width = "+10%";
+      "Mod+Control+H".action.consume-or-expel-window-left = {};
+      "Mod+Control+J".action.move-window-down = {};
+      "Mod+Control+K".action.move-window-up = {};
+      "Mod+Control+L".action.consume-or-expel-window-right = {};
+      #workspaces
+      "Mod+1".action.focus-workspace = 1;
+      "Mod+2".action.focus-workspace = 2;
+      "Mod+3".action.focus-workspace = 3;
+      "Mod+4".action.focus-workspace = 4;
+      "Mod+5".action.focus-workspace = 5;
+      "Mod+6".action.focus-workspace = 6;
+      "Mod+7".action.focus-workspace = 7;
+      "Mod+8".action.focus-workspace = 8;
+      "Mod+9".action.focus-workspace = 9;
+      "Mod+0".action.focus-workspace = 10;
+      "Mod+Shift+1".action.move-window-to-workspace = [ { focus = false; } 1 ];
+      "Mod+Shift+2".action.move-window-to-workspace = [ { focus = false; } 2 ];
+      "Mod+Shift+3".action.move-window-to-workspace = [ { focus = false; } 3 ];
+      "Mod+Shift+4".action.move-window-to-workspace = [ { focus = false; } 4 ];
+      "Mod+Shift+5".action.move-window-to-workspace = [ { focus = false; } 5 ];
+      "Mod+Shift+6".action.move-window-to-workspace = [ { focus = false; } 6 ];
+      "Mod+Shift+7".action.move-window-to-workspace = [ { focus = false; } 7 ];
+      "Mod+Shift+8".action.move-window-to-workspace = [ { focus = false; } 8 ];
+      "Mod+Shift+9".action.move-window-to-workspace = [ { focus = false; } 9 ];
+      "Mod+Shift+0".action.move-window-to-workspace = [ { focus = false; } 10 ];
+      "Mod+Shift+1".action.move-window-to-workspace = 1;
+      "Mod+Shift+2".action.move-window-to-workspace = 2;
+      "Mod+Shift+3".action.move-window-to-workspace = 3;
+      "Mod+Shift+4".action.move-window-to-workspace = 4;
+      "Mod+Shift+5".action.move-window-to-workspace = 5;
+      "Mod+Shift+6".action.move-window-to-workspace = 6;
+      "Mod+Shift+7".action.move-window-to-workspace = 7;
+      "Mod+Shift+8".action.move-window-to-workspace = 8;
+      "Mod+Shift+9".action.move-window-to-workspace = 9;
+      "Mod+Shift+0".action.move-window-to-workspace = 10;
+    };
+  };
+}
