@@ -93,7 +93,6 @@
         "nix-command"
         "flakes"
       ];
-      auto-optimize-store = true;
     };
     gc = {
       automatic = true;
@@ -220,6 +219,7 @@
       cheese
       obs-studio
       proton-vpn
+      firefox
       google-chrome
       vlc
       discord
