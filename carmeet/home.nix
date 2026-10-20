@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, ... }: {
   home = {
     username = "carmeet";
     homeDirectory = "/home/carmeet";
@@ -32,4 +32,7 @@
     ./dotfiles/fetch.nix
     ./dotfiles/niri.nix
   ];
+    home.file.".local/state/noctalia/settings.toml".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "/home/carmeet/nix-carmeet/carmeet/dotfiles/noctalia.toml";
 }
