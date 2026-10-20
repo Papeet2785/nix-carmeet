@@ -65,11 +65,16 @@
       "Mod+D".action.spawn-sh = "noctalia msg panel-toggle launcher";
       "Mod+V".action.spawn-sh = "noctalia msg panel-toggle clipboard";
       "Mod+N".action.spawn-sh = "noctalia msg panel-toggle control-center";
-      "Mod+Comma".action.spawn-sh = "noctalia msg settings toggle";
+      "Mod+Comma".action.spawn-sh = "noctalia msg settings-toggle";
       "Control+Alt+Delete".action.spawn-sh = "noctalia msg panel-toggle session";
       "Mod+W".action.spawn-sh = "noctalia msg panel-toggle wallpaper";
       "Mod+Shift+S".action.screenshot = {};
-      #media
+      #specialkeys
+      "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" ];
+      "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-" ];
+      "XF86AudioMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
+      "XF86MonBrightnessUp".action.spawn = [ "brightnessctl" "set" "+5%" ];
+      "XF86MonBrightnessDown".action.spawn = [ "brightnessctl" "set" "5%-" ];
       "XF86AudioPlay".action.spawn = [ "playerctl" "play-pause" ];
       "XF86AudioNext".action.spawn = [ "playerctl" "next" ];
       "XF86AudioPrev".action.spawn = [ "playerctl" "previous" ];
@@ -79,6 +84,7 @@
       "Mod+Space".action.toggle-window-floating = {};
       "Mod+Shift+Space".action.switch-focus-between-floating-and-tiling = {};
       "Mod+F".action.switch-preset-column-width = {};
+      "Mod+Shift+F".action.fullscreen-window = {};
       "Mod+H".action.focus-column-left = {};
       "Mod+J".action.focus-window-down = {};
       "Mod+K".action.focus-window-up = {};
