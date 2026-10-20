@@ -1,1 +1,94 @@
-/nix/store/4g86p371mxqygk704nnp5l3v2mzgv4ib-home-manager-files/.local/state/noctalia/settings.toml
+config_version = 15
+
+[audio]
+enable_notification_sounds = false
+enable_power_sounds = false
+enable_screenshot_sounds = false
+enable_sounds = false
+enable_volume_sounds = false
+
+[bar.default]
+center = [ "control-center", "clock", "tray" ]
+end = [ "ram", "cpu", "temp", "volume", "battery" ]
+margin_ends = 0
+padding = 7
+radius_top_left = 0
+radius_top_right = 0
+start = [ "workspaces", "active_window" ]
+widget_spacing = 20
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[nightlight]
+enabled = true
+force = true
+temperature_day = 5400
+temperature_night = 5400
+
+[shell.launcher]
+app_grid = true
+category_icons_only = true
+compact = true
+layout = "simple"
+
+[wallpaper]
+directory = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper"
+transition = [ "fade" ]
+
+    [wallpaper.default]
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
+
+    [wallpaper.last]
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
+
+[widget.battery]
+display_mode = "graphic"
+
+[widget.clock]
+format = "{:%I:%M %p}"
+
+[widget.control-center]
+glyph = "navigation-filled"
+
+[widget.tray]
+drawer = true
+scale = 0.60000000000000009
