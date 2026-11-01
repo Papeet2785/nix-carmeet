@@ -123,4 +123,4 @@ color = "on_error_container"
 [widget.workspaces]
 empty_color = "primary_container"
 focused_color = "#458588"
-occupied_color = "on_primary_container"
+occupied_color = "primary"
