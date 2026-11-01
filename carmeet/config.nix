@@ -163,6 +163,7 @@
       uv
       clang
       gcc
+      pkg-config
       clang-tools
       lld
       binutils
@@ -174,6 +175,7 @@
       gnumake
       rust-analyzer
       rustPlatform.rustLibSrc
+      rustlings
       jdt-language-server
       ruff
       vscode-langservers-extracted
