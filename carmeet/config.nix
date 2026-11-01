@@ -156,6 +156,8 @@
       trash-cli
       #code
       helix
+      zed
+      godot
       python3
       openjdk
       uv
@@ -215,6 +217,9 @@
       qalculate-gtk
       evince
       gimp
+      inkscape
+      inkscape
+      protondb
       loupe
       cheese
       obs-studio
