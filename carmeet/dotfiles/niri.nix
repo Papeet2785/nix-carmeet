@@ -55,8 +55,8 @@
       #apps
       "Mod+Return".action.spawn = "ghostty";
       "Mod+Escape".action.spawn = [ "ghostty" "-e" "btop" ];
-      "Mod+C".action.spawn = "zeditor";
-      "Mod+Shift+C".action.spawn = [ "ghostty" "-e" "hx" "~" ];
+      "Mod+C".action.spawn = [ "ghostty" "-e" "hx" "~" ];
+      "Mod+Shift+C".action.spawn = [ "ghostty" "-e" "hx" "~/nix-carmeet" ];
       "Mod+Tab".action.toggle-overview = {};
       "Mod+B".action.spawn = "firefox";
       "Mod+Shift+B".action.spawn = "google-chrome";
