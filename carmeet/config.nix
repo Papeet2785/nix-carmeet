@@ -163,7 +163,7 @@
       uv
       gcc
       pkg-config
-      lldp
+      lldb
       clang-tools
       lld
       binutils
