@@ -169,7 +169,7 @@
       libx11.dev
       libxcursor
       libxi
-      libsinerama
+      libxinerama
       libxrandr
       lld
       binutils
