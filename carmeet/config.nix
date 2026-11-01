@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }: {
+{  pkgs, inputs, ... }: {
   imports = [ ./hardware.nix ];
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -156,7 +156,6 @@
       trash-cli
       #code
       helix
-      zed-editor
       godot
       python3
       openjdk
