@@ -161,9 +161,9 @@
       python3
       openjdk
       uv
-      clang
       gcc
       pkg-config
+      lldp
       clang-tools
       lld
       binutils
@@ -177,9 +177,13 @@
       rustPlatform.rustLibSrc
       rustlings
       jdt-language-server
+      ty
+      python314Packages.python-lsp-server
+      python314Packages.jedi
       ruff
       vscode-langservers-extracted
       fish-lsp
+      nixd
       nil
       marksman
       #services
