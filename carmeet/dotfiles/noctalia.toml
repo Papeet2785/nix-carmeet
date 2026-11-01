@@ -14,7 +14,7 @@ margin_ends = 0
 padding = 7
 radius_top_left = 0
 radius_top_right = 0
-start = [ "workspaces", "active_window" ]
+start = [ "workspaces", "bar", "active_window" ]
 widget_spacing = 20
 
 [lockscreen_widgets]
@@ -61,6 +61,9 @@ force = true
 temperature_day = 5400
 temperature_night = 5400
 
+[plugins]
+enabled = [ "raycursive/niri-displays" ]
+
 [shell.launcher]
 app_grid = true
 category_icons_only = true
@@ -72,23 +75,49 @@ directory = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/space.jpg"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/space.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/space.jpg"
+
+[widget.bar]
+type = "raycursive/niri-displays:bar"
 
 [widget.battery]
+color = "#458588"
 display_mode = "graphic"
 
 [widget.clock]
-format = "{:%I:%M %p}"
+color = "tertiary"
+format = "{:%A %e, %I:%M:%S %p}"
 
 [widget.control-center]
-glyph = "navigation-filled"
+color = "primary"
+glyph = "device-ipad"
+
+[widget.cpu]
+color = "secondary"
+icon_color = "secondary"
+
+[widget.ram]
+color = "primary"
+icon_color = "primary"
+
+[widget.temp]
+color = "on_tertiary_container"
+icon_color = "on_tertiary_container"
 
 [widget.tray]
 drawer = true
 scale = 0.60000000000000009
+
+[widget.volume]
+color = "on_error_container"
+
+[widget.workspaces]
+empty_color = "primary_container"
+focused_color = "#458588"
+occupied_color = "on_primary_container"
