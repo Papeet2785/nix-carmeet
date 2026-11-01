@@ -156,7 +156,7 @@
       trash-cli
       #code
       helix
-      zed
+      zed-editor
       godot
       python3
       openjdk
@@ -218,8 +218,8 @@
       evince
       gimp
       inkscape
-      inkscape
-      protondb
+      steam
+      protonplus
       loupe
       cheese
       obs-studio
