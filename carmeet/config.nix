@@ -164,6 +164,13 @@
       pkg-config
       lldb
       clang-tools
+      libGL
+      libx11
+      libx11.dev
+      libxcursor
+      libxi
+      libsinerama
+      libxrandr
       lld
       binutils
       arduino
