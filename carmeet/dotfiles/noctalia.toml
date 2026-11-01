@@ -61,6 +61,9 @@ force = true
 temperature_day = 5400
 temperature_night = 5400
 
+[notification]
+position = "bottom_right"
+
 [plugins]
 enabled = [ "raycursive/niri-displays" ]
 
