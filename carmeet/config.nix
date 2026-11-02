@@ -109,6 +109,7 @@
     dconf.enable = true;
     fish.enable = true;
     starship.enable = true;
+    steam.enable = true;
     auto-cpufreq = {
       enable = true;
       settings = {
@@ -128,6 +129,10 @@
     bluetooth = {
       enable = true;
       powerOnBoot = true;
+    };
+    graphics = {
+      enable = true;
+      enable32Bit = true;
     };
   };
   users.users.carmeet = {
@@ -234,7 +239,6 @@
       evince
       gimp
       inkscape
-      steam
       protonplus
       loupe
       cheese
