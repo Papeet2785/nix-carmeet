@@ -12,6 +12,7 @@
     niri = {
       url = "github:sodiboo/niri-flake";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +27,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs @{ self, nixpkgs, home-manager, noctalia, auto-cpufreq, stylix, freesmlauncher, ... }: {
+  outputs = inputs @{ self, nixpkgs, home-manager, hyprland, noctalia, auto-cpufreq, stylix, freesmlauncher, ... }: {
     nixosConfigurations.myMachine = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
