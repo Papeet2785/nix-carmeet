@@ -244,6 +244,7 @@
       cheese
       obs-studio
       proton-vpn
+      brave-origin
       firefox
       google-chrome
       vlc

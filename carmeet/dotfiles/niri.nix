@@ -59,7 +59,7 @@
       "Mod+C".action.spawn = [ "foot" "-e" "hx" "~" ];
       "Mod+Shift+C".action.spawn = [ "foot" "-e" "hx" "~/nix-carmeet" ];
       "Mod+Tab".action.toggle-overview = {};
-      "Mod+B".action.spawn = "firefox";
+      "Mod+B".action.spawn = "brave-origin";
       "Mod+Shift+B".action.spawn = "google-chrome";
       "Mod+E".action.spawn = "nautilus";
       "Mod+Shift+R".action.spawn = [ "niri" "msg" "action" "load-config-file" ];
