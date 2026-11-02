@@ -234,7 +234,7 @@
       papirus-folders
       #apps
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
-      xtuner
+      lingot
       qalculate-gtk
       evince
       gimp
