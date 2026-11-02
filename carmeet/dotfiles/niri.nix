@@ -32,7 +32,7 @@
         enable = true;
         width = 3;
         active.color = "#458588";
-        inactive.color = "#1d2021";
+        inactive.color = "#3c3836";
       };
       focus-ring.enable = false;
       background-color = "#1d2021";
