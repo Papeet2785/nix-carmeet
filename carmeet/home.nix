@@ -1,26 +1,15 @@
-{ config, ... }: {
+{ lib, config, ... }: {
   home = {
     username = "carmeet";
     homeDirectory = "/home/carmeet";
     stateVersion = "26.11";
   };
   programs = {
-    ghostty = {
-      enable = true;
-      settings = {
-        confirm-close-surface = false;
-        font-family = "Jetbrains Mono Nerd Font";
-        window-padding-x = 10;
-        window-padding-y = 10;
-        window-padding-balance = true;        
-        font-size = 12;
-      };
-    };
     foot = {
       enable = true;
       settings = {
         main = {
-          font = "JetBrainsMono Nerd Font:size=12";
+          font = lib.mkForce "JetBrains Mono Nerd Font:size=12";
           pad = "10x10 center";
         };
       };
