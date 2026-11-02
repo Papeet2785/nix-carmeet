@@ -113,13 +113,13 @@ directory = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/space.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/solar_system.jpeg"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/space.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/solar_system.jpeg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/space.jpg"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/solar_system.jpeg"
 
 [widget.bar]
 type = "raycursive/niri-displays:bar"
