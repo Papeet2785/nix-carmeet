@@ -2,8 +2,8 @@
   home.file.".local/share/applications/helix-terminal.desktop".text = ''
     [Desktop Entry]
     Name = Helix
-    Comment = Helix in Ghostty
-    Exec = ghostty -e hx %F
+    Comment = Helix in foot
+    Exec = foot -e hx %F
     Terminal = false
     Type = Application
     MimeType = text/plain;text/markdown;text/x-c;text/x-java;text/css'textjavascript;application/json;text/x-python;text/x-nix;

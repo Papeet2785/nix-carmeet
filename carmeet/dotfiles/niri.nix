@@ -54,10 +54,10 @@
     }];
     binds = {
       #apps
-      "Mod+Return".action.spawn = "ghostty";
-      "Mod+Escape".action.spawn = [ "ghostty" "-e" "btop" ];
-      "Mod+C".action.spawn = [ "ghostty" "-e" "hx" "~" ];
-      "Mod+Shift+C".action.spawn = [ "ghostty" "-e" "hx" "~/nix-carmeet" ];
+      "Mod+Return".action.spawn = "foot";
+      "Mod+Escape".action.spawn = [ "foot" "-e" "btop" ];
+      "Mod+C".action.spawn = [ "foot" "-e" "hx" "~" ];
+      "Mod+Shift+C".action.spawn = [ "foot" "-e" "hx" "~/nix-carmeet" ];
       "Mod+Tab".action.toggle-overview = {};
       "Mod+B".action.spawn = "firefox";
       "Mod+Shift+B".action.spawn = "google-chrome";

@@ -16,6 +16,15 @@
         font-size = 12;
       };
     };
+    foot = {
+      enable = true;
+      settings = {
+        main = {
+          font = "JetBrainsMono Nerd Font:size=12";
+          pad = "10x10 center";
+        };
+      };
+    };
     noctalia.enable = true;
     btop = {
       enable = true;

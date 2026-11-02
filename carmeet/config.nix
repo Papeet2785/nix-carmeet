@@ -223,7 +223,7 @@
       gtk4
       qt6Packages.qt6ct
       bc
-      ghostty
+      foot
       libnotify
       wl-clipboard
       cliphist
