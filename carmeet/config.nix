@@ -1,4 +1,4 @@
-{  pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [ ./hardware.nix ];
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -144,6 +144,7 @@
       _JAVA_AWT_WM_NONREPARENTING = "1";
       GDK_BACKEND = "wayland,x11";
       QT_QPA_PLATFORM = "wayland;xcb";
+      PAPIRUS_FOLDER_COLOR = "blue";
     };
     variables = {
       RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
@@ -224,6 +225,8 @@
       bibata-cursors
       pavucontrol
       brightnessctl
+      papirus-icon-theme
+      papirus-folders
       #apps
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
       xtuner
@@ -277,10 +280,24 @@
       name = "Bibata-Modern-Classic";
       size = 24;
     };
+    icons = {
+      enable = true;
+      package = pkgs.papirus-icon-theme;
+      dark = "Papirus-Dark";
+      light = "Papirus";
+    };
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "Jetbrains Mono Nerd Font";
+      };
+      sansSerif = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+      };
+      serif = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
       };
       sizes = {
         applications = 10;

@@ -10,6 +10,9 @@
       settings = {
         confirm-close-surface = false;
         font-family = "Jetbrains Mono Nerd Font";
+        window-padding-x = 10;
+        window-padding-y = 10;
+        window-padding-balance = true;        
         font-size = 12;
       };
     };
