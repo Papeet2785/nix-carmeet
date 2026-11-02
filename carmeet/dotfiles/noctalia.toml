@@ -17,6 +17,9 @@ radius_top_right = 0
 start = [ "workspaces", "bar", "active_window" ]
 widget_spacing = 20
 
+[location]
+address = "Charlotte, NC"
+
 [lockscreen_widgets]
 enabled = false
 schema_version = 2
@@ -30,7 +33,7 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
     box_width = 810.0
-    cx = 960.0
+    cx = 959.99993896484375
     cy = 898.0
     output = "eDP-1"
     placement_height = 1080.0
