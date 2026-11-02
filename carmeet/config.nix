@@ -43,7 +43,7 @@
         save = true;
         numlock = true;
         vi_mode = true;
-        vi_default_mode = "normal";
+        vi_default_mode = "insert";
       };
     };
     upower.enable = true;
