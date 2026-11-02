@@ -255,7 +255,6 @@
       zapzap
       lingot
       simple-scan
-      supertuxkart
       gnome-themes-extra
       onlyoffice-desktopeditors
       kdePackages.kdenlive
