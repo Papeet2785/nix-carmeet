@@ -350,7 +350,7 @@ in
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     cursor = {
       package = bibata-cursor-gruvbox;
-      name = "Bibata-Modern-Gruvbox-Dark";
+      name = "Bibata-Modern-Classic";
       size = 24;
     };
     icons = {
