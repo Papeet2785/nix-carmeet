@@ -17,15 +17,15 @@
       border_color = "0x458588aa";
       border_radius = 12;
       bind = [
-        "SUPER, SHIFT, r, reload_config"
-        "Super, d, spawn, noctalia msg panel-toggle launcher"
-        "Super, SHIFT, c, spawn, foot -e hx ~/nix-carmeet"
-        "Super, c, spawn, foot -e hx ~"
-        "Super, b, spawn, firefox"
-        "Super, SHIFT, b, spawn, google-chrome"
-        "Super, e, spawn, nautilus"
-        "Super, Return, spawn, foot"
-        "Super, Escape, spawn, foot -e btop"
+        "SUPER, shift_l, r, reload_config"
+        "SUPER, d, spawn, noctalia msg panel-toggle launcher"
+        "SUPER, shift_l, c, spawn, foot -e hx ~/nix-carmeet"
+        "SUPER, c, spawn, foot -e hx ~"
+        "SUPER, b, spawn, firefox"
+        "SUPER, shift_l, b, spawn, google-chrome"
+        "SUPER, e, spawn, nautilus"
+        "SUPER, Return, spawn, foot"
+        "SUPER, Escape, spawn, foot -e btop"
       ];
     };
   };
