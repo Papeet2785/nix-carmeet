@@ -228,8 +228,9 @@
       file
       xwayland-satellite
       fuse
-      #niri
+      #mango
       playerctl
+      wlr-randr
       wireplumber
       jq
       gtk4
