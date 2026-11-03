@@ -29,7 +29,7 @@ let
       runHook postInstall
     '';   
   }; 
-  gruvbox-papirus-icon-theme = pkgs.stdenv.mkDerivation {
+   gruvbox-papirus-icon-theme = pkgs.stdenv.mkDerivation {
     pname = "gruvbox-papirus-icon-theme";
     version = "unstable-2026";
     src = pkgs.fetchFromGitHub {
@@ -47,10 +47,12 @@ let
     dontBuild = true;
     installPhase = ''
       runHook preInstall
+      set -eux
       mkdir -p $out/share/icons
       cp -rL ${pkgs.papirus-icon-theme}/share/icons/. \
         $out/share/icons/
       chmod -R u+w $out/share/icons
+      patchShebangs ./papirus-folders
       for theme in Papirus Papirus-Dark Papirus-Light; do
         cp -r src/. "$out/share/icons/$theme/"
         ./papirus-folders \
@@ -60,7 +62,7 @@ let
       done
       runHook postInstall
     '';
-  };
+  }; 
 in
 {
   imports = [
