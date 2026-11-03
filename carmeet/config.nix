@@ -3,37 +3,29 @@ let
    bibata-cursor-gruvbox = pkgs.stdenv.mkDerivation {
     pname = "bibata-cursor-gruvbox";
     version = "unstable-2026";
-
     src = pkgs.fetchFromGitHub {
       owner = "NiciTheNici";
       repo = "bibata_cursor_gruvbox";
       rev = "main";
       hash = "sha256-VCEHiog+hfp/kh0OS5a2fJaIf1PtBuQ0HvFbsxwAoNI=";
     };
-
     nativeBuildInputs = [
       pkgs.python312
       pkgs.librsvg
       pkgs.xcursorgen
     ];
-
     dontBuild = true;
-
     installPhase = ''
       runHook preInstall
       set -eux
-
       python src/cursor_utils.py \
         --hypr \
         --x11 \
         --theme Bibata-Modern-Classic-Gruvbox \
         --out-dir ./out
-
       mkdir -p "$out/share/icons"
-
       cp -r ./out/Bibata-Modern-Classic-Gruvbox \
         "$out/share/icons/"
-
       runHook postInstall
     '';
   }; 
