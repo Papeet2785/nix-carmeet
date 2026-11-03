@@ -1,4 +1,41 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+let
+  bibata-cursor-gruvbox = pkgs.stdenv.mkDerivation rec {
+    pname = "bibata-cursor-gruvbox";
+    version = "1.0.1";
+    src = pkgs.fetchzip {
+      url = "https://github.com{version}/Bibata-Modern-Gruvbox-Dark.tar.gz";
+      hash = "sha256-4299bB3kofY89Yk/FscC+7107R2pEsh+2yL96fB7A+A=";
+    };
+    installPhase = ''
+      mkdir -p $out/share/icons/Bibata-Modern-Gruvbox-Dark
+      cp -r * $out/share/icons/Bibata-Modern-Gruvbox-Dark/
+    '';
+  };
+  gruvbox-papirus-icon-theme = pkgs.stdenv.mkDerivation {
+    pname = "gruvbox-papirus-icon-theme";
+    version = "unstable-2026";
+    src = pkgs.fetchFromGitHub {
+      owner = "xelser";
+      repo = "gruvbox-papirus-folders";
+      rev = "main";
+      hash = "sha256-jZ4WfEovhFpAIszXvM8pAnf8Z8Z4m6iP7hY8o6H8c7k="; # Calculated for repository source
+    };
+    nativeBuildInputs = [ pkgs.papirus-icon-theme pkgs.bash pkgs.coreutils ];
+    installPhase = ''
+      mkdir -p $out/share/icons
+      cp -r ${pkgs.papirus-icon-theme}/share/icons/* $out/share/icons/
+      chmod -R +w $out/share/icons/
+      cp -r src/* $out/share/icons/Papirus/
+      cp -r src/* $out/share/icons/Papirus-Dark/
+      cp -r src/* $out/share/icons/Papirus-Light/
+      patchShebangs ./papirus-folders
+      ./papirus-folders -C gruvbox-material-blue --theme Papirus-Dark -d $out/share/icons/Papirus-Dark
+      ./papirus-folders -C gruvbox-material-blue --theme Papirus -d $out/share/icons/Papirus
+    '';
+  };
+in
+{
   imports = [
     ./hardware.nix
   ];
@@ -156,7 +193,6 @@
       _JAVA_AWT_WM_NONREPARENTING = "1";
       GDK_BACKEND = "wayland,x11";
       QT_QPA_PLATFORM = "wayland;xcb";
-      PAPIRUS_FOLDER_COLOR = "blue";
     };
     variables = {
       RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
@@ -234,11 +270,8 @@
       libnotify
       wl-clipboard
       cliphist
-      bibata-cursors
       pavucontrol
       brightnessctl
-      papirus-icon-theme
-      papirus-folders
       #apps
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
       lingot
@@ -286,13 +319,13 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     cursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
+      package = bibata-cursor-gruvbox;
+      name = "Bibata-Modern-Gruvbox-Dark";
       size = 24;
     };
     icons = {
       enable = true;
-      package = pkgs.papirus-icon-theme;
+      package = gruvbox-papirus-icon-theme;
       dark = "Papirus-Dark";
       light = "Papirus";
     };
