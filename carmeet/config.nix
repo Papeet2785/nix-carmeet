@@ -1,7 +1,6 @@
 { pkgs, inputs, ... }: {
   imports = [
     ./hardware.nix
-    inputs.mango.nixosModules.mango
   ];
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -107,10 +106,6 @@
     niri = {
       enable = true;
       package = pkgs.niri;
-    };
-    mango = {
-      enable = true;
-      addLoginEntry = true;
     };
     xwayland.enable = true;
     nix-ld.enable = true;
@@ -228,11 +223,8 @@
       file
       xwayland-satellite
       fuse
-      #mango
+      #niri
       playerctl
-      flameshot
-      wlr-randr
-      wl-mirror
       wireplumber
       jq
       gtk4
