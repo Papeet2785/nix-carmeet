@@ -43,6 +43,7 @@ let
       pkgs.coreutils
       pkgs.gnused
       pkgs.gtk3
+      pkgs.getent
     ];
     dontBuild = true;
     installPhase = ''
