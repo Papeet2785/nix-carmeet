@@ -38,7 +38,7 @@
       tag_rule = [
         "id:*,layout_name:tile"
       ];
-      scroller_proportion_preset = "0.5,0.7,0.85,1.0";
+      scroller_proportion_preset = "0.5,1.0";
       scroller_default_proportion = 1.0;
       scroller_focus_center = 1;
       xkb_rules_layout = "us";
@@ -67,6 +67,7 @@
         "SUPER+SHIFT,b,spawn,google-chrome"
         "SUPER,e,spawn,nautilus"
         "SUPER+SHIFT,r,reload_config"
+        "SUPER+SHIFT,s,flameshot gui"
         "SUPER,d,spawn,noctalia msg panel-toggle launcher"
         "SUPER,v,spawn,noctalia msg panel-toggle clipboard"
         "SUPER,n,spawn,noctalia msg panel-toggle control-center"
