@@ -1,5 +1,8 @@
 { pkgs, inputs, ... }: {
-  imports = [ ./hardware.nix ];
+  imports = [
+    ./hardware.nix
+    inputs.mango.nixosModules.mango
+  ];
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
@@ -105,7 +108,11 @@
       enable = true;
       package = pkgs.niri;
     };
-    mango.enable = true;
+    mango = {
+      enable = true;
+      addLoginEntry = true;
+    };
+    xwayland.enable = true;
     nix-ld.enable = true;
     dconf.enable = true;
     fish.enable = true;

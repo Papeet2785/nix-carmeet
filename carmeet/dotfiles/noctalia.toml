@@ -96,7 +96,7 @@ temperature_night = 5400
 position = "bottom_right"
 
 [plugins]
-enabled = [ "raycursive/niri-displays" ]
+enabled = [ "raycursive/niri-displays", "prponkshe/mango-displays" ]
 
 [shell.launcher]
 app_grid = true
