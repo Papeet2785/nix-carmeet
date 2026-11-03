@@ -67,7 +67,7 @@
         "SUPER+SHIFT,b,spawn,google-chrome"
         "SUPER,e,spawn,nautilus"
         "SUPER+SHIFT,r,reload_config"
-        "SUPER+SHIFT,s,flameshot gui"
+        "SUPER+SHIFT,s,spawn,flameshot gui"
         "SUPER,d,spawn,noctalia msg panel-toggle launcher"
         "SUPER,v,spawn,noctalia msg panel-toggle clipboard"
         "SUPER,n,spawn,noctalia msg panel-toggle control-center"
