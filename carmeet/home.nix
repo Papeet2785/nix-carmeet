@@ -32,6 +32,7 @@
     ./dotfiles/helix.nix
     ./dotfiles/fetch.nix
     ./dotfiles/niri.nix
+    ./dotfiles/mango.nix
   ];
     home.activation.noctaliaWritableConfig =
     config.lib.dag.entryAfter [ "writeBoundary" ] ''
