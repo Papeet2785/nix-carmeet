@@ -74,7 +74,7 @@
         "CTRL+ALT,Delete,spawn,noctalia msg panel-toggle session"
         "SUPER,w,spawn,noctalia msg panel-toggle wallpaper"
         "SUPER,Tab,toggleoverview"
-        "SUPER+ALT,l,switch_layout"
+        "SUPER+ALT,Tab,switch_layout"
         "SUPER,q,killclient"
         "SUPER,space,togglefloating"
         "SUPER+SHIFT,f,togglefullscreen"
