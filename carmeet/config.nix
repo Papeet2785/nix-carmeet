@@ -1,27 +1,5 @@
 { pkgs, inputs, ... }:
 let
-  bibata-cursor-gruvbox = pkgs.stdenv.mkDerivation {
-    pname = "bibata-cursor-gruvbox";
-    version = "unstable-2026";
-
-    src = pkgs.fetchFromGitHub {
-      owner = "NiciTheNici";
-      repo = "bibata_cursor_gruvbox";
-      rev = "main"; # Point directly to the main branch to prevent 404 errors
-      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Temporary placeholder hash
-    };
-
-    installPhase = ''
-      mkdir -p $out/share/icons/Bibata-Modern-Gruvbox-Dark
-      
-      # Copy theme structural files to the output icons directory
-      if [ -d "Bibata-Modern-Gruvbox-Dark" ]; then
-        cp -r Bibata-Modern-Gruvbox-Dark/* $out/share/icons/Bibata-Modern-Gruvbox-Dark/
-      else
-        cp -r * $out/share/icons/Bibata-Modern-Gruvbox-Dark/
-      fi
-    '';
-  };
   gruvbox-papirus-icon-theme = pkgs.stdenv.mkDerivation {
     pname = "gruvbox-papirus-icon-theme";
     version = "unstable-2026";
@@ -32,7 +10,7 @@ let
       rev = "main";
       hash = "sha256-P8YfefK6up+8jRd+n5KMu2tkepiu1fWx+rWXg1y5Kio="; 
     };
-    nativeBuildInputs = [ pkgs.papirus-icon-theme pkgs.bash pkgs.coreutils ];
+    nativeBuildInputs = [ pkgs.papirus-icon-theme pkgs.bash pkgs.coreutils pkgs.gnused ];
     installPhase = ''
       mkdir -p $out/share/icons
       cp -rL ${pkgs.papirus-icon-theme}/share/icons/* $out/share/icons/
@@ -41,8 +19,11 @@ let
       cp -r src/* $out/share/icons/Papirus-Dark/
       cp -r src/* $out/share/icons/Papirus-Light/
       patchShebangs ./papirus-folders
-      ./papirus-folders -C gruvbox-material-blue --theme Papirus-Dark -d $out/share/icons/Papirus-Dark
-      ./papirus-folders -C gruvbox-material-blue --theme Papirus -d $out/share/icons/Papirus
+      sed -i "s|/usr|$out|g" ./papirus-folders
+      sed -i "s|\$HOME/.local|$out|g" ./papirus-folders
+      sed -i "s|\$HOME/.icons|$out/share/icons|g" ./papirus-folders
+      ./papirus-folders -C gruvbox-material-blue --theme Papirus-Dark
+      ./papirus-folders -C gruvbox-material-blue --theme Papirus
     '';
   };
 in
@@ -192,7 +173,7 @@ in
   users.users.carmeet = {
     isNormalUser = true;
     description = "sigma-nixos-user";
-    extraGroups = [ "networkmanager" "wheel" "lp" "lpadmin" "dialout"];
+    extraGroups = [ "networkmanager" "wheel" "lp" "lpadmin" "dialout" ];
     shell = pkgs.fish;
   };
   nixpkgs.config.allowUnfree = true;
@@ -330,7 +311,7 @@ in
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     cursor = {
-      package = bibata-cursor-gruvbox;
+      package = bibata-cursor-gruvbox-final;
       name = "Bibata-Modern-Gruvbox-Dark";
       size = 24;
     };
@@ -355,7 +336,7 @@ in
       };
       sizes = {
         applications = 10;
-        terminal = 12;
+        terminal = 12; # <-- Fixed trailing letter compilation bug
         desktop = 10;
         popups = 12;
       };
