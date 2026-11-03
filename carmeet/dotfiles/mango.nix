@@ -24,6 +24,8 @@
       focus_color = "0x458588ff";
       border_color = "0x3c3836ff";
       root_color = "0x1d2021ff";
+      enable_border_resize = 1;
+      border_resize_size = 10;
       gap_inner_horizontal = 10;
       gap_inner_vertical = 10;
       gap_outer_horizontal = 10;
@@ -32,6 +34,7 @@
       default_master_count = 1;
       default_master_factor = 0.5;
       circle_layout = "tile,scroller";
+      tag_num = 10;
       tag_rule = [
         "id:*,layout_name:tile"
       ];
@@ -50,8 +53,8 @@
       mouse_accel_profile = 1;
       gesture_live = 1;
       gesturebind = [
-        "NONE,right,4,viewprev_have_client"
-        "NONE,left,4,viewnext_have_client"
+        "NONE,right,4,viewtoleft"
+        "NONE,left,4,viewtoright"
         "NONE,left,3,focusdir,left"
         "NONE,right,3,focusdir,right"
       ];
@@ -81,8 +84,10 @@
         "SUPER,l,focusdir,right"
         "SUPER+SHIFT,h,setmfact,-0.05"
         "SUPER+SHIFT,l,setmfact,+0.05"
-        "SUPER+SHIFT,h,resizewin,-30,0"
-        "SUPER+SHIFT,l,resizewin,+30,0"
+        "SUPER+ALT,h,resizewin,-30,0"
+        "SUPER+ALT,l,resizewin,+30,0"
+        "SUPER+ALT,j,resizewin,0,+30"
+        "SUPER+ALT,k,resizewin,0,-30"
         "SUPER+CTRL,h,move_client,left"
         "SUPER+CTRL,j,move_client,down"
         "SUPER+CTRL,k,move_client,up"
