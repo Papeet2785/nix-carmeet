@@ -14,7 +14,7 @@ margin_ends = 0
 padding = 7
 radius_top_left = 0
 radius_top_right = 0
-start = [ "workspaces", "bar", "bar_2", "active_window" ]
+start = [ "workspaces", "bar", "active_window" ]
 widget_spacing = 20
 
 [location]
@@ -96,7 +96,7 @@ temperature_night = 5400
 position = "bottom_right"
 
 [plugins]
-enabled = [ "raycursive/niri-displays", "prponkshe/mango-displays" ]
+enabled = [ "raycursive/niri-displays" ]
 
 [shell.launcher]
 app_grid = true
@@ -153,11 +153,7 @@ transition = [ "fade" ]
     path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/solar_system.jpeg"
 
 [widget.bar]
-enabled = false
 type = "raycursive/niri-displays:bar"
-
-[widget.bar_2]
-type = "prponkshe/mango-displays:bar"
 
 [widget.battery]
 color = "#458588"
