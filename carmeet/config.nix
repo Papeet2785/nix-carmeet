@@ -15,6 +15,7 @@ let
   gruvbox-papirus-icon-theme = pkgs.stdenv.mkDerivation {
     pname = "gruvbox-papirus-icon-theme";
     version = "unstable-2026";
+    dontWrapQtApps = true;
     src = pkgs.fetchFromGitHub {
       owner = "xelser";
       repo = "gruvbox-papirus-folders";

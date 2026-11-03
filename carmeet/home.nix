@@ -37,7 +37,6 @@
     config.lib.dag.entryAfter [ "writeBoundary" ] ''
       target="$HOME/.local/state/noctalia/settings.toml"
       source="/home/carmeet/nix-carmeet/carmeet/dotfiles/noctalia.toml"
-
       $DRY_RUN_CMD rm -f "$target"
       $DRY_RUN_CMD ln -sfn "$source" "$target"
     '';
