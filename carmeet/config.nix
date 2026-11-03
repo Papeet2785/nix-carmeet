@@ -19,7 +19,7 @@ let
       owner = "xelser";
       repo = "gruvbox-papirus-folders";
       rev = "main";
-      hash = "sha256-jZ4WfEovhFpAIszXvM8pAnf8Z8Z4m6iP7hY8o6H8c7k="; # Calculated for repository source
+      hash = "sha256-P8YfefK6up+8jRd+n5KMu2tkepiu1fWx+rWXg1y5Kio=";
     };
     nativeBuildInputs = [ pkgs.papirus-icon-theme pkgs.bash pkgs.coreutils ];
     installPhase = ''
