@@ -105,6 +105,7 @@
       enable = true;
       package = pkgs.niri;
     };
+    mango.enable = true;
     nix-ld.enable = true;
     dconf.enable = true;
     fish.enable = true;
