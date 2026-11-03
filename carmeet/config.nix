@@ -3,31 +3,39 @@ let
    bibata-cursor-gruvbox = pkgs.stdenv.mkDerivation {
     pname = "bibata-cursor-gruvbox";
     version = "unstable-2026";
+
     src = pkgs.fetchFromGitHub {
       owner = "NiciTheNici";
       repo = "bibata_cursor_gruvbox";
       rev = "main";
       hash = "sha256-VCEHiog+hfp/kh0OS5a2fJaIf1PtBuQ0HvFbsxwAoNI=";
     };
+
     nativeBuildInputs = [
       pkgs.python312
       pkgs.librsvg
       pkgs.xcursorgen
     ];
+
     dontBuild = true;
-     installPhase = ''
+
+    installPhase = ''
       runHook preInstall
       set -eux
+
       python src/cursor_utils.py \
         --hypr \
         --x11 \
+        --theme Bibata-Modern-Classic-Gruvbox \
         --out-dir ./out
-      echo "Generated cursor themes:"
-      find ./out -maxdepth 2 -type d -print
+
       mkdir -p "$out/share/icons"
-      cp -r ./out/Bibata-* "$out/share/icons/"
+
+      cp -r ./out/Bibata-Modern-Classic-Gruvbox \
+        "$out/share/icons/"
+
       runHook postInstall
-    '';   
+    '';
   }; 
    gruvbox-papirus-icon-theme = pkgs.stdenv.mkDerivation {
     pname = "gruvbox-papirus-icon-theme";
