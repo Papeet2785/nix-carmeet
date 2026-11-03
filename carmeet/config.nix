@@ -231,6 +231,7 @@
       #mango
       playerctl
       wlr-randr
+      wl-mirror
       wireplumber
       jq
       gtk4
