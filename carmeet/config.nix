@@ -225,7 +225,7 @@ in
   nixpkgs.config.allowUnfree = true;
   environment = {
     sessionVariables = {
-      XCURSOR_THEME = "Bibata-Modern-Classic";
+      XCURSOR_THEME = "Bibata-Modern-Classic-Gruvbox";
       XCURSOR_SIZE = "24";
       MOZ_ENABLE_WAYLAND = "1";
       NIXOS_OZONE_WL = "1";
@@ -360,7 +360,7 @@ in
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     cursor = {
       package = bibata-cursor-gruvbox;
-      name = "Bibata-Modern-Classic";
+      name = "Bibata-Modern-Classic-Gruvbox";
       size = 24;
     };
     icons = {
