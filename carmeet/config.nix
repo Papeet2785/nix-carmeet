@@ -1,6 +1,6 @@
 { pkgs, inputs, ... }:
 let
-  bibata-cursor-gruvbox-final = pkgs.stdenv.mkDerivation {
+   bibata-cursor-gruvbox = pkgs.stdenv.mkDerivation {
     pname = "bibata-cursor-gruvbox";
     version = "unstable-2026";
     src = pkgs.fetchFromGitHub {
@@ -9,41 +9,57 @@ let
       rev = "main";
       hash = "sha256-VCEHiog+hfp/kh0OS5a2fJaIf1PtBuQ0HvFbsxwAoNI=";
     };
+    nativeBuildInputs = [
+      pkgs.python312
+      pkgs.librsvg
+      pkgs.xcursorgen
+    ];
+    dontBuild = true;
     installPhase = ''
-      mkdir -p $out/share/icons/Bibata-Modern-Gruvbox-Dark
-      if [ -d "Bibata-Modern-Gruvbox-Dark" ]; then
-        cp -r Bibata-Modern-Gruvbox-Dark/* $out/share/icons/Bibata-Modern-Gruvbox-Dark/
-      else
-        cp -r * $out/share/icons/Bibata-Modern-Gruvbox-Dark/
-      fi
+      runHook preInstall
+      set -euxo pipefail
+      python src/cursor_utils.py \
+        --hypr \
+        --x11 \
+        --theme Bibata-Modern-Gruvbox-Dark \
+        --out-dir ./out
+      echo "Generated cursor themes:"
+      find ./out -maxdepth 3 -type d -print
+      mkdir -p "$out/share/icons"
+      cp -r ./out/. "$out/share/icons/"
+      runHook postInstall
     '';
   }; 
   gruvbox-papirus-icon-theme = pkgs.stdenv.mkDerivation {
     pname = "gruvbox-papirus-icon-theme";
     version = "unstable-2026";
-    dontWrapQtApps = true; 
     src = pkgs.fetchFromGitHub {
       owner = "xelser";
       repo = "gruvbox-papirus-folders";
       rev = "main";
-      hash = "sha256-P8YfefK6up+8jRd+n5KMu2tkepiu1fWx+rWXg1y5Kio="; 
+      hash = "sha256-P8YfefK6up+8jRd+n5KMu2tkepiu1fWx+rWXg1y5Kio=";
     };
-    nativeBuildInputs = [ pkgs.papirus-icon-theme pkgs.bash pkgs.coreutils pkgs.gnused ];
+    nativeBuildInputs = [
+      pkgs.bash
+      pkgs.coreutils
+      pkgs.gnused
+      pkgs.gtk3
+    ];
+    dontBuild = true;
     installPhase = ''
+      runHook preInstall
       mkdir -p $out/share/icons
-      cp -rL ${pkgs.papirus-icon-theme}/share/icons/* $out/share/icons/
-      chmod -R +w $out/share/icons/
-      cp -r src/* $out/share/icons/Papirus/
-      cp -r src/* $out/share/icons/Papirus-Dark/
-      cp -r src/* $out/share/icons/Papirus-Light/
-      
-      patchShebangs ./papirus-folders
-      sed -i "s|/usr|$out|g" ./papirus-folders
-      sed -i "s|\$HOME/.local|$out|g" ./papirus-folders
-      sed -i "s|\$HOME/.icons|$out/share/icons|g" ./papirus-folders
-
-      ./papirus-folders -C gruvbox-material-blue --theme Papirus-Dark
-      ./papirus-folders -C gruvbox-material-blue --theme Papirus
+      cp -rL ${pkgs.papirus-icon-theme}/share/icons/. \
+        $out/share/icons/
+      chmod -R u+w $out/share/icons
+      for theme in Papirus Papirus-Dark Papirus-Light; do
+        cp -r src/. "$out/share/icons/$theme/"
+        ./papirus-folders \
+          --color gruvbox-material-blue \
+          --theme "$out/share/icons/$theme" \
+          --once
+      done
+      runHook postInstall
     '';
   };
 in
@@ -331,7 +347,7 @@ in
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     cursor = {
-      package = bibata-cursor-gruvbox-final;
+      package = bibata-cursor-gruvbox;
       name = "Bibata-Modern-Gruvbox-Dark";
       size = 24;
     };
