@@ -284,6 +284,7 @@ in
       git
       kdePackages.kdeconnect-kde
       gvfs
+      yazi
       nautilus
       xdg-utils
       mimeo
