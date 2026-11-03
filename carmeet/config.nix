@@ -1,31 +1,41 @@
 { pkgs, inputs, ... }:
 let
-  bibata-cursor-gruvbox = pkgs.stdenv.mkDerivation rec {
+  bibata-cursor-gruvbox = pkgs.stdenv.mkDerivation {
     pname = "bibata-cursor-gruvbox";
-    version = "1.0.1";
-    src = pkgs.fetchzip {
-      url = "https://github.com{version}/Bibata-Modern-Gruvbox-Dark.tar.gz";
-      hash = "sha256-4299bB3kofY89Yk/FscC+7107R2pEsh+2yL96fB7A+A=";
+    version = "unstable-2026";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "NiciTheNici";
+      repo = "bibata_cursor_gruvbox";
+      rev = "main"; # Point directly to the main branch to prevent 404 errors
+      sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # Temporary placeholder hash
     };
+
     installPhase = ''
       mkdir -p $out/share/icons/Bibata-Modern-Gruvbox-Dark
-      cp -r * $out/share/icons/Bibata-Modern-Gruvbox-Dark/
+      
+      # Copy theme structural files to the output icons directory
+      if [ -d "Bibata-Modern-Gruvbox-Dark" ]; then
+        cp -r Bibata-Modern-Gruvbox-Dark/* $out/share/icons/Bibata-Modern-Gruvbox-Dark/
+      else
+        cp -r * $out/share/icons/Bibata-Modern-Gruvbox-Dark/
+      fi
     '';
   };
   gruvbox-papirus-icon-theme = pkgs.stdenv.mkDerivation {
     pname = "gruvbox-papirus-icon-theme";
     version = "unstable-2026";
-    dontWrapQtApps = true;
+    dontWrapQtApps = true; 
     src = pkgs.fetchFromGitHub {
       owner = "xelser";
       repo = "gruvbox-papirus-folders";
       rev = "main";
-      hash = "sha256-P8YfefK6up+8jRd+n5KMu2tkepiu1fWx+rWXg1y5Kio=";
+      hash = "sha256-P8YfefK6up+8jRd+n5KMu2tkepiu1fWx+rWXg1y5Kio="; 
     };
     nativeBuildInputs = [ pkgs.papirus-icon-theme pkgs.bash pkgs.coreutils ];
     installPhase = ''
       mkdir -p $out/share/icons
-      cp -r ${pkgs.papirus-icon-theme}/share/icons/* $out/share/icons/
+      cp -rL ${pkgs.papirus-icon-theme}/share/icons/* $out/share/icons/
       chmod -R +w $out/share/icons/
       cp -r src/* $out/share/icons/Papirus/
       cp -r src/* $out/share/icons/Papirus-Dark/
