@@ -230,6 +230,7 @@
       fuse
       #mango
       playerctl
+      flameshot
       wlr-randr
       wl-mirror
       wireplumber
