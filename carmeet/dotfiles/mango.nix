@@ -14,15 +14,15 @@
         open = "0.46,1.0,0.29,1";
         close = "0.46,1.0,0.29,1";
       };
-      bordercolor = "0x458588aa";
+      border_color = "0x458588aa";
       border_radius = 12;
       bind = [
-        "SUPER, Shift, r, reload_config"
+        "SUPER, SHIFT, r, reload_config"
         "Super, d, spawn, noctalia msg panel-toggle launcher"
-        "Super, Shift, c, spawn, foot -e hx ~/nix-carmeet"
+        "Super, SHIFT, c, spawn, foot -e hx ~/nix-carmeet"
         "Super, c, spawn, foot -e hx ~"
         "Super, b, spawn, firefox"
-        "Super, Shift, b, spawn, google-chrome"
+        "Super, SHIFT, b, spawn, google-chrome"
         "Super, e, spawn, nautilus"
         "Super, Return, spawn, foot"
         "Super, Escape, spawn, foot -e btop"
