@@ -29,41 +29,6 @@ let
       runHook postInstall
     '';
   }; 
-   gruvbox-papirus-icon-theme = pkgs.stdenv.mkDerivation {
-    pname = "gruvbox-papirus-icon-theme";
-    version = "unstable-2026";
-    src = pkgs.fetchFromGitHub {
-      owner = "xelser";
-      repo = "gruvbox-papirus-folders";
-      rev = "main";
-      hash = "sha256-P8YfefK6up+8jRd+n5KMu2tkepiu1fWx+rWXg1y5Kio=";
-    };
-    nativeBuildInputs = [
-      pkgs.bash
-      pkgs.coreutils
-      pkgs.gnused
-      pkgs.gtk3
-      pkgs.getent
-    ];
-    dontBuild = true;
-    installPhase = ''
-      runHook preInstall
-      set -eux
-      mkdir -p $out/share/icons
-      cp -rL ${pkgs.papirus-icon-theme}/share/icons/. \
-        $out/share/icons/
-      chmod -R u+w $out/share/icons
-      patchShebangs ./papirus-folders
-      for theme in Papirus Papirus-Dark Papirus-Light; do
-        cp -r src/. "$out/share/icons/$theme/"
-        ./papirus-folders \
-          --color gruvbox-material-blue \
-          --theme "$out/share/icons/$theme" \
-          --once
-      done
-      runHook postInstall
-    '';
-  }; 
 in
 {
   imports = [
@@ -293,6 +258,8 @@ in
       fuse
       #niri
       playerctl
+      papirus-icon-theme
+      papirus-folders
       wireplumber
       jq
       gtk4
@@ -357,7 +324,7 @@ in
     };
     icons = {
       enable = true;
-      package = gruvbox-papirus-icon-theme;
+      package = pkgs.papirus-icon-theme;
       dark = "Papirus-Dark";
       light = "Papirus";
     };
