@@ -1,5 +1,23 @@
 { pkgs, inputs, ... }:
 let
+  bibata-cursor-gruvbox-final = pkgs.stdenv.mkDerivation {
+    pname = "bibata-cursor-gruvbox";
+    version = "unstable-2026";
+    src = pkgs.fetchFromGitHub {
+      owner = "NiciTheNici";
+      repo = "bibata_cursor_gruvbox";
+      rev = "main";
+      hash = "sha256-VCEHiog+hfp/kh0OS5a2fJaIf1PtBuQ0HvFbsxwAoNI=";
+    };
+    installPhase = ''
+      mkdir -p $out/share/icons/Bibata-Modern-Gruvbox-Dark
+      if [ -d "Bibata-Modern-Gruvbox-Dark" ]; then
+        cp -r Bibata-Modern-Gruvbox-Dark/* $out/share/icons/Bibata-Modern-Gruvbox-Dark/
+      else
+        cp -r * $out/share/icons/Bibata-Modern-Gruvbox-Dark/
+      fi
+    '';
+  }; 
   gruvbox-papirus-icon-theme = pkgs.stdenv.mkDerivation {
     pname = "gruvbox-papirus-icon-theme";
     version = "unstable-2026";
@@ -18,10 +36,12 @@ let
       cp -r src/* $out/share/icons/Papirus/
       cp -r src/* $out/share/icons/Papirus-Dark/
       cp -r src/* $out/share/icons/Papirus-Light/
+      
       patchShebangs ./papirus-folders
       sed -i "s|/usr|$out|g" ./papirus-folders
       sed -i "s|\$HOME/.local|$out|g" ./papirus-folders
       sed -i "s|\$HOME/.icons|$out/share/icons|g" ./papirus-folders
+
       ./papirus-folders -C gruvbox-material-blue --theme Papirus-Dark
       ./papirus-folders -C gruvbox-material-blue --theme Papirus
     '';
@@ -336,7 +356,7 @@ in
       };
       sizes = {
         applications = 10;
-        terminal = 12; # <-- Fixed trailing letter compilation bug
+        terminal = 12;
         desktop = 10;
         popups = 12;
       };
