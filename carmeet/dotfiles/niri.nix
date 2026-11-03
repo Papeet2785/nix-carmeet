@@ -65,7 +65,7 @@
       "Mod+Tab".action.toggle-overview = {};
       "Mod+B".action.spawn = "firefox";
       "Mod+Shift+B".action.spawn = "google-chrome";
-      "Mod+E".action.spawn = "nautilus";
+      "Mod+E".action.spawn = "pcmanfm";
       "Mod+Shift+R".action.spawn = [ "niri" "msg" "action" "load-config-file" ];
       #noctalia
       "Mod+D".action.spawn-sh = "noctalia msg panel-toggle launcher";

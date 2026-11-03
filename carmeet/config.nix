@@ -249,7 +249,7 @@ in
       git
       kdePackages.kdeconnect-kde
       gvfs
-      nautilus
+      pcmanfm
       xdg-utils
       mimeo
       shared-mime-info
