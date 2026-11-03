@@ -6,7 +6,7 @@
     Exec = foot -e hx %F
     Terminal = false
     Type = Application
-    MimeType = text/plain;text/markdown;text/x-c;text/x-java;text/css'textjavascript;application/json;text/x-python;text/x-nix;
+    MimeType = text/plain;text/markdown;text/x-c;text/x-java;text/css;textjavascript;application/json;text/x-python;text/x-nix;
   '';
   xdg.mimeApps = {
     enable = true;
@@ -23,7 +23,7 @@
       "text/css" = "helix-terminal.desktop";
       "text/javascript" = "helix-terminal.desktop";
       "application/json" = "helix-terminal.desktop";
-      "application/pdf" = "org.gnome.Evince.desktop";
+      "application/pdf" = "org.pwmt.zathura.desktop";
       "audio/mpeg" = "vlc.desktop";
       "audio/mp3" = "vlc.desktop";
       "audio/x-wav" = "vlc.desktop";
@@ -32,6 +32,13 @@
       "video/x-matroska" = "vlc.desktop";
       "video/webm" = "vlc.desktop";
       "video/mpeg" = "vlc.desktop";
+      "image/jpeg" = "org.xfce.ristretto.desktop";
+      "image/png" = "org.xfce.ristretto.desktop";
+      "image/gif" = "org.xfce.ristretto.desktop";
+      "image/bmp" = "org.xfce.ristretto.desktop";
+      "image/webp" = "org.xfce.ristretto.desktop";
+      "image/tiff" = "org.xfce.ristretto.desktop";
+      "image/svg+xml" = "org.xfce.ristretto.desktop";
     };
   };
 }

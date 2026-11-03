@@ -249,7 +249,7 @@ in
       git
       kdePackages.kdeconnect-kde
       gvfs
-      pcmanfm
+      thunar
       xdg-utils
       mimeo
       shared-mime-info
@@ -275,11 +275,11 @@ in
       inputs.freesmlauncher.packages.${pkgs.stdenv.hostPlatform.system}.freesmlauncher
       lingot
       qalculate-gtk
-      evince
+      zathura
       gimp
       inkscape
       protonplus
-      loupe
+      ristretto
       cheese
       obs-studio
       proton-vpn
