@@ -249,6 +249,7 @@ in
       git
       kdePackages.kdeconnect-kde
       gvfs
+      tumbler
       thunar
       xdg-utils
       mimeo
