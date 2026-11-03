@@ -9,6 +9,7 @@
         "noctalia --daemon"
         "polkit-gnome-authentication-agent-1"
         "xwayland-satellite"
+        "flameshot"
       ];
       animations = 1;
       animation_type_open = "zoom";
