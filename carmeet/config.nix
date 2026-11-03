@@ -15,20 +15,19 @@ let
       pkgs.xcursorgen
     ];
     dontBuild = true;
-    installPhase = ''
+     installPhase = ''
       runHook preInstall
-      set -euxo pipefail
+      set -eux
       python src/cursor_utils.py \
         --hypr \
         --x11 \
-        --theme Bibata-Modern-Gruvbox-Dark \
         --out-dir ./out
       echo "Generated cursor themes:"
-      find ./out -maxdepth 3 -type d -print
+      find ./out -maxdepth 2 -type d -print
       mkdir -p "$out/share/icons"
-      cp -r ./out/. "$out/share/icons/"
+      cp -r ./out/Bibata-* "$out/share/icons/"
       runHook postInstall
-    '';
+    '';   
   }; 
   gruvbox-papirus-icon-theme = pkgs.stdenv.mkDerivation {
     pname = "gruvbox-papirus-icon-theme";
