@@ -168,6 +168,7 @@
       glib
       bash
       trash-cli
+      btop
       #code
       helix
       godot
