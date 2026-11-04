@@ -183,6 +183,7 @@ scale = 0.60000000000000009
 
 [widget.volume]
 color = "on_error_container"
+mute_color = "error_container"
 
 [widget.workspaces]
 empty_color = "primary_container"
