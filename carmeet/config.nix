@@ -1,36 +1,4 @@
-{ pkgs, inputs, ... }:
-let
-   bibata-cursor-gruvbox = pkgs.stdenv.mkDerivation {
-    pname = "bibata-cursor-gruvbox";
-    version = "unstable-2026";
-    src = pkgs.fetchFromGitHub {
-      owner = "NiciTheNici";
-      repo = "bibata_cursor_gruvbox";
-      rev = "main";
-      hash = "sha256-VCEHiog+hfp/kh0OS5a2fJaIf1PtBuQ0HvFbsxwAoNI=";
-    };
-    nativeBuildInputs = [
-      pkgs.python312
-      pkgs.librsvg
-      pkgs.xcursorgen
-    ];
-    dontBuild = true;
-    installPhase = ''
-      runHook preInstall
-      set -eux
-      python src/cursor_utils.py \
-        --hypr \
-        --x11 \
-        --theme Bibata-Modern-Classic-Gruvbox \
-        --out-dir ./out
-      mkdir -p "$out/share/icons"
-      cp -r ./out/Bibata-Modern-Classic-Gruvbox \
-        "$out/share/icons/"
-      runHook postInstall
-    '';
-  }; 
-in
-{
+{ pkgs, inputs, ... }: {
   imports = [
     ./hardware.nix
   ];
@@ -182,7 +150,7 @@ in
   nixpkgs.config.allowUnfree = true;
   environment = {
     sessionVariables = {
-      XCURSOR_THEME = "Bibata-Modern-Classic-Gruvbox";
+      XCURSOR_THEME = "Bibata-Modern-Classic";
       XCURSOR_SIZE = "24";
       MOZ_ENABLE_WAYLAND = "1";
       NIXOS_OZONE_WL = "1";
@@ -261,6 +229,7 @@ in
       playerctl
       papirus-icon-theme
       papirus-folders
+      bibata-cursors
       wireplumber
       jq
       gtk4
@@ -317,10 +286,10 @@ in
   };
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark-dark.yaml";
     cursor = {
-      package = bibata-cursor-gruvbox;
-      name = "Bibata-Modern-Classic-Gruvbox";
+      package = pkgs.bibata-cursor;
+      name = "Bibata-Modern-Classic";
       size = 24;
     };
     icons = {

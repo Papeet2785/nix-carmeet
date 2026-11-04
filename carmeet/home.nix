@@ -15,12 +15,6 @@
       };
     };
     noctalia.enable = true;
-    btop = {
-      enable = true;
-      settings = {
-        color_theme = "gruvbox_dark";
-      };
-    };
   };
   stylix.targets = {
     niri.enable = false;
