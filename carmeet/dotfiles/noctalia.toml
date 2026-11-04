@@ -144,13 +144,13 @@ directory = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/gradient.png"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/gradient.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/gradient.png"
 
 [widget.bar]
 type = "raycursive/niri-displays:bar"
@@ -160,7 +160,7 @@ color = "primary"
 display_mode = "graphic"
 
 [widget.clock]
-color = "tertiary"
+color = "#E5C07B"
 format = "{:%A %e, %I:%M:%S %p}"
 
 [widget.control-center]
@@ -181,9 +181,8 @@ drawer = true
 scale = 0.60000000000000009
 
 [widget.volume]
-color = "on_error_container"
-mute_color = "error_container"
+color = "#E5C07B"
 
 [widget.workspaces]
 empty_color = "primary_container"
-occupied_color = "tertiary"
+occupied_color = "#E5C07B"
