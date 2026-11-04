@@ -288,7 +288,7 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark-dark.yaml";
     cursor = {
-      package = pkgs.bibata-cursor;
+      package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
       size = 24;
     };
