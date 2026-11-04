@@ -1,4 +1,4 @@
-config_version = 17
+config_version = 19
 
 [audio]
 enable_notification_sounds = false
@@ -169,7 +169,6 @@ glyph = "device-ipad"
 
 [widget.cpu]
 color = "secondary"
-icon_color = "secondary"
 
 [widget.ram]
 color = "tertiary"

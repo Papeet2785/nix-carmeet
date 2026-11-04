@@ -7,10 +7,6 @@
     ];
     hotkey-overlay.skip-at-startup = true;
     prefer-no-csd = true;
-    cursor = {
-      theme = "Bibata-Modern-Classic-Gruvbox";
-      size = 24;
-    };
     debug.honor-xdg-activation-with-invalid-serial = true;
     input = {
       keyboard = {
