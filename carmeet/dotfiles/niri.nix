@@ -35,8 +35,8 @@
       border = {
         enable = true;
         width = 3;
-        active.color = "#458588";
-        inactive.color = "#3c3836";
+        active.color = "#61afef";
+        inactive.color = "#7584fe";
       };
       focus-ring.enable = false;
       background-color = "#1d2021";

@@ -144,19 +144,19 @@ directory = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/gradient.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/gradient.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/gradient.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/odyssey.jpg"
 
 [widget.bar]
 type = "raycursive/niri-displays:bar"
 
 [widget.battery]
-color = "#458588"
+color = "primary"
 display_mode = "graphic"
 
 [widget.clock]
@@ -172,12 +172,10 @@ color = "secondary"
 icon_color = "secondary"
 
 [widget.ram]
-color = "primary"
-icon_color = "primary"
+color = "tertiary"
 
 [widget.temp]
-color = "on_tertiary_container"
-icon_color = "on_tertiary_container"
+color = "on_surface"
 
 [widget.tray]
 drawer = true
@@ -188,5 +186,4 @@ color = "on_error_container"
 
 [widget.workspaces]
 empty_color = "primary_container"
-focused_color = "#458588"
-occupied_color = "primary"
+occupied_color = "tertiary"
