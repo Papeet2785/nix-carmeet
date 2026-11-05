@@ -192,6 +192,7 @@
   nixpkgs.config.allowUnfree = true;
   environment = {
     sessionVariables = {
+      BINDGEN_EXTRA_CLANG_ARGS = "-isystem ${pkgs.stdenv.cc.libc.dev}/include";
       LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
       XCURSOR_THEME = "Bibata-Modern-Classic";
       XCURSOR_SIZE = "24";
