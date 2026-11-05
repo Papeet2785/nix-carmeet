@@ -138,6 +138,7 @@
         libglvnd
         expat
         mesa
+        libgbm
         krb5
         nspr
         nss
