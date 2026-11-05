@@ -247,6 +247,17 @@
       nil
       marksman
       pango
+      libX11.dev
+      libxcb.dev
+      libXext.dev
+      libXrandr.dev
+      libXfixes.dev
+      libXrender.dev
+      libXcursor.dev
+      libXi.dev
+      libXinerama.dev
+      libXau.dev
+      libXdmcp.dev
       cairo
       #services
       polkit_gnome
