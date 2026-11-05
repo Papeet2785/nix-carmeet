@@ -231,6 +231,7 @@
       rustc
       cargo
       pyright
+      cmake
       gnumake
       rust-analyzer
       rustPlatform.rustLibSrc
