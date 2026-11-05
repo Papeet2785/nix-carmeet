@@ -200,8 +200,29 @@
       GDK_BACKEND = "wayland,x11";
       QT_QPA_PLATFORM = "wayland;xcb";
       PKG_CONFIG_PATH = "${pkgs.pango.dev}/lib/pkgconfig:${pkgs.cairo.dev}/lib/pkgconfig";
-      CMAKE_LIBRARY_PATH = "${pkgs.libX11}/lib";
-      CMAKE_INCLUDE_PATH = "${pkgs.libX11.dev}/include:${pkgs.xorgproto}/include";
+      CMAKE_INCLUDE_PATH = pkgs.lib.makeSearchPath "include" [
+        pkgs.libX11.dev
+        pkgs.xorgproto
+        pkgs.libXrandr.dev
+        pkgs.libXinerama.dev
+        pkgs.libXcursor.dev
+        pkgs.libXi.dev
+        pkgs.libXext.dev
+        pkgs.libXrender.dev
+        pkgs.libXfixes.dev
+        pkgs.libxcb.dev
+      ];
+      CMAKE_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+        pkgs.libX11
+        pkgs.libXrandr
+        pkgs.libXinerama
+        pkgs.libXcursor
+        pkgs.libXi
+        pkgs.libXext
+        pkgs.libXrender
+        pkgs.libXfixes
+        pkgs.libxcb
+      ];
     };
     variables = {
       RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";

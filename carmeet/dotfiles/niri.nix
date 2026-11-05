@@ -32,10 +32,10 @@
         enable = true;
         width = 3;
         active.color = "#61afef";
-        inactive.color = "#abb2bf";
+        inactive.color = "#282c34";
       };
       focus-ring.enable = false;
-      background-color = "#abb2bf";
+      background-color = "#282c34";
       preset-column-widths = [
         { proportion = 0.50; }
         { proportion = 1.00; }
