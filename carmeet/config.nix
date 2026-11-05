@@ -114,10 +114,29 @@
         glib
         zlib
         zstd
+        bzip2
         stdenv.cc.cc
+        fontconfig
+        freetype
         libGL
+        libxkbcommon
+        libxkbcommon.dev
+        xorg.libX11
+        xorg.libxcb
+        xorg.libXext
+        xorg.libXrandr
+        xorg.libXcomposite
+        xorg.libXdamage
+        xorg.libXfixes
+        xorg.libXrender
+        xorg.libXtst
+        wayland
+        libdrm
+        libpulseaudio
+        alsa-lib
+        dbus
       ];
-    };
+    };   
     dconf.enable = true;
     fish.enable = true;
     starship.enable = true;
@@ -174,7 +193,6 @@
     systemPackages = with pkgs; [
       #shell
       fzf
-      glib
       bash
       trash-cli
       btop
@@ -188,9 +206,6 @@
       pkg-config
       lldb
       clang-tools
-      libGL
-      libx11
-      libx11.dev
       libxcursor
       libxi
       libxinerama
