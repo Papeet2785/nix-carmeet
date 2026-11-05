@@ -247,7 +247,7 @@
       nil
       marksman
       pango
-      libX11.dev
+      libX11
       libxcb.dev
       libXext.dev
       libXrandr.dev
