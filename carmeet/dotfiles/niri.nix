@@ -56,7 +56,7 @@
       #apps
       "Mod+Return".action.spawn = "foot";
       "Mod+Escape".action.spawn = [ "foot" "-e" "btop" ];
-      "Mod+C".action.spawn = [ "foot" "-e" "hx" "~" ];
+      "Mod+C".action.spawn = [ "foot" "-e" "hx" "~/code" ];
       "Mod+Shift+C".action.spawn = [ "foot" "-e" "hx" "~/nix-carmeet" ];
       "Mod+Tab".action.toggle-overview = {};
       "Mod+B".action.spawn = "firefox";
