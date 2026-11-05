@@ -200,6 +200,8 @@
       GDK_BACKEND = "wayland,x11";
       QT_QPA_PLATFORM = "wayland;xcb";
       PKG_CONFIG_PATH = "${pkgs.pango.dev}/lib/pkgconfig:${pkgs.cairo.dev}/lib/pkgconfig";
+      CMAKE_LIBRARY_PATH = "${pkgs.libX11}/lib";
+      CMAKE_INCLUDE_PATH = "${pkgs.libX11.dev}/include:${pkgs.xorgproto}/include";
     };
     variables = {
       RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
