@@ -215,10 +215,13 @@
         pkgs.libxcb
         pkgs.libglvnd
       ];
-      LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
-        pkgs.libglvnd
-        pkgs.mesa
-      ] + ":/run/opengl-driver/lib";
+      LD_LIBRARY_PATH = [
+        (pkgs.lib.makeLibraryPath [
+          pkgs.libglvnd
+          pkgs.mesa
+        ])
+        "/run/opengl-driver/lib"
+      ];
       CMAKE_INCLUDE_PATH = pkgs.lib.makeSearchPath "include" [
         pkgs.libglvnd.dev
         (pkgs.symlinkJoin {
