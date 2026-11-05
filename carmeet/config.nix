@@ -108,7 +108,15 @@
       package = pkgs.niri;
     };
     xwayland.enable = true;
-    nix-ld.enable = true;
+    nix-ld.enable = {
+      enable = true;
+      libraries = with pkgs; [
+        glib
+        zlib
+        zstd
+        stdenv.cc.cc
+      ];
+    };
     dconf.enable = true;
     fish.enable = true;
     starship.enable = true;
