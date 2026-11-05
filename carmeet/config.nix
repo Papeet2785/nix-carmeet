@@ -115,6 +115,7 @@
         zlib
         zstd
         stdenv.cc.cc
+        libGL
       ];
     };
     dconf.enable = true;
