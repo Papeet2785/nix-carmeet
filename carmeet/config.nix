@@ -135,6 +135,14 @@
         libpulseaudio
         alsa-lib
         dbus
+        libglvnd
+        expat
+        mesa
+        krb5
+        nspr
+        nss
+        systemd
+        libxkbfile
       ];
     };   
     dconf.enable = true;
