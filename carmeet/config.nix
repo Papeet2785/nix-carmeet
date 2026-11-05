@@ -108,7 +108,7 @@
       package = pkgs.niri;
     };
     xwayland.enable = true;
-    nix-ld.enable = {
+    nix-ld = {
       enable = true;
       libraries = with pkgs; [
         glib
