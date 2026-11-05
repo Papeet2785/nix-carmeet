@@ -250,6 +250,8 @@
       marksman
       pango
       libX11
+      libX11.dev
+      xorgproto
       libxcb.dev
       libXext.dev
       libXrandr.dev
