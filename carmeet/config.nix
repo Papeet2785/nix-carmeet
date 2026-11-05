@@ -202,8 +202,13 @@
       PKG_CONFIG_PATH = "${pkgs.pango.dev}/lib/pkgconfig:${pkgs.cairo.dev}/lib/pkgconfig";
       CMAKE_INCLUDE_PATH = pkgs.lib.makeSearchPath "include" [
         pkgs.libglvnd.dev
-        pkgs.libX11.dev
-        pkgs.xorgproto
+        (pkgs.symlinkJoin {
+          name = "x11-combined-headers";
+          paths = [
+            pkgs.libX11.dev
+            pkgs.xorgproto
+          ];
+        })
         pkgs.libXrandr.dev
         pkgs.libXinerama.dev
         pkgs.libXcursor.dev
