@@ -2,7 +2,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = lib.mkForce "onedarker";
+      theme = lib.mkForce "base16_default";
       editor = {
         default-yank-register = "+";
         idle-timeout = 0;
