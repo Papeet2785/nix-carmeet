@@ -148,6 +148,8 @@
         systemd
         libxkbfile
         brotli
+        pango
+        cairo
       ];
     };   
     dconf.enable = true;
