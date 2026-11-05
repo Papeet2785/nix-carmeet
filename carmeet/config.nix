@@ -207,16 +207,16 @@
           paths = [
             pkgs.libX11.dev
             pkgs.xorgproto
+            pkgs.libXrandr.dev
+            pkgs.libXinerama.dev
+            pkgs.libXcursor.dev
+            pkgs.libXi.dev
+            pkgs.libXext.dev
+            pkgs.libXrender.dev
+            pkgs.libXfixes.dev
+            pkgs.libxcb.dev
           ];
         })
-        pkgs.libXrandr.dev
-        pkgs.libXinerama.dev
-        pkgs.libXcursor.dev
-        pkgs.libXi.dev
-        pkgs.libXext.dev
-        pkgs.libXrender.dev
-        pkgs.libXfixes.dev
-        pkgs.libxcb.dev
       ];
       CMAKE_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
         pkgs.libX11
