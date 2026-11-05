@@ -148,8 +148,6 @@
         systemd
         libxkbfile
         brotli
-        pango
-        cairo
       ];
     };   
     dconf.enable = true;
@@ -201,6 +199,7 @@
       _JAVA_AWT_WM_NONREPARENTING = "1";
       GDK_BACKEND = "wayland,x11";
       QT_QPA_PLATFORM = "wayland;xcb";
+      PKG_CONFIG_PATH = "${pkgs.pango.dev}/lib/pkgconfig:${pkgs.cairo.dev}/lib/pkgconfig";
     };
     variables = {
       RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
@@ -246,6 +245,8 @@
       nixd
       nil
       marksman
+      pango
+      cairo
       #services
       polkit_gnome
       udiskie
