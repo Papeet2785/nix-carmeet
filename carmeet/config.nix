@@ -121,15 +121,15 @@
         libGL
         libxkbcommon
         libxkbcommon.dev
-        xorg.libX11
-        xorg.libxcb
-        xorg.libXext
-        xorg.libXrandr
-        xorg.libXcomposite
-        xorg.libXdamage
-        xorg.libXfixes
-        xorg.libXrender
-        xorg.libXtst
+        libX11
+        libxcb
+        libXext
+        libXrandr
+        libXcomposite
+        libXdamage
+        libXfixes
+        libXrender
+        libXtst
         wayland
         libdrm
         libpulseaudio
