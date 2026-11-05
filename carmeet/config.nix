@@ -116,6 +116,7 @@
         zstd
         bzip2
         stdenv.cc.cc
+        llvmPackages.libclang
         fontconfig
         freetype
         libGL
@@ -191,6 +192,7 @@
   nixpkgs.config.allowUnfree = true;
   environment = {
     sessionVariables = {
+      LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
       XCURSOR_THEME = "Bibata-Modern-Classic";
       XCURSOR_SIZE = "24";
       MOZ_ENABLE_WAYLAND = "1";
