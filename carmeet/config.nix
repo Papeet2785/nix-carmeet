@@ -143,6 +143,10 @@
         nss
         systemd
         libxkbfile
+        nss
+        systemd
+        libxkbfile
+        brotli
       ];
     };   
     dconf.enable = true;
