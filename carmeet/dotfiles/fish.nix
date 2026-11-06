@@ -11,6 +11,9 @@
     interactiveShellInit = ''
       set -g fish_greeting ""
     '';
+    interactiveShellInit = ''
+      fish_add_path --global --prepend "$HOME/.cargo/bin"
+    '';
   };
   programs.starship = {
     enable = true;
