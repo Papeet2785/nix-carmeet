@@ -27,7 +27,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "onedark_custom";
+      theme = lib.mkForce "onedark_custom";
 
       editor = {
         default-yank-register = "+";
