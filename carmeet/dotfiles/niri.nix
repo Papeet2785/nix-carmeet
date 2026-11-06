@@ -17,7 +17,7 @@
       touchpad = {
         tap = true;
         natural-scroll = true;
-        dwt = true;
+        dwt = false;
         accel-speed = 1.0;
         accel-profile = "flat";
       };
@@ -53,7 +53,6 @@
       draw-border-with-background = true;
     }];
     binds = {
-      #apps
       "Mod+Return".action.spawn = "foot";
       "Mod+Escape".action.spawn = [ "foot" "-e" "btop" ];
       "Mod+C".action.spawn = [ "foot" "-e" "hx" "~/code" ];
@@ -63,7 +62,6 @@
       "Mod+Shift+B".action.spawn = "google-chrome";
       "Mod+E".action.spawn = "thunar";
       "Mod+Shift+R".action.spawn = [ "niri" "msg" "action" "load-config-file" ];
-      #noctalia
       "Mod+D".action.spawn-sh = "noctalia msg panel-toggle launcher";
       "Mod+V".action.spawn-sh = "noctalia msg panel-toggle clipboard";
       "Mod+N".action.spawn-sh = "noctalia msg panel-toggle control-center";
@@ -71,7 +69,6 @@
       "Control+Alt+Delete".action.spawn-sh = "noctalia msg panel-toggle session";
       "Mod+W".action.spawn-sh = "noctalia msg panel-toggle wallpaper";
       "Mod+Shift+S".action.screenshot = {};
-      #specialkeys
       "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" ];
       "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-" ];
       "XF86AudioMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
@@ -81,7 +78,6 @@
       "XF86AudioNext".action.spawn = [ "playerctl" "next" ];
       "XF86AudioPrev".action.spawn = [ "playerctl" "previous" ];
       "XF86AudioStop".action.spawn = [ "playerctl" "stop" ];
-      #window
       "Mod+Q".action.close-window = {};
       "Mod+Space".action.toggle-window-floating = {};
       "Mod+Shift+Space".action.switch-focus-between-floating-and-tiling = {};
@@ -99,7 +95,6 @@
       "Mod+Control+J".action.move-window-down = {};
       "Mod+Control+K".action.move-window-up = {};
       "Mod+Control+L".action.consume-or-expel-window-right = {};
-      #workspaces
       "Mod+1".action.focus-workspace = 1;
       "Mod+2".action.focus-workspace = 2;
       "Mod+3".action.focus-workspace = 3;
