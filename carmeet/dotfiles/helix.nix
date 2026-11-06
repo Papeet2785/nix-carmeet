@@ -21,10 +21,10 @@
     inherits = "onedark"
     "ui.background" = { bg = "#000000" }
     "ui.gutter" = { bg = "#000000" }
-    "ui.statusline" = { fg = "#abb2bf", bg = "#000000" }
-    "ui.statusline.inactive" = { fg = "#5c6370", bg = "#000000" }
-    "ui.statusline.normal" = { fg = "#ffffff", bg = "#a8323e", modifiers = ["bold"] }
-    "ui.statusline.insert" = { fg = "#ffffff", bg = "#286090", modifiers = ["bold"] }
-    "ui.statusline.select" = { fg = "#282c34", bg = "#d19a66", modifiers = ["bold"] }
+    "ui.statusline" = { fg = "#abb2bf", bg = "#282c34" }
+    "ui.statusline.inactive" = { fg = "#5c6370", bg = "#282c34" }
+    "ui.statusline.normal" = { fg = "#282c34", bg = "#e06c75"}
+    "ui.statusline.insert" = { fg = "#282c34", bg = "#61afef"}
+    "ui.statusline.select" = { fg = "#282c34", bg = "#e5c07b"}
   '';
 }
