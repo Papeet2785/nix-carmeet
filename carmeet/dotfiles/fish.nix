@@ -9,10 +9,8 @@
       la = "ls -Alh";
     };
     interactiveShellInit = ''
-      set -g fish_greeting ""
-    '';
-    interactiveShellInit = ''
       fish_add_path --global --prepend "$HOME/.cargo/bin"
+      set -g fish_greeting ""
     '';
   };
   programs.starship = {
