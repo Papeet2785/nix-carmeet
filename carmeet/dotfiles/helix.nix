@@ -18,7 +18,7 @@
     };
   };
   xdg.configFile."helix/themes/onedark_custom.toml".text = ''
-    inherits = "onedark"
+    inherits = "onedarker"
     "ui.background" = { bg = "#000000" }
     "ui.gutter" = { bg = "#000000" }
     "ui.statusline" = { fg = "#abb2bf", bg = "#282c34" }
