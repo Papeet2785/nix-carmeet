@@ -192,8 +192,6 @@
   nixpkgs.config.allowUnfree = true;
   environment = {
     sessionVariables = {
-      BINDGEN_EXTRA_CLANG_ARGS = "-isystem ${pkgs.stdenv.cc.libc.dev}/include";
-      LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
       XCURSOR_THEME = "Bibata-Modern-Classic";
       XCURSOR_SIZE = "24";
       MOZ_ENABLE_WAYLAND = "1";
@@ -202,60 +200,6 @@
       _JAVA_AWT_WM_NONREPARENTING = "1";
       GDK_BACKEND = "wayland,x11";
       QT_QPA_PLATFORM = "wayland;xcb";
-      PKG_CONFIG_PATH = "${pkgs.pango.dev}/lib/pkgconfig:${pkgs.cairo.dev}/lib/pkgconfig";
-      LIBRARY_PATH = pkgs.lib.makeLibraryPath [
-        pkgs.libX11
-        pkgs.libXrandr
-        pkgs.libXinerama
-        pkgs.libXcursor
-        pkgs.libXi
-        pkgs.libXext
-        pkgs.libXrender
-        pkgs.libXfixes
-        pkgs.libxcb
-        pkgs.libglvnd
-      ];
-      LD_LIBRARY_PATH = [
-        (pkgs.lib.makeLibraryPath [
-          pkgs.libglvnd
-          pkgs.mesa
-        ])
-        "/run/opengl-driver/lib"
-      ];
-      CMAKE_INCLUDE_PATH = pkgs.lib.makeSearchPath "include" [
-        pkgs.libglvnd.dev
-        (pkgs.symlinkJoin {
-          name = "x11-combined-headers";
-          paths = [
-            pkgs.libX11.dev
-            pkgs.xorgproto
-            pkgs.libXrandr.dev
-            pkgs.libXinerama.dev
-            pkgs.libXcursor.dev
-            pkgs.libXi.dev
-            pkgs.libXext.dev
-            pkgs.libXrender.dev
-            pkgs.libXfixes.dev
-            pkgs.libxcb.dev
-          ];
-        })
-      ];
-      CMAKE_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
-        pkgs.libX11
-        pkgs.libglvnd
-        pkgs.libXrandr
-        pkgs.libXinerama
-        pkgs.libXcursor
-        pkgs.libXi
-        pkgs.libXext
-        pkgs.libXrender
-        pkgs.libXfixes
-        pkgs.libxcb
-      ];
-    };
-    variables = {
-      RUST_SRC_PATH = "${pkgs.rustPlatform.rustLibSrc}";
-    };
     systemPackages = with pkgs; [
       #shell
       fzf
@@ -270,7 +214,6 @@
       uv
       gcc
       pkg-config
-      lldb
       clang-tools
       libxcursor
       libxi
@@ -280,14 +223,9 @@
       binutils
       arduino
       processing
-      rustc
-      cargo
       pyright
       cmake
       gnumake
-      rust-analyzer
-      rustPlatform.rustLibSrc
-      rustlings
       jdt-language-server
       ty
       python314Packages.python-lsp-server
