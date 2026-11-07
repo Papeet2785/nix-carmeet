@@ -52,12 +52,6 @@
     xserver = {
       enable = true;
       xkb = { layout = "us"; };
-      windowManager.dwm = {
-        enable = true;
-        package = pkgs.dwm.overrideAttrs {
-          src = ./dotfiles/suckless/dwm;
-        };
-      };
     };
     logind.settings.Login = {
       HandleLidSwitch = "suspend";
