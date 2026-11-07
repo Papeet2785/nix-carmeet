@@ -144,13 +144,13 @@ directory = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper"
 transition = [ "fade" ]
 
     [wallpaper.default]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/gradient.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
 
     [wallpaper.last]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/gradient.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/gradient.png"
+    path = "/home/carmeet/nix-carmeet/carmeet/dotfiles/wallpaper/nixos.png"
 
 [widget.bar]
 type = "raycursive/niri-displays:bar"
