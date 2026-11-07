@@ -15,7 +15,6 @@
       };
     };
     noctalia.enable = true;
-    fonts.fontconfig.enable = true;
   };
   stylix.targets = {
     niri.enable = false;
