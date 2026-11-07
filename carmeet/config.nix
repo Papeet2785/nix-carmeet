@@ -107,6 +107,12 @@
       enable = true;
       package = pkgs.niri;
     };
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    };
     xwayland.enable = true;
     nix-ld = {
       enable = true;
@@ -231,6 +237,8 @@
       ty
       python314Packages.python-lsp-server
       python314Packages.jedi
+      lua
+      lua-language-server
       ruff
       vscode-langservers-extracted
       fish-lsp
