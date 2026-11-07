@@ -13,9 +13,9 @@
           pad = "10x10 center";
         };
       };
-      fonts.fontconfig.enable = true;
     };
     noctalia.enable = true;
+    fonts.fontconfig.enable = true;
   };
   stylix.targets = {
     niri.enable = false;
