@@ -52,7 +52,7 @@
     xserver = {
       enable = true;
       xkb = { layout = "us"; };
-      xserver.windowManager.dwm = {
+      windowManager.dwm = {
         enable = true;
         package = pkgs.dwm.overrideAttrs {
           src = ./dotfiles/suckless/dwm;
