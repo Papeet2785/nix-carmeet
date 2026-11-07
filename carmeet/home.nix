@@ -13,6 +13,7 @@
           pad = "10x10 center";
         };
       };
+      fonts.fontconfig.enable = true;
     };
     noctalia.enable = true;
   };
