@@ -5,13 +5,13 @@
     stateVersion = "26.11";
   };
   programs = {
-    foot = {
+    kitty = {
       enable = true;
       settings = {
-        main = {
-          font = lib.mkForce "JetBrains Mono Nerd Font:size=12";
-          pad = "10x10 center";
-        };
+        font_family = "JetBrainsMono Nerd Font";
+        font_size = 12;
+        window_padding_width = 10;
+        confirm_os_window_close = 0;
       };
     };
     noctalia.enable = true;

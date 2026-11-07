@@ -281,7 +281,7 @@
       gtk4
       qt6Packages.qt6ct
       bc
-      foot
+      kitty
       libnotify
       wl-clipboard
       cliphist

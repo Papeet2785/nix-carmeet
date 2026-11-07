@@ -53,10 +53,10 @@
       draw-border-with-background = true;
     }];
     binds = {
-      "Mod+Return".action.spawn = "foot";
-      "Mod+Escape".action.spawn = [ "foot" "-e" "btop" ];
-      "Mod+C".action.spawn = [ "foot" "-e" "hx" "~/code" ];
-      "Mod+Shift+C".action.spawn = [ "foot" "-e" "hx" "~/nix-carmeet" ];
+      "Mod+Return".action.spawn = "kitty";
+      "Mod+Escape".action.spawn = [ "kitty" "-e" "btop" ];
+      "Mod+C".action.spawn = [ "kitty" "-e" "hx" "~/code" ];
+      "Mod+Shift+C".action.spawn = [ "kitty" "-e" "hx" "~/nix-carmeet" ];
       "Mod+Tab".action.toggle-overview = {};
       "Mod+B".action.spawn = "firefox";
       "Mod+Shift+B".action.spawn = "google-chrome";
