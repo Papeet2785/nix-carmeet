@@ -6,11 +6,6 @@
       noto-fonts-color-emoji
     ];
   };
-  config = {
-    common = {
-      default = [ "gtk" ];
-    };
-  };
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark-dark.yaml";
