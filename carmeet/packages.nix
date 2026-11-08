@@ -20,7 +20,8 @@
     libxrandr
     lld
     binutils
-    arduino
+    arduino-ide
+    arduino-cli
     processing
     pyright
     cmake
